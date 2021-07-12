@@ -1,9 +1,6 @@
-# [Sage](https://roots.io/sage/)
-[![Packagist](https://img.shields.io/packagist/vpre/roots/sage.svg?style=flat-square)](https://packagist.org/packages/roots/sage)
-[![devDependency Status](https://img.shields.io/david/dev/roots/sage.svg?style=flat-square)](https://david-dm.org/roots/sage#info=devDependencies)
-[![Build Status](https://img.shields.io/travis/roots/sage.svg?style=flat-square)](https://travis-ci.org/roots/sage)
+# Slab
 
-Sage is a WordPress starter theme with a modern development workflow.
+Slab is a WordPress starter theme with a modern development workflow, based on the [Sage starter theme by Roots](https://roots.io/sage/).
 
 ## Features
 
@@ -13,9 +10,8 @@ Sage is a WordPress starter theme with a modern development workflow.
 * [Browsersync](http://www.browsersync.io/) for synchronized browser testing
 * [Blade](https://laravel.com/docs/5.6/blade) as a templating engine
 * [Controller](https://github.com/soberwp/controller) for passing data to Blade templates
-* CSS framework (optional): [Bootstrap 4](https://getbootstrap.com/), [Bulma](https://bulma.io/), [Foundation](https://foundation.zurb.com/), [Tachyons](http://tachyons.io/), [Tailwind](https://tailwindcss.com/)
+* [Bootstrap 4](https://getbootstrap.com/)
 
-See a working example at [roots-example-project.com](https://roots-example-project.com/).
 
 ## Requirements
 
@@ -98,23 +94,3 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
 
 * [Sage documentation](https://roots.io/sage/docs/)
 * [Controller documentation](https://github.com/soberwp/controller#usage)
-
-## Contributing
-
-Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
-
-## Sage sponsors
-
-Help support our open-source development efforts by [becoming a patron](https://www.patreon.com/rootsdev).
-
-<a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://cdn.roots.io/app/uploads/kinsta.svg" alt="Kinsta" width="200" height="150"></a> <a href="https://k-m.com/"><img src="https://cdn.roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="200" height="150"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="itineris" width="200" height="150"></a> <a href="http://www.hbgdesignlab.se/"><img src="https://cdn.roots.io/app/uploads/helsingborgdesignlab.png" alt="Helsingborg Design LAB" with="200" height="150">
-
-## Community
-
-Keep track of development and community news.
-
-* Participate on the [Roots Discourse](https://discourse.roots.io/)
-* Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-* Read and subscribe to the [Roots Blog](https://roots.io/blog/)
-* Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
-* Listen to the [Roots Radio podcast](https://roots.io/podcast/)
