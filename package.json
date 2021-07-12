@@ -1,22 +1,16 @@
 {
-  "name": "sage",
+  "name": "slab",
   "version": "9.0.10",
-  "author": "Roots <team@roots.io>",
-  "homepage": "https://roots.io/sage/",
+  "author": "Stirling Brandworks <hello@stirlingbrandworks.com>",
+  "homepage": "https://github.com/stirling-brandworks/slab/",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/roots/sage.git"
+    "url": "git@github.com:stirling-brandworks/slab.git"
   },
   "bugs": {
-    "url": "https://github.com/roots/sage/issues"
+    "url": "https://github.com/stirling-brandworks/slab/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
   "browserslist": [
     "last 2 versions",
     "android 4",
@@ -31,10 +25,13 @@
     "lint": "npm run -s lint:scripts && npm run -s lint:styles",
     "lint:scripts": "eslint resources/assets/scripts resources/assets/build",
     "lint:styles": "stylelint \"resources/assets/styles/**/*.{css,sass,scss,sss,less}\"",
-    "test": "npm run -s lint"
+    "test": "npm run -s lint",
+    "prepare": "husky install"
   },
   "engines": {
-    "node": ">= 8.0.0"
+    "node": "^12",
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.19.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
@@ -73,7 +70,8 @@
     "webpack-dev-middleware": "~2.0.4",
     "webpack-hot-middleware": "^2.22.3",
     "webpack-merge": "~4.1.4",
-    "yargs": "^16.1.0"
+    "yargs": "^16.1.0",
+    "husky": "^6.0.0"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",

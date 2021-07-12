@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5e169eb87481574641b2c3fb63e1a9c",
+    "content-hash": "d10595f0bc86584645f944935737f9ca",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -728,6 +728,56 @@
             "time": "2020-04-07T20:44:10+00:00"
         },
         {
+            "name": "log1x/blade-svg-sage",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Log1x/blade-svg-sage.git",
+                "reference": "fb6f7e72d6a89a06960820f45397be319476ed42"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Log1x/blade-svg-sage/zipball/fb6f7e72d6a89a06960820f45397be319476ed42",
+                "reference": "fb6f7e72d6a89a06960820f45397be319476ed42",
+                "shasum": ""
+            },
+            "require": {
+                "nothingworks/blade-svg": "^0.3.0",
+                "php": ">=7.0"
+            },
+            "type": "package",
+            "autoload": {
+                "files": [
+                    "src/BladeSvgSage.php",
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me"
+                }
+            ],
+            "description": "Composer package to add support for Blade SVG by Adam Wathan to Roots Sage.",
+            "homepage": "https://github.com/log1x/blade-svg-sage",
+            "keywords": [
+                "blade",
+                "roots",
+                "sage",
+                "svg",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/Log1x/blade-svg-sage/issues",
+                "source": "https://github.com/Log1x/blade-svg-sage/tree/master"
+            },
+            "time": "2019-02-07T22:45:02+00:00"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "1.25.3",
             "source": {
@@ -786,6 +836,61 @@
                 "source": "https://github.com/briannesbitt/Carbon"
             },
             "time": "2019-06-03T17:56:44+00:00"
+        },
+        {
+            "name": "nothingworks/blade-svg",
+            "version": "v0.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamwathan/blade-svg.git",
+                "reference": "600269d60efe52bf9fc2cc610b21744cd69425df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamwathan/blade-svg/zipball/600269d60efe52bf9fc2cc610b21744cd69425df",
+                "reference": "600269d60efe52bf9fc2cc610b21744cd69425df",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "^5.3|^6.0|^7.0",
+                "illuminate/support": "^5.3|^6.0|^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BladeSvg\\BladeSvgServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BladeSvg\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/adamwathan/blade-svg/issues",
+                "source": "https://github.com/adamwathan/blade-svg/tree/v0.3.4"
+            },
+            "abandoned": "blade-ui-kit/blade-icons",
+            "time": "2020-03-03T13:55:12+00:00"
         },
         {
             "name": "psr/container",
@@ -1049,6 +1154,52 @@
                 "source": "https://github.com/soberwp/controller/tree/2.1.2"
             },
             "time": "2020-03-01T09:03:34+00:00"
+        },
+        {
+            "name": "stoutlogic/acf-builder",
+            "version": "1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/StoutLogic/acf-builder.git",
+                "reference": "06f5903fb5455bdae57246291bcd699ae29dc905"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/StoutLogic/acf-builder/zipball/06f5903fb5455bdae57246291bcd699ae29dc905",
+                "reference": "06f5903fb5455bdae57246291bcd699ae29dc905",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "^1.1|^2.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpdocumentor/reflection-docblock": "2.*",
+                "phpunit/phpunit": "4.*",
+                "squizlabs/php_codesniffer": "^2.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "StoutLogic\\AcfBuilder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Pfisterer",
+                    "email": "steve@stoutlogic.com"
+                }
+            ],
+            "description": "An Advanced Custom Field Configuration Builder",
+            "support": {
+                "issues": "https://github.com/StoutLogic/acf-builder/issues",
+                "source": "https://github.com/StoutLogic/acf-builder/tree/1.11.0"
+            },
+            "time": "2021-02-11T17:16:16+00:00"
         },
         {
             "name": "symfony/debug",
@@ -1614,6 +1765,96 @@
                 "source": "https://github.com/paragonie/random_compat"
             },
             "time": "2018-07-02T15:55:56+00:00"
+        },
+        {
+            "name": "paulthewalton/acf-stubs",
+            "version": "5.8.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paulthewalton/acf-stubs.git",
+                "reference": "722096c127186c41ac98395b418195d1db9cf576"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paulthewalton/acf-stubs/zipball/722096c127186c41ac98395b418195d1db9cf576",
+                "reference": "722096c127186c41ac98395b418195d1db9cf576",
+                "shasum": ""
+            },
+            "require-dev": {
+                "ext-gettext": "*",
+                "giacocorsiglia/stubs-generator": "^0.5.0",
+                "giacocorsiglia/wordpress-stubs": "*",
+                "php": "^7.1",
+                "wpackagist-plugin/advanced-custom-fields": "5.8.7"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Walton",
+                    "email": "pwalton@live.ca",
+                    "role": "copycat"
+                }
+            ],
+            "description": "Based on giacocorsiglia/wordpress-stubs. Advanced Custom Fields function, class, and global variable declaration stubs for easier static analysis.",
+            "keywords": [
+                "acf",
+                "advanced custom fields",
+                "static analysis",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/paulthewalton/acf-stubs/issues",
+                "source": "https://github.com/paulthewalton/acf-stubs/tree/5.8.7"
+            },
+            "time": "2019-12-04T19:26:53+00:00"
+        },
+        {
+            "name": "php-stubs/wordpress-stubs",
+            "version": "v5.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-stubs/wordpress-stubs.git",
+                "reference": "beda02c58f1c4689d42c8dde6a84f7f0c9c93f42"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-stubs/wordpress-stubs/zipball/beda02c58f1c4689d42c8dde6a84f7f0c9c93f42",
+                "reference": "beda02c58f1c4689d42c8dde6a84f7f0c9c93f42",
+                "shasum": ""
+            },
+            "replace": {
+                "giacocorsiglia/wordpress-stubs": "*"
+            },
+            "require-dev": {
+                "giacocorsiglia/stubs-generator": "^0.5.0",
+                "php": "~7.1"
+            },
+            "suggest": {
+                "paragonie/sodium_compat": "Pure PHP implementation of libsodium",
+                "symfony/polyfill-php73": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+                "szepeviktor/phpstan-wordpress": "WordPress extensions for PHPStan"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "WordPress function and class declaration stubs for static analysis.",
+            "homepage": "https://github.com/php-stubs/wordpress-stubs",
+            "keywords": [
+                "PHPStan",
+                "static analysis",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/php-stubs/wordpress-stubs/issues",
+                "source": "https://github.com/php-stubs/wordpress-stubs/tree/v5.7.2"
+            },
+            "time": "2021-05-13T07:54:04+00:00"
         },
         {
             "name": "ramsey/uuid",

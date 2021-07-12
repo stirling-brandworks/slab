@@ -30,7 +30,7 @@ add_filter('body_class', function (array $classes) {
  * Add "… Continued" to the excerpt
  */
 add_filter('excerpt_more', function () {
-    return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
+    return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'slab') . '</a>';
 });
 
 /**
@@ -40,7 +40,7 @@ collect([
     'index', '404', 'archive', 'author', 'category', 'tag', 'taxonomy', 'date', 'home',
     'frontpage', 'page', 'paged', 'search', 'single', 'singular', 'attachment', 'embed'
 ])->map(function ($type) {
-    add_filter("{$type}_template_hierarchy", __NAMESPACE__.'\\filter_templates');
+    add_filter("{$type}_template_hierarchy", __NAMESPACE__ . '\\filter_templates');
 });
 
 /**
@@ -61,7 +61,7 @@ add_filter('template_include', function ($template) {
     }, []);
     if ($template) {
         echo template($template, $data);
-        return get_stylesheet_directory().'/index.php';
+        return get_stylesheet_directory() . '/index.php';
     }
     return $template;
 }, PHP_INT_MAX);
@@ -84,7 +84,7 @@ add_filter('comments_template', function ($comments_template) {
 
     if ($theme_template) {
         echo template($theme_template, $data);
-        return get_stylesheet_directory().'/index.php';
+        return get_stylesheet_directory() . '/index.php';
     }
 
     return $comments_template;
