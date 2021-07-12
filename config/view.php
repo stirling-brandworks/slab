@@ -13,8 +13,8 @@ return [
     */
 
     'paths' => [
-        get_theme_file_path().'/resources/views',
-        get_parent_theme_file_path().'/resources/views',
+        get_theme_file_path() . '/resources/views',
+        get_parent_theme_file_path() . '/resources/views',
     ],
 
 
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'compiled' => wp_upload_dir()['basedir'].'/cache',
+    'compiled' => function_exists('is_wpe') ? '/tmp/slab-cache' : wp_upload_dir()['basedir'] . '/cache',
 
 
     /*
