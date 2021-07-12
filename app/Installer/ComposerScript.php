@@ -18,7 +18,7 @@ class ComposerScript extends RootsComposerScript
      */
     public static function postCreateProject(Event $event)
     {
-        $sage = escapeshellarg(dirname(__DIR__) . '/bin/sage');
+        $sage = escapeshellarg(dirname(__DIR__) . '/bin/slab');
         (new static($event))
             ->validate()
             ->run(new Process(sprintf('php %s %s', $sage, 'meta')))
