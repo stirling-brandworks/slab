@@ -81,7 +81,7 @@ function asset_path($asset)
  */
 function filter_templates($templates)
 {
-    $paths = apply_filters('sage/filter_templates/paths', [
+    $paths = apply_filters('slab/filter_templates/paths', [
         'views',
         'resources/views'
     ]);
@@ -133,6 +133,6 @@ function locate_template($templates)
 function display_sidebar()
 {
     static $display;
-    isset($display) || $display = apply_filters('sage/display_sidebar', false);
+    isset($display) || $display = apply_filters('slab/display_sidebar', false);
     return $display;
 }
