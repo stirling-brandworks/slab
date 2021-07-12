@@ -25,7 +25,8 @@
     "lint": "npm run -s lint:scripts && npm run -s lint:styles",
     "lint:scripts": "eslint resources/assets/scripts resources/assets/build",
     "lint:styles": "stylelint \"resources/assets/styles/**/*.{css,sass,scss,sss,less}\"",
-    "test": "npm run -s lint"
+    "test": "npm run -s lint",
+    "prepare": "husky install"
   },
   "engines": {
     "node": "^12",
@@ -69,7 +70,8 @@
     "webpack-dev-middleware": "~2.0.4",
     "webpack-hot-middleware": "^2.22.3",
     "webpack-merge": "~4.1.4",
-    "yargs": "^16.1.0"
+    "yargs": "^16.1.0",
+    "husky": "^6.0.0"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
