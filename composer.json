@@ -37,7 +37,7 @@
   "scripts": {
     "test": ["phpcs"],
     "post-create-project-cmd": [
-      "Roots\\Sage\\Installer\\ComposerScript::postCreateProject"
+      "App\\Installer\\ComposerScript::postCreateProject"
     ]
   }
 }
