@@ -34,7 +34,9 @@
     "test": "npm run -s lint"
   },
   "engines": {
-    "node": ">= 8.0.0"
+    "node": "^12",
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.19.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
