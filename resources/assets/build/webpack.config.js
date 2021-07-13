@@ -7,6 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const CopyGlobsPlugin = require('copy-globs-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const SassJsonImporter = require('node-sass-json-importer');
 
 const desire = require('./util/desire');
 const config = require('./config');
@@ -94,6 +95,7 @@ let webpackConfig = {
               loader: 'sass', options: {
                 sourceMap: config.enabled.sourceMaps,
                 sourceComments: true,
+                importer: SassJsonImporter,
               },
             },
           ],

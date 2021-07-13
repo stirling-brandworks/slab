@@ -1,5 +1,17 @@
 /** Import Bootstrap functions */
 @import "~bootstrap/scss/functions";
+@import "../../../../slab.config.json";
+
+$slab-colors: map-get($theme, "colors");
+
+@each $color in $slab-colors {
+  $slug: map-get($color, "slug");
+  $hex: map-get($color, "color");
+
+  .bg-#{$slug} {
+    background-color: $hex;
+  }
+}
 
 $theme-colors: (
   primary: #525ddc
