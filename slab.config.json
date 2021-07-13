@@ -1,0 +1,11 @@
+{
+  "theme": {
+    "colors": [
+      {
+        "name": "Dark Blue",
+        "slug": "dark-blue",
+        "color": "#043f5e"
+      }
+    ]
+  }
+}

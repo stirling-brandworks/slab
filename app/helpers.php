@@ -127,6 +127,40 @@ function locate_template($templates)
 }
 
 /**
+ * Return all the values from slab.config.json
+ *
+ * @return array
+ */
+function get_slab_config_json(): array
+{
+    if (!file_exists($themeJson = dirname(__DIR__) . '/slab.config.json')) {
+        return collect([]);
+    }
+
+    $config = json_decode(file_get_contents($themeJson), true);
+
+    // Set the slug to a sensible default if not configured
+    $config['theme']['colors'] = array_map(function ($color) {
+        $color['slug'] = $color['slug'] ?? sanitize_title($color['name']);
+        return $color;
+    }, $config['theme']['colors']);
+
+    return $config;
+}
+
+/**
+ * Get the colors defined in slab.config.json, optionally filtered
+ * by slab/theme/colors
+ *
+ * @return array
+ */
+function get_theme_colors(): array
+{
+    $config = get_slab_config_json();
+    return apply_filters('slab/theme/colors', $config['theme']['colors'] ?? []);
+}
+
+/**
  * Determine whether to show the sidebar
  * @return bool
  */

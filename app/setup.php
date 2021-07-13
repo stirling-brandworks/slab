@@ -70,6 +70,17 @@ add_action('after_setup_theme', function () {
      * @see resources/assets/styles/layouts/_tinymce.scss
      */
     add_editor_style(asset_path('styles/main.css'));
+
+    /**
+     * Define the main colors for Gutenberg editor
+     * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes
+     */
+    if (!empty($colors = get_theme_colors())) :
+        add_theme_support(
+            'editor-color-palette',
+            apply_filters('slab/theme/colors', $colors)
+        );
+    endif;
 }, 20);
 
 /**
