@@ -29,4 +29,16 @@ return [
     */
 
     'uri' => get_theme_file_uri(),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Include any Stirling theme packages
+    |--------------------------------------------------------------------------
+    |
+    | Any packages listed must also be required by Composer in order to load.
+    |
+    */
+    'packages' => [
+        // StirlingBrandworks\Shelf\Shelf::class
+    ],
 ];

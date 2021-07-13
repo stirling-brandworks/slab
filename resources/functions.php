@@ -91,3 +91,15 @@ Container::getInstance()
             'services' => require dirname(__DIR__) . '/config/services.php',
         ]);
     }, true);
+
+
+/**
+ * Load any custom packages
+ */
+foreach (\App\config('theme.packages') as $class) {
+    if (!class_exists($class)) {
+        $sage_error(__('Make sure you have installed the package via composer', 'slab'), __("$class not found", 'slab'));
+    }
+
+    new $class;
+}
