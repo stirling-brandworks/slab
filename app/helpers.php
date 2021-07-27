@@ -52,6 +52,10 @@ function config($key = null, $default = null)
  */
 function template($file, $data = [])
 {
+    if (!file_exists($file) && strpos($file, 'views/blocks/') !== false) {
+        $file = locate_template($file);
+    }
+
     return sage('blade')->render($file, $data);
 }
 
