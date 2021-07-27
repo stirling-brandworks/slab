@@ -26,7 +26,8 @@
     "roots/sage-lib": "~9.0.9",
     "soberwp/controller": "~2.1.0",
     "stoutlogic/acf-builder": "^1.11",
-    "log1x/blade-svg-sage": "^2.0"
+    "log1x/blade-svg-sage": "^2.0",
+    "mwdelaney/sage-acf-gutenberg-blocks": "^0.6.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.8.0",
