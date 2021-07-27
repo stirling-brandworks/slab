@@ -1,5 +1,5 @@
 @php
-$tabs = array_map(function($tab) { $tab['slug'] = sanitize_title($tab['title']); return $tab; }, get_field('tabs'))
+$tabs = array_map(function($tab) { $tab['slug'] = sanitize_title($tab['title']); return $tab; }, $tabs)
 @endphp
 <ul class="nav nav-tabs" role="tablist">
   @foreach ($tabs as $tab)

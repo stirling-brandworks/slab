@@ -2,5 +2,6 @@
 
 return [
     'tabs',
-    'accordion'
+    'accordion',
+    'card'
 ];

@@ -2,7 +2,7 @@
 $uniqid = uniqid();
 $items = array_map(
 function($item) { $item['slug'] = sanitize_title($item['title']); return $item; },
-get_field('accordion_items')
+$items
 );
 @endphp
 <div class="accordion" id="{{ $uniqid }}">

@@ -6,5 +6,5 @@
 --}}
 
 <div data-{{ $block['id'] }} class="{{ $block['classes'] }}">
-  @include ('components.accordion')
+  @include ('components.accordion', ['items' => get_field('accordion_items')])
 </div>

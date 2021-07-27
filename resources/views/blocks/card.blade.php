@@ -1,10 +1,10 @@
 {{--
-  Title: Tabs
-  Description: Tabbed section
+  Title: Card
+  Description: Card component
   Category: widgets
   Mode: edit
 --}}
 
 <div data-{{ $block['id'] }} class="{{ $block['classes'] }}">
-  @include ('components.tabs', ['tabs' => get_field('tabs')])
+  @include ('components.card', get_field('card'))
 </div>
