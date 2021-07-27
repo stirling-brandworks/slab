@@ -136,3 +136,17 @@ function display_sidebar()
     isset($display) || $display = apply_filters('slab/display_sidebar', false);
     return $display;
 }
+
+/**
+ * Simple function to pretty up our field partial includes.
+ *
+ * @link https://roots.io/guides/using-acf-builder-with-sage/
+ *
+ * @param  mixed $partial
+ * @return mixed
+ */
+function get_field_partial($partial)
+{
+    $partial = str_replace('.', '/', $partial);
+    return include(config('theme.dir') . "/app/fields/{$partial}.php");
+}
