@@ -89,5 +89,6 @@ Container::getInstance()
             'theme' => require dirname(__DIR__) . '/config/theme.php',
             'view' => require dirname(__DIR__) . '/config/view.php',
             'services' => require dirname(__DIR__) . '/config/services.php',
+            'blocks' => require dirname(__DIR__) . '/config/blocks.php',
         ]);
     }, true);
