@@ -7,7 +7,7 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $fields = new FieldsBuilder('accordion');
 
 $fields
-    ->addRepeater('items')
+    ->addRepeater('accordion_items')
     ->addText('title')->setRequired()
     ->addWysiwyg('content')->setRequired()
     ->endRepeater();
