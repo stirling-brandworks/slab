@@ -10,7 +10,9 @@
       "homepage": "https://github.com/brianjohnhanna"
     }
   ],
-  "keywords": ["wordpress"],
+  "keywords": [
+    "wordpress"
+  ],
   "support": {
     "issues": "https://github.com/stirling-brandworks/slab/issues"
   },
@@ -36,7 +38,9 @@
     "paulthewalton/acf-stubs": "^5.8"
   },
   "scripts": {
-    "test": ["phpcs"],
+    "test": [
+      "phpcs"
+    ],
     "post-create-project-cmd": [
       "Roots\\Sage\\Installer\\ComposerScript::postCreateProject"
     ]

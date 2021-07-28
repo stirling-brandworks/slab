@@ -8,7 +8,7 @@
       {!! $content !!}
     </p>
     @if ($link)
-    <a href="{{ $link['url'] }}" class="btn btn-primary" target="{{ $link['target'] ?: '_self' }}">
+    <a href="{{ $link['url'] }}" class="btn btn-primary stretched-link" target="{{ $link['target'] ?: '_self' }}">
       {!! $link['title'] !!}
     </a>
     @endif

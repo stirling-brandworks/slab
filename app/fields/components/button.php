@@ -8,7 +8,7 @@ $fields = new FieldsBuilder('button');
 
 $fields
     ->addImage('icon', [
-        'return_type' => 'ID'
+        'return_format' => 'ID'
     ])
     ->addLink('link')->setRequired();
 
