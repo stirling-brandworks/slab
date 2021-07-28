@@ -52,6 +52,11 @@ function config($key = null, $default = null)
  */
 function template($file, $data = [])
 {
+    /**
+     * Fix for issue with MWDelaney/sage-acf-wp-blocks package and Sage 9
+     *
+     * @link https://github.com/MWDelaney/sage-acf-wp-blocks/issues/52#issuecomment-740865743
+     */
     if (!file_exists($file) && strpos($file, 'views/blocks/') !== false) {
         $file = locate_template($file);
     }
