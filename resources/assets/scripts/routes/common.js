@@ -1,4 +1,4 @@
-import { initSliders } from '../lib/sliders';
+import { initSliders } from '../lib/swipers';
 
 export default {
   init() {
