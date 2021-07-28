@@ -89,3 +89,30 @@ add_filter('comments_template', function ($comments_template) {
 
     return $comments_template;
 }, 100);
+
+/**
+ * Return controller ACF fields as array instead of object
+ *
+ * @link https://github.com/soberwp/controller#advanced-custom-fields-module
+ */
+add_filter('sober/controller/acf/array', function () {
+    return true;
+});
+
+/**
+ * Determine which views should show the sidebar
+ *
+ * @link https://roots.io/docs/sage/9.x/sidebar/#displaying-the-sidebar
+ */
+add_filter('slab/display_sidebar', function ($display) {
+    static $display;
+
+    isset($display) || $display = in_array(true, [
+        // The sidebar will be displayed if any of the following return true
+        is_single(),
+        is_404(),
+        is_page_template('views/template-custom.blade.php')
+    ]);
+
+    return $display;
+});
