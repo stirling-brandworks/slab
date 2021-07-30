@@ -1,10 +1,50 @@
-/** Import Bootstrap functions */
-@import "~bootstrap/scss/functions";
+/**
+ * Use this file to customize the bootstrap variables (colors, fonts, etc)
+ *
+ * Using the base _variables.scss file provided by Bootstrap, you can override any variables
+ * set in the original file by adding them below with the new value.
+ *
+ * @link https://getbootstrap.com/docs/5.0/customize/sass/#file-structure
+ * @link see https://github.com/twbs/bootstrap/blob/v5.0.2/scss/_variables.scss
+ */
 
-$theme-colors: (
-  primary: #525ddc
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+/* Colors */
+$primary: $blue;
+$secondary: $gray-600;
+$light: $gray-100;
+$dark: $gray-900;
+
+// Create your own map
+$custom-colors: (
+  "custom-color": #900,
 );
 
-/** Bootstrap navbar fix (https://git.io/fADqW) */
-$navbar-dark-toggler-icon-bg: none;
-$navbar-light-toggler-icon-bg: none;
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+/* Body Colors */
+$body-bg: $white;
+$body-color: $gray-900;
+$link-color: $primary;
+$link-decoration: underline;
+$link-shade-percentage: 20%;
+$link-hover-color: shift-color($link-color, $link-shade-percentage);
+$link-hover-decoration: null;
+
+/* Typography */
+
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", "Roboto",
+  "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-serif: "Georgia", serif;
+$font-family-base: $font-family-sans-serif;
+$headings-font-family: $font-family-serif;
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;

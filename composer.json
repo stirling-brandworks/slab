@@ -10,7 +10,9 @@
       "homepage": "https://github.com/brianjohnhanna"
     }
   ],
-  "keywords": ["wordpress"],
+  "keywords": [
+    "wordpress"
+  ],
   "support": {
     "issues": "https://github.com/stirling-brandworks/slab/issues"
   },
@@ -26,7 +28,8 @@
     "roots/sage-lib": "~9.0.9",
     "soberwp/controller": "~2.1.0",
     "stoutlogic/acf-builder": "^1.11",
-    "log1x/blade-svg-sage": "^2.0"
+    "log1x/blade-svg-sage": "^2.0",
+    "wp-bootstrap/wp-bootstrap-navwalker": "^4.3"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.8.0",
@@ -35,7 +38,9 @@
     "paulthewalton/acf-stubs": "^5.8"
   },
   "scripts": {
-    "test": ["phpcs"],
+    "test": [
+      "phpcs"
+    ],
     "post-create-project-cmd": [
       "App\\Installer\\ComposerScript::postCreateProject"
     ]

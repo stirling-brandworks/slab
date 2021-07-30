@@ -18,7 +18,7 @@ Slab is a WordPress starter theme based on the [Sage starter theme by Roots](htt
 - [Browsersync](http://www.browsersync.io/) for synchronized browser testing
 - [Blade](https://laravel.com/docs/5.6/blade) as a templating engine
 - [Controller](https://github.com/soberwp/controller) for passing data to Blade templates
-- [Bootstrap 4](https://getbootstrap.com/)
+- [Bootstrap 5](https://getbootstrap.com/)
 
 ### Requirements
 
