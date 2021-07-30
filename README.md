@@ -20,7 +20,7 @@ Slab is a WordPress starter theme based on the [Sage starter theme by Roots](htt
 - [Controller](https://github.com/soberwp/controller) for passing data to Blade templates
 - [Bootstrap 4](https://getbootstrap.com/)
 
-## Requirements
+### Requirements
 
 Make sure all dependencies have been installed before moving on:
 
@@ -30,22 +30,59 @@ Make sure all dependencies have been installed before moving on:
 - [Node.js](http://nodejs.org/) >= 8.0.0
 - [Yarn](https://yarnpkg.com/en/docs/install)
 
-## Theme installation
+## Getting Started
 
-Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+We recommend using [Local WP](https://localwp.com/) for WordPress development on your local machine.
+
+With either of the following strategies, replace "your-theme-name" with the desired slug of your theme. This should match up with the repository slug for consistency.
+
+### Using composer create-project (easiest)
+
+Run the following command from your wp-content/themes directory and follow the prompts to configure your theme.
 
 ```shell
-# @ app/themes/ or wp-content/themes/
-$ composer create-project roots/sage your-theme-name
+composer create-project stirlingbrandworks/slab your-theme-name --repository="{\"url\": \"https://github.com/stirling-brandworks/slab.git\", \"type\": \"vcs\"}" --stability=dev --remove-vcs
 ```
 
-To install the latest development version of Sage, add `dev-master` to the end of the command:
+### Using git with upstream sync
+
+To start a new WordPress project using the Slab theme, we recommend the following workflow.
+
+1. Navigate to the wp-content/themes directory
+1. Clone this repository using the following commands. You should rename the theme directory at this point.
+
+   ```shell
+   git clone -b 9.x --single-branch git@github.com:stirling-brandworks/slab.git your-theme-name
+
+   git branch main $(echo "Initial commit" | git commit-tree HEAD^{tree})
+
+   git checkout main
+   ```
+
+1. Create a new remote repository for the site on GitHub. You should name the repository the same as what you replaced "your-theme-name" with above. Don't initialize your repository with anything via the Github options.
+1. Update your origin URL to the newly created repository URL.
+   ```shell
+   git remote rename origin upstream
+   git remote add origin git@github.com:stirling-brandworks/your-theme-name.git
+   git push -u origin main
+   ```
+
+### Sync your theme with changes from Slab
+
+If you followed the instructions above on your local machine, you should be able to run the following commands to sync your theme with the main Slab repository.
+
+> Note: This is only compatible for minor versions of Sage/Slab. For example, you shouldn't update from Sage/Slab 9 to 10 using this method.
+
+If you don't have an upstream repository, [see the documentation here to set one up](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/configuring-a-remote-for-a-fork).
 
 ```shell
-$ composer create-project roots/sage your-theme-name dev-master
+git fetch upstream
+git checkout 9.x
+git merge upstream/9.x
+git push --set-upstream origin 9.x
 ```
 
-During theme installation you will have options to update `style.css` theme headers, select a CSS framework, and configure Browsersync.
+You should then be able to open up a Pull Request in Github to sync the changes.
 
 ## Theme structure
 
