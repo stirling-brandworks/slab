@@ -72,7 +72,7 @@ array_map(function ($file) use ($sage_error) {
     if (!locate_template($file, true, true)) {
         $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'slab'), $file), 'File not found');
     }
-}, ['helpers', 'setup', 'filters', 'admin']);
+}, ['helpers', 'setup', 'filters', 'admin', 'acf', 'cli']);
 
 /**
  * Here's what's happening with these hooks:
@@ -103,5 +103,6 @@ Container::getInstance()
             'theme' => require dirname(__DIR__) . '/config/theme.php',
             'view' => require dirname(__DIR__) . '/config/view.php',
             'services' => require dirname(__DIR__) . '/config/services.php',
+            'blocks' => require dirname(__DIR__) . '/config/blocks.php',
         ]);
     }, true);

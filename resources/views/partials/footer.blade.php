@@ -1,9 +1,3 @@
-<footer class="content-info">
-  <div class="container">
-    @php dynamic_sidebar('sidebar-footer') @endphp
-  </div>
-</footer>
-
 <footer class="text-center text-lg-start bg-light text-muted border-top">
   <div class="container text-center text-md-start">
     <div class="row mt-4">

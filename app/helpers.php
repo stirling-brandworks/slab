@@ -52,6 +52,15 @@ function config($key = null, $default = null)
  */
 function template($file, $data = [])
 {
+    /**
+     * Fix for issue with MWDelaney/sage-acf-wp-blocks package and Sage 9
+     *
+     * @link https://github.com/MWDelaney/sage-acf-wp-blocks/issues/52#issuecomment-740865743
+     */
+    if (!file_exists($file) && strpos($file, 'views/blocks/') !== false) {
+        $file = locate_template($file);
+    }
+
     return sage('blade')->render($file, $data);
 }
 
@@ -135,4 +144,18 @@ function display_sidebar()
     static $display;
     isset($display) || $display = apply_filters('slab/display_sidebar', false);
     return $display;
+}
+
+/**
+ * Simple function to pretty up our field partial includes.
+ *
+ * @link https://roots.io/guides/using-acf-builder-with-sage/
+ *
+ * @param  mixed $partial
+ * @return mixed
+ */
+function get_field_partial($partial)
+{
+    $partial = str_replace('.', '/', $partial);
+    return include(config('theme.dir') . "/app/fields/{$partial}.php");
 }
