@@ -57,7 +57,7 @@ add_filter('template_include', function ($template) {
         });
     });
     $data = collect(get_body_class())->reduce(function ($data, $class) use ($template) {
-        return apply_filters("sage/template/{$class}/data", $data, $template);
+        return apply_filters("slab/template/{$class}/data", $data, $template);
     }, []);
     if ($template) {
         echo template($template, $data);

@@ -44,8 +44,8 @@ return [
     |
     */
 
-    'namespaces' => [
+    'namespaces' => apply_filters('slab/views', [
         /* Given the below example, in your views use something like: @include('WC::some.view.or.partial.here') */
         // 'WC' => WP_PLUGIN_DIR.'/woocommerce/templates/',
-    ],
+    ]),
 ];
