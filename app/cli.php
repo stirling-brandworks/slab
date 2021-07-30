@@ -27,6 +27,7 @@ class CLI
         $this->setCardData();
         $this->setSliderData();
         $this->setAccordionTabData();
+        $this->addMenu();
 
         // Present link to page
         $url = get_permalink($this->kitchenSinkId);
@@ -35,6 +36,37 @@ class CLI
         );
     }
 
+
+    /**
+     * Adds a menu to the primary_navigation theme location with the
+     * Kitchen Sink page
+     *
+     * @link https://wordpress.stackexchange.com/a/44739/65403
+     *
+     * @return void
+     */
+    protected function addMenu()
+    {
+        $menuName = 'Main Menu';
+        $menuExists = wp_get_nav_menu_object($menuName);
+        if ($menuExists) return;
+
+        $menuId = wp_create_nav_menu($menuName);
+
+        wp_update_nav_menu_item($menuId, 0, array(
+            'menu-item-title' => 'Kitchen Sink',
+            'menu-item-object' => 'page',
+            'menu-item-object-id' => $this->kitchenSinkId,
+            'menu-item-type' => 'post_type',
+            'menu-item-status' => 'publish'
+        ));
+
+        if (!has_nav_menu('primary_navigation')) {
+            $locations = get_theme_mod('nav_menu_locations');
+            $locations['primary_navigation'] = $menuId;
+            set_theme_mod('nav_menu_locations', $locations);
+        }
+    }
     /**
      * Sets the data for the quicklinks field
      *
