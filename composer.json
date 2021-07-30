@@ -29,7 +29,8 @@
     "soberwp/controller": "~2.1.0",
     "stoutlogic/acf-builder": "^1.11",
     "log1x/blade-svg-sage": "^2.0",
-    "mwdelaney/sage-acf-gutenberg-blocks": "^0.6.0"
+    "mwdelaney/sage-acf-gutenberg-blocks": "^0.6.0",
+    "wp-bootstrap/wp-bootstrap-navwalker": "^4.3"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.8.0",
@@ -42,7 +43,7 @@
       "phpcs"
     ],
     "post-create-project-cmd": [
-      "Roots\\Sage\\Installer\\ComposerScript::postCreateProject"
+      "App\\Installer\\ComposerScript::postCreateProject"
     ]
   }
 }

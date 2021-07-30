@@ -117,3 +117,18 @@ add_filter('slab/display_sidebar', function ($display) {
 
     return $display;
 });
+
+/**
+ * Enable Boostrap 5 compatibility with WP Bootstrap Navwalker
+ *
+ * @link https://github.com/wp-bootstrap/wp-bootstrap-navwalker#usage-with-bootstrap-5
+ */
+add_filter('nav_menu_link_attributes', function ($atts, $item, $args) {
+    if (is_a($args->walker, 'WP_Bootstrap_Navwalker')) {
+        if (array_key_exists('data-toggle', $atts)) {
+            unset($atts['data-toggle']);
+            $atts['data-bs-toggle'] = 'dropdown';
+        }
+    }
+    return $atts;
+}, 20, 3);
