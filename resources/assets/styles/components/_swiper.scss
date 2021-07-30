@@ -13,14 +13,16 @@
   position: relative;
 
   &__bg,
-  &__content,
   &__overlay {
+    position: absolute;
     width: 100%;
     height: 100%;
   }
 
   &__bg img {
     object-fit: cover;
+    width: 100%;
+    height: auto;
   }
 
   &__overlay {

@@ -16,7 +16,7 @@ export const makeSwiper = (el, options = {}) => {
 };
 
 export const initSliders = () => {
-  const swiperEls = document.querySelectorAll('.slab-swiper--slider');
+  const swiperEls = document.querySelectorAll('.slab-swiper');
 
   Array.prototype.forEach.call(swiperEls, makeSwiper);
 };
