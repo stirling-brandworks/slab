@@ -9,6 +9,11 @@ $fields = new FieldsBuilder('kitchen_sink');
 $fields->setLocation('page_template', '==', 'views/template-kitchen-sink.blade.php');
 
 $fields
+    ->addTab('alerts')
+    ->addGroup('alert')
+    ->addFields(get_field_partial('components.alert'))
+    ->endGroup()
+
     ->addTab('quicklinks')
     ->addFields(get_field_partial('components.quicklinks'))
 

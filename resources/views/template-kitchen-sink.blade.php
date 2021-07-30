@@ -8,8 +8,18 @@
 @while(have_posts()) @php the_post() @endphp
 @include('partials.page-header')
 @include('partials.content-page')
-<h2>Quicklinks</h2>
-@include('components.quicklinks', compact('quicklinks'))
+
+<h2 class="mb-3">Alert</h2>
+<div class="mb-2">
+  @include('components.alert', $alert)
+</div>
+
+<hr />
+
+<h2 class="mb-3">Quicklinks</h2>
+@foreach ($quicklinks as $quicklink)
+@include('components.quicklink', $quicklink)
+@endforeach
 
 <hr />
 
