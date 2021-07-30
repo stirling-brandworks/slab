@@ -6,6 +6,30 @@ use Sober\Controller\Controller;
 
 class App extends Controller
 {
+    public function primaryMenu()
+    {
+        return [
+            'theme_location'  => 'primary_navigation',
+            'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+            'container'       => null,
+            'items_wrap'      => '%3$s',
+            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+            'walker'          => new \WP_Bootstrap_Navwalker(),
+        ];
+    }
+
+    public function secondaryMenu()
+    {
+        return [
+            'theme_location'  => 'secondary_navigation',
+            'depth'           => 1, // 1 = no dropdowns, 2 = with dropdowns.
+            'container'       => null,
+            'items_wrap'      => '%3$s',
+            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+            'walker'          => new \WP_Bootstrap_Navwalker(),
+        ];
+    }
+
     public function siteName()
     {
         return get_bloginfo('name');

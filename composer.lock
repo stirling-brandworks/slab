@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d10595f0bc86584645f944935737f9ca",
+    "content-hash": "a44ba46e138282584f8bf264696c318d",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -1659,6 +1659,47 @@
                 }
             ],
             "time": "2020-09-28T13:05:58+00:00"
+        },
+        {
+            "name": "wp-bootstrap/wp-bootstrap-navwalker",
+            "version": "v4.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-bootstrap/wp-bootstrap-navwalker.git",
+                "reference": "5d39044bcee8703d1402f7371b033c460b2e0a71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-bootstrap/wp-bootstrap-navwalker/zipball/5d39044bcee8703d1402f7371b033c460b2e0a71",
+                "reference": "5d39044bcee8703d1402f7371b033c460b2e0a71",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "require-dev": {
+                "stevegrunwell/wp-enforcer": "^0.5.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Hubbard"
+                },
+                {
+                    "name": "William Patton",
+                    "email": "will@pattonwebz.com"
+                }
+            ],
+            "description": "A custom WordPress nav walker class to fully implement the Bootstrap 4 navigation style in a custom theme using the WordPress built in menu manager.",
+            "support": {
+                "issues": "https://github.com/wp-bootstrap/wp-bootstrap-navwalker/issues/",
+                "source": "https://github.com/wp-bootstrap/wp-bootstrap-navwalker/"
+            },
+            "time": "2019-10-02T18:15:47+00:00"
         }
     ],
     "packages-dev": [
