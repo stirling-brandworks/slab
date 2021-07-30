@@ -36,7 +36,8 @@
     "squizlabs/php_codesniffer": "^2.8.0",
     "roots/sage-installer": "~1.6",
     "php-stubs/wordpress-stubs": "^5.7",
-    "paulthewalton/acf-stubs": "^5.8"
+    "paulthewalton/acf-stubs": "^5.8",
+    "php-stubs/wp-cli-stubs": "^2.5"
   },
   "scripts": {
     "test": [
