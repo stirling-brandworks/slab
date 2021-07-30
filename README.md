@@ -41,7 +41,7 @@ With either of the following strategies, replace "your-theme-name" with the desi
 Run the following command from your wp-content/themes directory and follow the prompts to configure your theme.
 
 ```shell
-composer create-project stirlingbrandworks/slab your-theme-name --repository="{\"url\": \"https://github.com/stirling-brandworks/slab.git\", \"type\": \"vcs\"}" --stability=dev --remove-vcs
+composer create-project --prefer-dist stirling-brandworks/slab --repository='{"type":"vcs","url":"https://github.com/stirling-brandworks/slab.git"}' --stability=dev --remove-vcs your-theme-name
 ```
 
 ### Using git with upstream sync
