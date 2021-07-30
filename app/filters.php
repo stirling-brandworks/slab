@@ -108,6 +108,10 @@ add_filter('sober/controller/acf/array', function () {
 add_filter('slab/display_sidebar', function ($display) {
     static $display;
 
+    if (get_field('hide_sidebar') === true) {
+        return false;
+    }
+
     isset($display) || $display = in_array(true, [
         // The sidebar will be displayed if any of the following return true
         is_single(),
