@@ -16,14 +16,14 @@
 <h2 class="mb-3">Cards</h2>
 <h3>Single Card</h3>
 <div class="mb-5" style="width: 32rem;">
-  @include('components.card', $single_card['card'])
+  @include('components.card', $single_card)
 </div>
 
 <h3>Multi Cards</h3>
 <div class="row mb-5">
   @foreach ($multi_card as $card)
   <div class="col">
-    @include('components.card', $card['card'])
+    @include('components.card', $card)
   </div>
   @endforeach
 </div>

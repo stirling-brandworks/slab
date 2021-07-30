@@ -7,7 +7,6 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $fields = new FieldsBuilder('card');
 
 $fields
-    ->addGroup('card')
     ->addSelect('layout', [
         'choices' => [
             'vertical' => 'Vertical',
@@ -20,7 +19,6 @@ $fields
     ])
     ->addText('title')
     ->addTextarea('content')
-    ->addLink('link')
-    ->endGroup();
+    ->addLink('link');
 
 return $fields;

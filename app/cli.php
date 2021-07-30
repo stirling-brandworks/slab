@@ -130,14 +130,12 @@ class CLI
     protected function generateCardData(): array
     {
         return [
-            'card' => [
-                'image' => $this->saveRandomImage(),
-                'title' => 'Lorem Ipsum',
-                'content' => 'Test',
-                'link' => [
-                    'title' => 'Visit Link',
-                    'url' => '#'
-                ]
+            'image' => $this->saveRandomImage(),
+            'title' => 'Lorem Ipsum',
+            'content' => 'Test',
+            'link' => [
+                'title' => 'Visit Link',
+                'url' => '#'
             ]
         ];
     }
