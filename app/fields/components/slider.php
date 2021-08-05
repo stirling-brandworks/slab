@@ -10,7 +10,6 @@ $fields
     ->addRepeater('slides')
     ->addImage('background_image', [
         'required' => true,
-        'return_format' => 'ID'
     ])
     ->addText('title')
     ->addTextarea('description')

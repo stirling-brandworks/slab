@@ -14,9 +14,7 @@ $fields
         ],
         'default_value' => 'vertical',
     ])
-    ->addImage('image', [
-        'return_format' => 'ID'
-    ])
+    ->addImage('image')
     ->addText('title')
     ->addTextarea('content')
     ->addLink('link');

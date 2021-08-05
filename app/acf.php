@@ -30,14 +30,12 @@ add_filter('sober/controller/acf/array', function () {
 /**
  * Set the default return type for an image to be ID and not object
  *
- * @link https://www.advancedcustomfields.com/resources/acf-prepare_field/
+ * @link https://www.advancedcustomfields.com/resources/acf-load_field/
  */
 add_filter(
-    'acf/prepare_field/type=image',
+    'acf/load_field/type=image',
     function ($field) {
-        if (empty($field['return_format'])) {
-            $field['return_format'] = 'ID';
-        };
+        $field['return_format'] = 'ID';
         return $field;
     }
 );
