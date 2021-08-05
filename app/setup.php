@@ -6,6 +6,7 @@ use Roots\Sage\Container;
 use Roots\Sage\Assets\JsonManifest;
 use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
+use StoutLogic\AcfBuilder\FieldsBuilder;
 
 /**
  * Theme assets
@@ -44,7 +45,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'slab')
+        'primary_navigation' => __('Primary Navigation', 'slab'),
+        'secondary_navigation' => __('Secondary Navigation', 'slab')
     ]);
 
     /**
@@ -128,5 +130,47 @@ add_action('after_setup_theme', function () {
      */
     sage('blade')->compiler()->directive('asset', function ($asset) {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
+    });
+});
+
+
+/**
+ * Initialize ACF Builder
+ *
+ * @link https://roots.io/guides/using-acf-builder-with-sage/
+ */
+add_action('init', function () {
+    if (!function_exists('acf_add_local_field_group')) {
+        return;
+    }
+    // Register any fields specific to pages
+    collect(glob(config('theme.dir') . '/app/fields/*.php'))->map(function ($field) {
+        return require_once($field);
+    })->map(function ($field) {
+        if ($field instanceof FieldsBuilder) {
+            acf_add_local_field_group($field->build());
+        }
+    });
+
+    /**
+     * Add components fields to registered blocks if they have a corresponding template
+     *
+     * This only works if:
+     *
+     * - The block is registered in the config/blocks.php array
+     * - There is a corresponding template in views/blocks with the same slug from config/blocks
+     * - There is a corresponding field definition file in app/fields/components with the same slug from config/blocks
+     */
+    collect(config('blocks'))->filter(function ($blockName) {
+        $templatePath = config('view.paths')[0] . "/blocks/$blockName.blade.php";
+        $fieldPath = config('theme.dir') . "/app/fields/components/$blockName.php";
+
+        return file_exists($templatePath) && file_exists($fieldPath);
+    })->map(function ($blockName) {
+        $field = require_once(config('theme.dir') . "/app/fields/components/$blockName.php");
+        if ($field instanceof FieldsBuilder) {
+            $field->setLocation('block', '===', 'acf/' . $field->getName());
+            acf_add_local_field_group($field->build());
+        }
     });
 });

@@ -48,6 +48,20 @@ if (!class_exists('Roots\\Sage\\Container')) {
 }
 
 /**
+ * Include the WP Bootstrap Navwalker manually. PSR Autoloading does not work
+ * @link https://github.com/wp-bootstrap/wp-bootstrap-navwalker
+ */
+if (!class_exists('WP_Bootstrap_Navwalker')) {
+    if (!file_exists($walker  = __DIR__ . '/../vendor/wp-bootstrap/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php')) {
+        $sage_error(
+            __('The class-wp-bootstrap-navwalker.php file may be missing. Check your composer.json file.', 'slab'),
+            __('WP_Bootstrap_Navwalker not found.', 'slab')
+        );
+    }
+    require_once $walker;
+}
+
+/**
  * Sage required files
  *
  * The mapped array determines the code library included in your theme.
@@ -58,7 +72,7 @@ array_map(function ($file) use ($sage_error) {
     if (!locate_template($file, true, true)) {
         $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'slab'), $file), 'File not found');
     }
-}, ['helpers', 'setup', 'filters', 'admin']);
+}, ['helpers', 'setup', 'filters', 'admin', 'acf', 'cli']);
 
 /**
  * Here's what's happening with these hooks:
@@ -89,5 +103,6 @@ Container::getInstance()
             'theme' => require dirname(__DIR__) . '/config/theme.php',
             'view' => require dirname(__DIR__) . '/config/view.php',
             'services' => require dirname(__DIR__) . '/config/services.php',
+            'blocks' => require dirname(__DIR__) . '/config/blocks.php',
         ]);
     }, true);

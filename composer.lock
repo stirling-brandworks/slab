@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a718fcd71104c6bde0ee90ac6d343fc",
+    "content-hash": "91a72451208d64dd4f72a5b3b48d0c96",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -785,6 +785,55 @@
                 "source": "https://github.com/Log1x/blade-svg-sage/tree/master"
             },
             "time": "2019-02-07T22:45:02+00:00"
+        },
+        {
+            "name": "mwdelaney/sage-acf-gutenberg-blocks",
+            "version": "0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MWDelaney/sage-acf-wp-blocks.git",
+                "reference": "1d5794c3b7052dfa7c946d431410329e5f021727"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MWDelaney/sage-acf-wp-blocks/zipball/1d5794c3b7052dfa7c946d431410329e5f021727",
+                "reference": "1d5794c3b7052dfa7c946d431410329e5f021727",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "sage-acf-gutenberg-blocks.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael W. Delaney",
+                    "email": "michael@michaeldelaney.me"
+                },
+                {
+                    "name": "Nico Prat"
+                }
+            ],
+            "description": "Create Gutenberg blocks from Sage blade templates and ACF fields.",
+            "homepage": "https://github.com/MWDelaney/sage-acf-gutenberg-blocks",
+            "keywords": [
+                "advanced custom fields",
+                "gutenberg",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/MWDelaney/sage-acf-wp-blocks/issues",
+                "source": "https://github.com/MWDelaney/sage-acf-wp-blocks/tree/0.6"
+            },
+            "time": "2020-09-30T18:13:55+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -1664,6 +1713,47 @@
                 }
             ],
             "time": "2021-03-23T23:28:01+00:00"
+        },
+        {
+            "name": "wp-bootstrap/wp-bootstrap-navwalker",
+            "version": "v4.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-bootstrap/wp-bootstrap-navwalker.git",
+                "reference": "5d39044bcee8703d1402f7371b033c460b2e0a71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-bootstrap/wp-bootstrap-navwalker/zipball/5d39044bcee8703d1402f7371b033c460b2e0a71",
+                "reference": "5d39044bcee8703d1402f7371b033c460b2e0a71",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "require-dev": {
+                "stevegrunwell/wp-enforcer": "^0.5.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Hubbard"
+                },
+                {
+                    "name": "William Patton",
+                    "email": "will@pattonwebz.com"
+                }
+            ],
+            "description": "A custom WordPress nav walker class to fully implement the Bootstrap 4 navigation style in a custom theme using the WordPress built in menu manager.",
+            "support": {
+                "issues": "https://github.com/wp-bootstrap/wp-bootstrap-navwalker/issues/",
+                "source": "https://github.com/wp-bootstrap/wp-bootstrap-navwalker/"
+            },
+            "time": "2019-10-02T18:15:47+00:00"
         }
     ],
     "packages-dev": [
@@ -1860,6 +1950,50 @@
                 "source": "https://github.com/php-stubs/wordpress-stubs/tree/v5.8.0"
             },
             "time": "2021-07-21T02:34:37+00:00"
+        },
+        {
+            "name": "php-stubs/wp-cli-stubs",
+            "version": "v2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-stubs/wp-cli-stubs.git",
+                "reference": "9140bf3f59d9df1f67f69c0d49d9364ee1684348"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-stubs/wp-cli-stubs/zipball/9140bf3f59d9df1f67f69c0d49d9364ee1684348",
+                "reference": "9140bf3f59d9df1f67f69c0d49d9364ee1684348",
+                "shasum": ""
+            },
+            "require": {
+                "php-stubs/wordpress-stubs": "^4.7 || ^5.0"
+            },
+            "require-dev": {
+                "giacocorsiglia/stubs-generator": "^0.5.0",
+                "php": "~7.1"
+            },
+            "suggest": {
+                "symfony/polyfill-php73": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+                "szepeviktor/phpstan-wordpress": "WordPress extensions for PHPStan"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "WP-CLI function and class declaration stubs for static analysis.",
+            "homepage": "https://github.com/php-stubs/wp-cli-stubs",
+            "keywords": [
+                "PHPStan",
+                "static analysis",
+                "wordpress",
+                "wp-cli"
+            ],
+            "support": {
+                "issues": "https://github.com/php-stubs/wp-cli-stubs/issues",
+                "source": "https://github.com/php-stubs/wp-cli-stubs/tree/v2.5.0"
+            },
+            "time": "2021-05-19T16:06:45+00:00"
         },
         {
             "name": "ramsey/uuid",
