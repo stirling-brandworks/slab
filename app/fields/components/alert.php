@@ -20,7 +20,6 @@ $fields
         'wrapper' => $config['wrapper']
     ])
     ->addImage('icon', [
-        'return_format' => 'ID',
         'wrapper' => $config['wrapper']
     ])
     ->addText('text', $config)->setRequired()
