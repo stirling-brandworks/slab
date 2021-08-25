@@ -23,6 +23,7 @@ class CLI
         ]);
 
         $this->setPageTemplate();
+        $this->setAlertData();
         $this->setQuicklinkData();
         $this->setCardData();
         $this->setSliderData();
@@ -67,6 +68,20 @@ class CLI
             set_theme_mod('nav_menu_locations', $locations);
         }
     }
+
+    protected function setAlertData(): void
+    {
+        $data = [
+            'type' => 'info',
+            'text' => 'This is an info alert',
+            'link' => [
+                'title' => 'More Info',
+                'url' => '#'
+            ]
+        ];
+        update_field('alert', $data, $this->kitchenSinkId);
+    }
+
     /**
      * Sets the data for the quicklinks field
      *
