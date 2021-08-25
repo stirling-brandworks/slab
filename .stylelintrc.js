@@ -1,12 +1,25 @@
 module.exports = {
-  'extends': 'stylelint-config-standard',
-  'rules': {
+  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+  rules: {
     'no-empty-source': null,
     'string-quotes': 'double',
+    'at-rule-empty-line-before': [
+      'always',
+      {
+        ignore: [
+          'after-comment',
+          'first-nested',
+          'inside-block',
+          'blockless-after-same-name-blockless',
+          'blockless-after-blockless',
+        ],
+        ignoreAtRules: ['else', 'warn', 'if', 'error'],
+      },
+    ],
     'at-rule-no-unknown': [
       true,
       {
-        'ignoreAtRules': [
+        ignoreAtRules: [
           'extend',
           'at-root',
           'debug',

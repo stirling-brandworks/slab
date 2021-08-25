@@ -4,10 +4,10 @@
   "trailingComma": "es5",
   "overrides": [
     {
-        "files": ["**/*.css", "**/*.scss", "**/*.html"],
-        "options": {
-            "singleQuote": false
-        }
+      "files": ["**/*.css", "**/*.scss", "**/*.html"],
+      "options": {
+        "singleQuote": false
+      }
     }
   ]
 }
