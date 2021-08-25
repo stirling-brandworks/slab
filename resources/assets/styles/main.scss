@@ -12,6 +12,8 @@
 @import "~swiper/swiper-bundle.css";
 
 /** Import theme styles */
+@import "common/functions";
+@import "common/mixins";
 @import "common/global";
 @import "common/typography";
 @import "common/utilities";
