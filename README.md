@@ -84,6 +84,18 @@ git push --set-upstream origin 9.x
 
 You should then be able to open up a Pull Request in Github to sync the changes.
 
+## Kitchen Sink
+
+This theme provides a "Kitchen Sink" template which demonstrates all the included components as well as best practices on how to implement them in your custom templates.
+
+In order automagically build the kitchen sink page with dummy data, run the following command using WP CLI.
+
+```shell
+wp slab demo
+```
+
+> Note: If you are running the site in Local WP, you will need to boot into the site shell to run any CLI commands. Right-click on the site name in Local and click "Open Site Shell". You can run the above command from there.
+
 ## Theme structure
 
 ```shell
