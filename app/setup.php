@@ -167,7 +167,7 @@ add_action('init', function () {
 
         return file_exists($templatePath) && file_exists($fieldPath);
     })->map(function ($blockName) {
-        $field = require_once(config('theme.dir') . "/app/fields/components/$blockName.php");
+        $field = require(config('theme.dir') . "/app/fields/components/$blockName.php");
         if ($field instanceof FieldsBuilder) {
             $field->setLocation('block', '===', 'acf/' . $field->getName());
             acf_add_local_field_group($field->build());
