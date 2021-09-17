@@ -1,5 +1,5 @@
 @php
-$uniqid = uniqid();
+$uniqid = uniqid('accordion_');
 $items = array_map(
 function($item) { $item['slug'] = sanitize_title($item['title']); return $item; },
 $items
