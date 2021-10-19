@@ -1,10 +1,6 @@
 /** Search form */
-.search-form {
-  @extend .form-inline;
-}
-
 .search-form label {
-  @extend .form-group;
+  @extend .form-label;
 
   font-weight: normal;
 }
@@ -16,4 +12,245 @@
 .search-form .search-submit {
   @extend .btn;
   @extend .btn-secondary;
+}
+
+/**
+ * Gravity Forms BS5 Styling
+ *
+ * Adapted from https://mind.sh/are/how-to-style-gravity-forms-with-bootstrap-5/
+ */
+/* stylelint-disable no-descending-specificity */
+.gform_wrapper {
+  .gform_heading {
+    @extend .mb-3;
+
+    .gform_description {
+      @extend .lead;
+    }
+  }
+
+  .gform_validation_errors {
+    @extend .mt-3;
+    @extend .alert;
+    @extend .alert-danger;
+
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  legend.gfield_label {
+    font-size: 1.15rem;
+  }
+
+  .hidden_label label {
+    @extend .visually-hidden;
+  }
+
+  .gfield {
+    @extend .mb-3;
+  }
+
+  .gfield_label,
+  .ginput_container label {
+    @extend .form-label;
+  }
+
+  .gfield_error {
+    label.gfield_label {
+      color: $danger !important;
+    }
+
+    input,
+    select,
+    textarea {
+      border-color: $danger !important;
+    }
+
+    .validation_message {
+      color: $danger !important;
+      font-weight: bold !important;
+    }
+  }
+
+  .gf_left_half {
+    @include media-breakpoint-up(sm) {
+      float: left;
+      width: calc(50% - 10px);
+    }
+  }
+
+  .gf_right_half {
+    @include media-breakpoint-up(sm) {
+      float: right;
+      width: 50%;
+    }
+  }
+
+  .gfield_required {
+    margin-left: 0.15em;
+  }
+
+  .ginput_container {
+    input:not([type="checkbox"]):not([type="radio"]),
+    textarea,
+    .ginput_container_list,
+    .ginput_container_date {
+      @extend .form-control;
+    }
+  }
+
+  .gfield_select {
+    @extend .form-select;
+  }
+
+  .ginput_complex {
+    @extend .input-group;
+
+    input {
+      @extend .form-control;
+    }
+
+    &.gf_name_has_2 {
+      span {
+        display: block;
+        width: 50%;
+
+        &:first-child {
+          padding-right: 10px;
+        }
+      }
+    }
+
+    .ginput_full {
+      width: 100%;
+    }
+
+    .ginput_left {
+      width: 50%;
+      padding-right: 1%;
+    }
+
+    .ginput_right {
+      width: 50%;
+    }
+  }
+
+  .gfield_radio,
+  .gfield_checkbox {
+    li {
+      @extend .form-check;
+
+      padding: 0;
+      margin-left: 20px;
+      font-size: 1.1em;
+
+      input {
+        width: 0.8em;
+        height: 0.8em;
+
+        @extend .form-check-input;
+
+        margin-top: 4px;
+      }
+
+      label {
+        @extend .form-check-label;
+
+        margin: 3px;
+        padding: 0 0 0 25px;
+      }
+    }
+  }
+
+  .gform_body {
+    .gform_page_footer {
+      margin-top: 30px;
+
+      input.gform_button {
+        @extend .btn;
+        @extend .btn-primary;
+        @extend .btn-lg;
+      }
+
+      input.gform_previous_button,
+      input.gform_next_button {
+        @extend .btn;
+        @extend .btn-dark;
+        @extend .btn-lg;
+      }
+
+      input.gform_previous_button {
+        @extend .btn-sm;
+      }
+    }
+  }
+
+  .gform_footer {
+    text-align: right;
+
+    input.button {
+      @extend .btn;
+      @extend .btn-primary;
+      @extend .mt-2;
+    }
+  }
+
+  .gf_progressbar_wrapper {
+    .gf_progressbar {
+      @extend .progress;
+
+      .gf_progressbar_percentage {
+        @extend .progress-bar;
+        @extend .bg-success;
+      }
+    }
+  }
+}
+
+#ui-datepicker-div {
+  background: #fff;
+  padding: 10px;
+  font-size: 0.9em;
+  -webkit-box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+
+  .ui-datepicker-header {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8em;
+
+    .ui-datepicker-prev {
+      display: block;
+      width: 50%;
+    }
+
+    .ui-datepicker-next {
+      display: block;
+      width: 50%;
+      text-align: right;
+    }
+  }
+
+  .ui-datepicker-title {
+    width: 100%;
+    display: flex;
+
+    select {
+      @extend .form-select;
+
+      width: 50%;
+
+      &:first-child {
+        width: 49%;
+        margin-right: 1%;
+      }
+    }
+  }
+
+  table.ui-datepicker-calendar {
+    @extend .table;
+    @extend .table-sm;
+  }
 }

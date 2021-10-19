@@ -57,7 +57,9 @@ add_filter('template_include', function ($template) {
         });
     });
     $data = collect(get_body_class())->reduce(function ($data, $class) use ($template) {
-        return apply_filters("slab/template/{$class}/data", $data, $template);
+        // soberwp/controller uses sage/* filter, so we pass through both...
+        $sageData = apply_filters("sage/template/{$class}/data", $data, $template);
+        return apply_filters("slab/template/{$class}/data", $sageData, $template);
     }, []);
     if ($template) {
         echo template($template, $data);
@@ -89,3 +91,40 @@ add_filter('comments_template', function ($comments_template) {
 
     return $comments_template;
 }, 100);
+
+/**
+ * Determine which views should show the sidebar
+ *
+ * @link https://roots.io/docs/sage/9.x/sidebar/#displaying-the-sidebar
+ */
+add_filter('slab/display_sidebar', function ($display) {
+    static $display;
+
+    if (get_field('hide_sidebar') === true) {
+        return false;
+    }
+
+    isset($display) || $display = in_array(true, [
+        // The sidebar will be displayed if any of the following return true
+        is_single(),
+        is_404(),
+        is_page_template('views/template-custom.blade.php')
+    ]);
+
+    return $display;
+});
+
+/**
+ * Enable Boostrap 5 compatibility with WP Bootstrap Navwalker
+ *
+ * @link https://github.com/wp-bootstrap/wp-bootstrap-navwalker#usage-with-bootstrap-5
+ */
+add_filter('nav_menu_link_attributes', function ($atts, $item, $args) {
+    if (is_a($args->walker, 'WP_Bootstrap_Navwalker')) {
+        if (array_key_exists('data-toggle', $atts)) {
+            unset($atts['data-toggle']);
+            $atts['data-bs-toggle'] = 'dropdown';
+        }
+    }
+    return $atts;
+}, 20, 3);
