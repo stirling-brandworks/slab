@@ -54,3 +54,7 @@
   @extend .visually-hidden;
   @extend .visually-hidden-focusable;
 }
+
+.wp-block-image img {
+  @extend .img-fluid;
+}
