@@ -2,7 +2,7 @@
 
 @section('content')
 @include('partials.page-header')
-
+<div class="pt-3">
 	<div class="container">
 		@if (!have_posts())
 		<div class="alert alert-warning">
@@ -17,5 +17,6 @@
 
 		{!! get_the_posts_navigation() !!}
 	</div>
+</div>
 
 @endsection
