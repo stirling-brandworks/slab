@@ -111,7 +111,7 @@ Container::getInstance()
 //ACF PRO Google Maps API KEY //TODO removed after latest libby core update
 function my_acf_init() {
     
-    acf_update_setting('google_api_key', 'AIzaSyDH4C8VwSUFTshDldzZGGHSsLkSlrV1HuI');
+    acf_update_setting('google_api_key', 'AIzaSyDKGpDu0lWyzGPgPamk0_3lEDat_DoD1xI');
 }
 
 add_action('acf/init', 'my_acf_init');
