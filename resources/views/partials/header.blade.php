@@ -8,7 +8,7 @@
 </nav>
 @endif
 
-<header class="mb-4 border-bottom banner">
+<header class="border-bottom banner">
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
       <a class="navbar-brand" href="{{ home_url('/') }}">{{ $site_name }}</a>
