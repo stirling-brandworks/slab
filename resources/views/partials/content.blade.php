@@ -1,9 +1,12 @@
 <article class="card p-3 mb-4 position-relative" @php post_class() @endphp>
+  @if (has_post_thumbnail())
+  	{!! the_post_thumbnail('large', array( 'class' => 'card-img-top mb-3' )) !!}
+  @endif
   <header>
-    <h2 class="card-title"><a href="{{ get_permalink() }}" class="text-dark text-decoration-none stretched-link">{!! get_the_title() !!}</a></h2>
+    <h2 class="card-title h4"><a href="{{ get_permalink() }}" class="text-dark text-decoration-none stretched-link">{!! get_the_title() !!}</a></h2>
     @include('partials/entry-meta')
   </header>
-  <div class="card-body px-0">
+  <div class="card-body text-muted px-0">
     @php the_excerpt() @endphp
   </div>
 </article>
