@@ -11,7 +11,10 @@
 <header class="border-bottom banner">
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="{{ home_url('/') }}">{{ $site_name }}</a>
+      <a class="navbar-brand" href="{{ home_url('/') }}">
+        <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="{{ $site_name }} Logo" />
+        {{ $site_name }}
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
