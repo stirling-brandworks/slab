@@ -9,7 +9,6 @@ module.exports = (api) => {
   return {
     parser: api.options.ctx.enabled.optimize ? 'postcss-safe-parser' : undefined,
     plugins: {
-      autoprefixer: true,
       cssnano: api.options.ctx.enabled.optimize ? cssnanoConfig : false,
     },
   };
