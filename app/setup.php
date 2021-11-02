@@ -68,6 +68,24 @@ add_action('after_setup_theme', function () {
     add_theme_support('customize-selective-refresh-widgets');
 
     /**
+     * Enable custom header; an image that is chosen as the representative image in the theme top header section
+     * @link https://codex.wordpress.org/Custom_Headers
+     */
+
+    //Set Default Image
+    $args = array(
+    'flex-width'    => true,
+    'width'         => 240,
+    'flex-height'    => true,
+    'height'        => 104,
+    'default-image' => get_template_directory_uri() . '/assets/images/logos/logo.png',
+    'uploads'       => true,
+    );
+
+    //Add Support
+    add_theme_support( 'custom-header', $args );
+
+    /**
      * Use main stylesheet for visual editor
      * @see resources/assets/styles/layouts/_tinymce.scss
      */

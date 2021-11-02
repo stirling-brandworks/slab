@@ -3,7 +3,9 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-3 text-center text-md-start">
-          <a class="navbar-brand py-1 d-inline-block mb-3 mb-lg-0" href="{{ home_url('/') }}">{{ $site_name }}</a>
+          <a class="navbar-brand py-1 d-inline-block mb-3 mb-lg-0" href="{{ home_url('/') }}">
+            <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="{{ $site_name }} Logo" />
+          </a>
         </div>
         <div class="col-12 col-md-3 offset-lg-1">
           @include('components.hours')
