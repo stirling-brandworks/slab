@@ -33,7 +33,6 @@ let webpackConfig = {
         errors: false,
         errorDetails: false,
         warnings: false,
-        //
         chunks: false,
         modules: false,
         reasons: false,
