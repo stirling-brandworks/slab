@@ -90,7 +90,6 @@ let webpackConfig = {
                     sourceMap: config.enabled.sourceMaps,
                 },
             },
-            { loader: 'resolve-url-loader', options: { sourceMap: config.enabled.sourceMaps } },
             {
                 loader: 'sass-loader', options: {
                     sassOptions: {
@@ -99,26 +98,10 @@ let webpackConfig = {
                     sourceMap: true, //config.enabled.sourceMaps, // false causes a resolve issue
                 },
             },
+            {
+                loader: 'resolve-url-loader',
+            },
             ],
-        },
-        {
-            test: /\.(ttf|otf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
-            include: config.paths.assets,
-            loader: 'url-loader',
-            options: {
-                limit: 4096,
-                name: `[path]${assetsFilenames}.[ext]`,
-            },
-        },
-        {
-            test: /\.(ttf|otf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
-            include: /node_modules/,
-            loader: 'url-loader',
-            options: {
-                limit: 4096,
-                outputPath: 'vendor/',
-                name: `[path]${assetsFilenames}.[ext]`,
-            },
         },
         ],
     },
@@ -220,4 +203,4 @@ module.exports = mergeWithCustomize({
     customizeArray: customizeArray({
         'module.rules': 'replace',
     }),
-})(webpackConfig, desire(`${__dirname}/webpack.config.preset`) ? desire(`${__dirname}/webpack.config.preset`) : {} )
+})(webpackConfig, desire(`${__dirname}/webpack.config.preset`) ? desire(`${__dirname}/webpack.config.preset`) : {} );
