@@ -4,12 +4,12 @@ const cssnanoConfig = {
     preset: ['default', { discardComments: { removeAll: true } }]
 };
 
-module.exports = (api) => {
+module.exports = ({options}) => {
     return {
-        parser: api.options.ctx.enabled.optimize ? 'postcss-safe-parser' : undefined,
+        parser: options.ctx.enabled.optimize ? 'postcss-safe-parser' : undefined,
         plugins: {
             autoprefixer: true,
             cssnano: options.ctx.enabled.optimize ? cssnanoConfig : false,
         },
     };
-};
+}

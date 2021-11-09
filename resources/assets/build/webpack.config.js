@@ -94,7 +94,7 @@ let webpackConfig = {
                     sassOptions: {
                         sourceComments: true,
                     },
-                    sourceMap: true, //config.enabled.sourceMaps, // false causes a resolve issue
+                    sourceMap: config.enabled.sourceMaps,
                 },
             },
             {
