@@ -138,7 +138,7 @@ let webpackConfig = {
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
-      Popper: 'popper.js/dist/umd/popper.js',
+      Popper: '@popperjs/dist/umd/popper.js',
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: config.enabled.optimize,
