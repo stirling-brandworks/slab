@@ -5,14 +5,12 @@ $searchType = isset($_GET['search_select']) || is_search() ?
 @endphp
 
 <form class="searchform" method="POST" action="{{ admin_url('admin-post.php') }}">
-  <div class="input-group">
-    <input type="text" class="form-control" type="text" name="s" id="s" placeholder="Search..."
+  <div class="position-relative">
+    <input type="text" class="searchform__search form-control py-1 pe-5" type="text" name="s" id="s" placeholder="Search..."
       value="{!! get_search_query() !!}" />
-    <div class="input-group-append">
-      <button type="submit" class="btn btn-primary">Search</button>
-    </div>
+    <button type="submit" class="searchform__submit bg-transparent border-0 p-0 pe-3" title="Search"><i class="fa fa-search text-muted"></i></button>
   </div>
-  <ul class="list-unstyled list-inline mt-1 text-start">
+  <ul class="list-unstyled list-inline mt-1 text-end mb-0">
     <li class="list-inline-item">
       <input class="button_catalog" type="radio"
         name="search_select" value="catalog" id="button_catalog" checked>

@@ -2,27 +2,31 @@
   <nav class="secondary-menu__wrapper">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-12 col-lg-3 text-center text-lg-start d-none d-md-block">
-          <a class="navbar-brand py-1 d-inline-block mb-3 mb-md-0" href="{{ home_url('/') }}">
-            <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="{{ $site_name }} Logo" />
+        <div class="col-12 col-md-3 col-lg-3 text-center text-lg-start d-none d-md-block">
+          <a class="navbar-brand py-1 d-inline-block mb-3 mb-md-0 mt-md-3 mt-lg-0" href="{{ home_url('/') }}">
+            <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="{{ $site_name }} Logo" class="mw-100 h-auto"/>
           </a>
-          <hr class="d-none d-md-block d-lg-none"/>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 offset-lg-1">
-          @include('components.hours')
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 offset-lg-1 text-md-end d-none d-md-block">
-          <ul class="secondary-menu__list list-unstyled mx-0 mb-1 pt-1 px-0">
+        <div class="col-12 col-md-9 col-lg-6 col-xl-5 text-center text-lg-end">
+          <div class="secondary-menu__icon-block secondary-menu__icon-block--hours d-md-inline-block text-center text-md-start py-1 pt-md-3 align-middle">
+            @include('components.hours')
+          </div>
+          <ul class="secondary-menu__list list-unstyled m-0 p-0 d-none d-md-inline-block align-middle">
             @if (has_nav_menu('secondary_navigation'))
               {!! wp_nav_menu($secondary_menu) !!}
             @endif
           </ul>
-          @include('components.searchform')
+        </div>
+        <div class="col-12 col-lg-3 col-xl-4 text-md-end d-none d-md-block">
+          <hr class="d-none d-md-block d-lg-none"/>
+          <div class="pt-lg-3 ps-lg-2">
+            @include('components.searchform')
+          </div>
         </div>
       </div>
     </div>
   </nav>
-  <nav class="main-menu-wrapper border-top bg-dark">
+  <nav class="main-menu-wrapper border-top bg-white">
     <div class="container">
       {!! wp_nav_menu($primary_menu) !!}
     </div>

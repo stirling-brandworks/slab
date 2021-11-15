@@ -1,0 +1,17 @@
+.searchform {
+  &__search {
+    border-radius: 2rem;
+  }
+
+  &__submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+
+  label {
+    font-size: 0.85rem;
+    vertical-align: top;
+  }
+}

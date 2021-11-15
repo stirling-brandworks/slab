@@ -27,7 +27,7 @@ $fields
             'width' => '30',
         ],
     ])
-    ->addSelect('disable_live_hours', [
+    ->addSelect('live_hours_display', [
         'label' => 'Live Hours Display',
         'instructions' => 'You may set the live hours to enabled (show) or disabled (hidden) within the header.',
         'wrapper' => [

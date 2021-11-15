@@ -77,8 +77,8 @@ add_action('after_setup_theme', function () {
     'flex-width'    => true,
     'width'         => 240,
     'flex-height'    => true,
-    'height'        => 104,
-    'default-image' => get_template_directory_uri() . '/assets/images/logos/logo.png',
+    'height'        => 240,
+    'default-image' => get_template_directory_uri() . '/assets/images/logos/logo.svg',
     'uploads'       => true,
     );
 
