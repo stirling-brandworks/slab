@@ -8,6 +8,7 @@
 			<div class="row">
 				<div class="col-md-8">
 					Slider
+					<!--Choice of static or posts-->
 				</div>
 				<div class="col-md-4">
 					<div class="bg-white rounded border p-3">
