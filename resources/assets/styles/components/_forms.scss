@@ -14,6 +14,27 @@
   @extend .btn-secondary;
 }
 
+/** Radios */
+.radio {
+  &--styled {
+    appearance: none;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    width: $spacer;
+    height: $spacer;
+    border-radius: $spacer;
+
+    &:checked {
+      border-color: $primary;
+      background-color: $primary;
+
+      & + label {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
 /**
  * Gravity Forms BS5 Styling
  *

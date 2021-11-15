@@ -12,15 +12,15 @@ $searchType = isset($_GET['search_select']) || is_search() ?
   </div>
   <ul class="list-unstyled list-inline mt-1 text-end mb-0">
     <li class="list-inline-item">
-      <input class="button_catalog" type="radio"
-        name="search_select" value="catalog" id="button_catalog" checked>
+      <input class="button_catalog radio radio--styled" type="radio"
+        name="search_select" value="catalog" id="button_catalog" checked >
       <label class="pl-2" for="button_catalog">
         Catalog</label>
     </li>
     <li class="list-inline-item ml-4">
-      <input class="button_site" type="radio"
+      <input class="button_site radio radio--styled" type="radio"
         name="search_select" value="site" id="button_site">
-      <label class="pl-2" for="button_site"> Website</label>
+      <label class="pl-2" for="button_site" > Website</label>
     </li>
   </ul>
   <input type="hidden" name="action" value="libby_search" />
