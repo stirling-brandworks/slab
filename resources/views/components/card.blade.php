@@ -1,10 +1,10 @@
-<div class="card">
+<div class="card position-relative">
   @if ($image)
   {!! wp_get_attachment_image($image, 'medium', false, ['class' => 'card-img-top']) !!}
   @endif
   <div class="card-body">
     <h4 class="card-title">{!! $title !!}</h4>
-    <p class="card-text">
+    <p class="card-text text-muted">
       {!! $content !!}
     </p>
     @if ($link)

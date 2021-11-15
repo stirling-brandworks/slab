@@ -19,9 +19,13 @@
           <hr />
 
           <h2 class="mb-3">Quicklinks</h2>
-          @foreach ($quicklinks as $quicklink)
-          @include('components.quicklink', $quicklink)
-          @endforeach
+          <div class="row">
+            @foreach ($quicklinks as $quicklink)
+            <div class="col">
+              @include('components.quicklink', $quicklink)
+            </div>
+            @endforeach
+          </div>
 
           <hr />
 

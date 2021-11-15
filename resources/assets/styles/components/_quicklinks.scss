@@ -1,0 +1,16 @@
+.quicklink {
+  position: relative;
+  border: 1px solid #ddd;
+  transition: 0.25s all ease;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $primary;
+  }
+
+  &__icon {
+    height: 5rem;
+    width: auto;
+  }
+}
