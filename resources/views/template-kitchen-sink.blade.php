@@ -42,7 +42,15 @@
 
           <hr />
 
-          <h2 class="mb-3">Sliders & Carousels</h2>
+
+          <h2 class="mb-3">Legend</h2>
+          <div class="mb-5" style="width: 32rem;">
+            @include('partials.legend')
+          </div>
+
+          <hr />
+
+          <h2 class="mb-3">Sliders &amp; Carousels</h2>
           <h3 class="mb-3">Slider</h3>
           <div class="mb-5">
             @if ($slider['slides'])
@@ -55,7 +63,7 @@
 
           <hr />
 
-          <h2 class="mb-3">Accordions & Tabs</h2>
+          <h2 class="mb-3">Accordions &amp; Tabs</h2>
           <h3 class="mb-3">Accordion</h3>
           <div class="mb-5">
             @if ($accordion_items)

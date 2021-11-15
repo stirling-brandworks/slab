@@ -107,8 +107,20 @@ add_action('widgets_init', function () {
         'id'            => 'sidebar-primary'
     ] + $config);
     register_sidebar([
-        'name'          => __('Footer', 'slab'),
-        'id'            => 'sidebar-footer'
+        'name'          => __('Footer 1', 'slab'),
+        'id'            => 'sidebar-footer-1'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Footer 2', 'slab'),
+        'id'            => 'sidebar-footer-2'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Footer 3', 'slab'),
+        'id'            => 'sidebar-footer-3'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Footer 4', 'slab'),
+        'id'            => 'sidebar-footer-4'
     ] + $config);
 });
 
