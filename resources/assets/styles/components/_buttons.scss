@@ -1,0 +1,51 @@
+//** Buttons */
+.btn-primary {
+  color: #fff;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+  }
+}
+
+/** Links */
+.slab-link {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $contrast;
+  text-decoration: none;
+  transition: 0.2s all ease;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: darken($contrast, 10%);
+  }
+
+  &--arrow {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0.75rem;
+      height: 0.75rem;
+      position: relative;
+      top: -2px;
+      left: 0;
+      background: no-repeat center url("../images/icons/arrow-contrast-right.svg");
+      background-size: contain;
+      vertical-align: middle;
+      transition: 0.2s all ease;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      &::after {
+        left: 2px;
+      }
+    }
+  }
+}

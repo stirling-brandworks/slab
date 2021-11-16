@@ -3,8 +3,10 @@ SwiperCore.use([Navigation, Pagination]);
 
 export const makeSwiper = (el, options = {}) => {
   const defaults = {
+    loop: true,
     pagination: {
       el: '.slab-swiper__pagination',
+      clickable: true,
     },
     navigation: {
       prevEl: '.slab-swiper__button-prev',

@@ -3,16 +3,22 @@
 @section('content')
 @while(have_posts()) @php the_post() @endphp
 	
-	<section class="bg-secondary pt-4">
+	<section class="bg-secondary bg-w-white-bottom pt-4">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8">
-					Slider
-					<!--Choice of static or posts-->
+				@php $slider = get_field('slider') @endphp
+				@if ($slider['slides'])
+				<div class="col-md-7 col-lg-8">
+					@include('components.slider', $slider)
 				</div>
-				<div class="col-md-4">
-					<div class="bg-white rounded border p-3">
-						Sidebar
+				@endif
+				<div class="col-md-5 col-lg-4">
+					<div class="bg-white slab-edge border p-3">
+						<h3>Title</h3>
+						<div class=""></div>
+						<div class="pt-2">
+							<a href="#" class="btn btn-primary d-block">Text</a>
+						</div>
 					</div>
 				</div>
 			</div>
