@@ -3,7 +3,8 @@
 @section('content')
 @while(have_posts()) @php the_post() @endphp
 	
-	@if ( get_field('hero_visiblity')['section_display'] == "true")
+	@php $hero = get_field('hero_section') @endphp
+	@if ( get_field('hero')['section_display'] == "true")
 	<section class="bg-secondary bg-w-white-bottom pt-4">
 		<div class="container">
 			<div class="row">
@@ -13,20 +14,20 @@
 					@include('components.slider', $slider)
 				</div>
 				@endif
-				@if ( get_field('hero_sidebar_title') || get_field('hero_sidebar_content') || get_field('hero_sidebar_link'))
+				@if ( $hero['title'] || $hero['link'] || $hero['hero_sidebar_content'])
 				<div class="col-md-5 col-lg-4">
 					<div class="bg-white slab-edge border p-3">
-						@if ( get_field('hero_sidebar_title'))
-						<h3>{!! get_field('hero_sidebar_title') !!}</h3>
+						@if ( $hero['title'])
+						<h3>{!! $hero['title'] !!}</h3>
 						@endif
 
-						@if ( get_field('hero_sidebar_content'))
-						<div class="">{!! get_field('hero_sidebar_content') !!}</div>
+						@if ( $hero['hero_sidebar_content'])
+						<div class="text-muted">{!! $hero['hero_sidebar_content'] !!}</div>
 						@endif
 
-						@if ( get_field('hero_sidebar_link'))
+						@if ($hero['link'])
 						<div class="pt-2">
-							<a href="{!! get_field('hero_sidebar_link')['url'] !!}" class="btn btn-primary d-block">{!! get_field('hero_sidebar_link')['title'] !!}</a>
+							<a href="{!! $hero['link']['url'] !!}" class="btn btn-primary d-block">{!! $hero['link']['title'] !!}</a>
 						</div>
 						@endif
 					</div>
@@ -49,7 +50,7 @@
 			@endif
 			@php $quicklinks = get_field('quicklinks_section')['quicklinks'] @endphp
 			<div class="row">
-				
+				Quicklinks here
 			</div>
 		</div>
 	</section>
