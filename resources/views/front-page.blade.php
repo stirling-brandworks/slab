@@ -3,6 +3,7 @@
 @section('content')
 @while(have_posts()) @php the_post() @endphp
 	
+	@if ( get_field('hero_visiblity')['section_display'] == "true")
 	<section class="bg-secondary bg-w-white-bottom pt-4">
 		<div class="container">
 			<div class="row">
@@ -12,48 +13,83 @@
 					@include('components.slider', $slider)
 				</div>
 				@endif
+				@if ( get_field('hero_sidebar_title') || get_field('hero_sidebar_content') || get_field('hero_sidebar_link'))
 				<div class="col-md-5 col-lg-4">
 					<div class="bg-white slab-edge border p-3">
-						<h3>Title</h3>
-						<div class=""></div>
+						@if ( get_field('hero_sidebar_title'))
+						<h3>{!! get_field('hero_sidebar_title') !!}</h3>
+						@endif
+
+						@if ( get_field('hero_sidebar_content'))
+						<div class="">{!! get_field('hero_sidebar_content') !!}</div>
+						@endif
+
+						@if ( get_field('hero_sidebar_link'))
 						<div class="pt-2">
-							<a href="#" class="btn btn-primary d-block">Text</a>
+							<a href="{!! get_field('hero_sidebar_link')['url'] !!}" class="btn btn-primary d-block">{!! get_field('hero_sidebar_link')['title'] !!}</a>
 						</div>
+						@endif
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-
-	@if ($quicklinks)
-	<section class="pt-2 pb-5 bg-white">
-		<div class="container">
-			<div class="row">
-				@foreach ($quicklinks as $quicklink)
-	            <div class="col">
-	              @include('components.quicklink', $quicklink)
-	            </div>
-	            @endforeach
+				@endif
 			</div>
 		</div>
 	</section>
 	@endif
 
+	@php $quicklinks_sec = get_field('quicklinks_section') @endphp
+	@if ( $quicklinks_sec['section_display'] == "true")
+	<section class="pt-2 pb-5 bg-white">
+		<div class="container">
+			@if ( $quicklinks_sec['title'] )
+				<h3 class="text-center text-md-start">{!! $quicklinks_sec['title'] !!}</h3>
+			@endif
+			@if ( $quicklinks_sec['link'] )
+				<a href="{!! $quicklinks_sec['link']['url'] !!}" class="slab-link slab-link--arrow">{!! $quicklinks_sec['link']['title'] !!}</a>
+			@endif
+			@php $quicklinks = get_field('quicklinks_section')['quicklinks'] @endphp
+			<div class="row">
+				
+			</div>
+		</div>
+	</section>
+	@endif
+
+	@php $books = get_field('books') @endphp
+	@if ( $books['section_display'] == "true")
 	<section class="pt-3 pb-5 bg-white bg-w-gray-bottom">
 		<div class="container">
-			<h2 class="text-center">Books</h2>
+			@if ( $books['title'] )
+				<h3 class="text-center">{!! $books['title'] !!}</h3>
+			@endif
+			@if ( $books['link'] )
+				<a href="{!! $books['link']['url'] !!}" class="slab-link slab-link--arrow">{!! $books['link']['title'] !!}</a>
+			@endif
 		</div>
 	</section>
+	@endif
 
+	@php $resources = get_field('resources') @endphp
+	@if ( $resources['section_display'] == "true")
 	<section class="pt-3 pb-5 bg-light">
 		<div class="container">
-			<h2 class="text-center">Resources</h2>
+			@if ( $resources['title'] )
+				<h3 class="text-center">{!! $resources['title'] !!}</h3>
+			@endif
+			@if ( $resources['link'] )
+				<a href="{!! $resources['link']['url'] !!}" class="slab-link slab-link--arrow">{!! $resources['link']['title'] !!}</a>
+			@endif
 		</div>
 	</section>
+	@endif
 
+	@php $news = get_field('news') @endphp
+	@if ( $news['section_display'] == "true")
 	<section class="py-5 bg-white">
 		<div class="container">
-			<h2 class="text-center">News</h2>
+			@if ( $news['title'] )
+				<h3 class="text-center">{!! $news['title'] !!}</h3>
+			@endif
 
 			<div class="row">
 				<div class="col-md-7">
@@ -61,10 +97,15 @@
 				</div>
 				<div class="col-md-5">
 					News Thumbs
+
+					@if ( $news['link'] )
+						<a href="{!! $news['link']['url'] !!}" class="btn btn-primary d-block">{!! $news['link']['title'] !!}</a>
+					@endif
 				</div>
 			</div>
 		</div>
 	</section>
+	@endif
 
 	@include('partials.content-page')
 @endwhile
