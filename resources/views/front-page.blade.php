@@ -70,17 +70,17 @@
 			</div>
 			@endif
 
-			@php $featured_posts = get_field('resources')['featured_databases'] @endphp
-			@if( $featured_posts )
+			@php $featured_resources = get_field('resources')['featured_databases'] @endphp
+			@if( $featured_resources )
 			<div class="mt-4 px-lg-5">
 				<div class="swiper-container slab-multi-swiper mx-5 mx-md-0 pe-md-5">
   					<div class="swiper-wrapper mx-md-5">
-				    	@foreach ($featured_posts as $featured_post)
+				    	@foreach ($featured_resources as $featured_resource)
 	        			@php
-	        				$title = get_the_title( $featured_post->ID );
-	        				$excerpt = get_the_excerpt( $featured_post->ID );
-	        				$url = get_field( 'database_url', $featured_post->ID );
-	        				$image = get_post_thumbnail_id( $featured_post->ID );
+	        				$title = get_the_title( $featured_resource->ID );
+	        				$excerpt = get_the_excerpt( $featured_resource->ID );
+	        				$url = get_field( 'database_url', $featured_resource->ID );
+	        				$image = get_post_thumbnail_id( $featured_resource->ID );
 	        			@endphp
 				    		<div class="swiper-slide slab-slide">
 				    			@include('components.shelf.database-item')
@@ -107,7 +107,11 @@
 			<div class="row">
 				<div class="col-md-7">
 					
-					@include('components.card')
+					
+					@php $featured_post = get_field('news')['featured_post'] @endphp
+					@if( $featured_post )
+						card
+					@endif
 
 				</div>
 				<div class="col-md-5">

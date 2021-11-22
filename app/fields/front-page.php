@@ -43,6 +43,12 @@ $fields
             ->setLabel(null)
             ->addFields(get_field_partial('components.visiblity-toggle'))
             ->addFields(get_field_partial('components.section-title'))
+            ->addPostObject('featured_post')
+                ->setWidth('50%')
+                ->setInstructions('Select a published post to feature in the highlighted space to show more prominently than the rest of the posts.')
+            ->addTaxonomy('news_category')
+                ->setWidth('50%')
+                ->setInstructions('Select a category to show posts *only* from that category. If none is selected posts from all categories will show.')
         ->endGroup();
 
 return $fields;
