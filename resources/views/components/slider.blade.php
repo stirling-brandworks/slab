@@ -1,4 +1,4 @@
-<div class="swiper-container slab-swiper">
+<div class="swiper-container slab-swiper slab-swiper--single">
   <div class="swiper-wrapper">
     @foreach ($slides as $slide)
     @include('components.slide', $slide)

@@ -31,6 +31,11 @@ $bottom-height: 7rem;
   }
 }
 
+/** Transitions */
+.transition {
+  transition: 0.25s all ease;
+}
+
 /** Z-Indexes */
 .z-1 {
   z-index: 1;

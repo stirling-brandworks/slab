@@ -1,0 +1,19 @@
+/** Database Item */
+.database-item {
+  border: 1px solid #ddd;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $primary;
+  }
+
+  &__img-wrap {
+    min-height: 8rem;
+  }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+  }
+}

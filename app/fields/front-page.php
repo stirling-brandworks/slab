@@ -35,6 +35,7 @@ $fields
             ->setLabel(null)
             ->addFields(get_field_partial('components.visiblity-toggle'))
             ->addFields(get_field_partial('components.section-title'))
+            ->addFields(get_field_partial('components.shelf.database-list'))
         ->endGroup()
 
     ->addTab('news')

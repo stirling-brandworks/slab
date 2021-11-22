@@ -3,7 +3,6 @@
 @section('content')
 @while(have_posts()) @php the_post() @endphp
 	
-	
 	@if ( get_field('hero')['section_display'])
 		@php $hero = get_field('hero_section') @endphp
 		@include('partials.hero')
@@ -60,7 +59,7 @@
 
 	@php $resources = get_field('resources') @endphp
 	@if ( $resources['section_display'])
-	<section class="pt-3 pb-5 bg-light">
+	<section class="pt-3 bg-light">
 		<div class="container">
 			@if ( $resources['title'] )
 			<div class="title-wrapper text-center @if ( $resources['link'] ) w-100 d-md-flex justify-content-md-between align-items-md-center text-md-start @endif">
@@ -70,6 +69,30 @@
 				@endif
 			</div>
 			@endif
+
+			@php $featured_posts = get_field('resources')['featured_databases'] @endphp
+			@if( $featured_posts )
+			<div class="mt-4 px-lg-5">
+				<div class="swiper-container slab-multi-swiper mx-5 mx-md-0 pe-md-5">
+  					<div class="swiper-wrapper mx-md-5">
+				    	@foreach ($featured_posts as $featured_post)
+	        			@php
+	        				$title = get_the_title( $featured_post->ID );
+	        				$excerpt = get_the_excerpt( $featured_post->ID );
+	        				$url = get_field( 'database_url', $featured_post->ID );
+	        				$image = get_post_thumbnail_id( $featured_post->ID );
+	        			@endphp
+				    		<div class="swiper-slide slab-slide">
+				    			@include('components.shelf.database-item')
+				    		</div>
+				    	@endforeach
+			    	</div>
+			    	<div class="swiper-button-prev slab-swiper__button-prev slab-swiper__button-prev--dark"></div>
+  					<div class="swiper-button-next slab-swiper__button-next slab-swiper__button-next--dark"></div>
+			    </div>
+			</div>
+			@endif
+
 		</div>
 	</section>
 	@endif
@@ -79,11 +102,13 @@
 	<section class="py-5 bg-white">
 		<div class="container">
 			@if ( $news['title'] )
-				<h3 class="text-center">{!! $news['title'] !!}</h3>
+				<h3 class="text-center mb-5">{!! $news['title'] !!}</h3>
 			@endif
 			<div class="row">
 				<div class="col-md-7">
-					Recent Post
+					
+					@include('components.card')
+
 				</div>
 				<div class="col-md-5">
 					News Thumbs
