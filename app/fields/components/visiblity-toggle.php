@@ -7,9 +7,12 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $fields = new FieldsBuilder('visibility');
 
 $fields
-    ->addSelect('section_display')
-      ->setInstructions("Toggle this section's visibility, when set to hidden it will not display.")
-      ->setChoices(['true' =>'Visible', 'false' =>'Hidden'])
-      ->setDefaultValue('true');
+	->addTrueFalse('section_display', [
+        'instructions' => "Toggle this section's visibility, when set to false it will not display",
+        'default_value' => 1,
+        'ui' => 1,
+        'ui_on_text' => 'Show',
+        'ui_off_text' => 'Hide',
+    ]);
 
 return $fields;

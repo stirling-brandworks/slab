@@ -4,7 +4,7 @@
 @while(have_posts()) @php the_post() @endphp
 	
 	@php $hero = get_field('hero_section') @endphp
-	@if ( get_field('hero')['section_display'] == "true")
+	@if ( get_field('hero')['section_display'])
 	<section class="bg-secondary bg-w-white-bottom pt-4">
 		<div class="container">
 			<div class="row">
@@ -39,7 +39,7 @@
 	@endif
 
 	@php $quicklinks_sec = get_field('quicklinks_section') @endphp
-	@if ( $quicklinks_sec['section_display'] == "true")
+	@if ( $quicklinks_sec['section_display'])
 	<section class="pt-2 pb-5 bg-white">
 		<div class="container">
 			@if ( $quicklinks_sec['title'] )
@@ -57,7 +57,7 @@
 	@endif
 
 	@php $books = get_field('books') @endphp
-	@if ( $books['section_display'] == "true")
+	@if ( $books['section_display'])
 	<section class="pt-3 pb-5 bg-white bg-w-gray-bottom">
 		<div class="container">
 			@if ( $books['title'] )
@@ -71,7 +71,7 @@
 	@endif
 
 	@php $resources = get_field('resources') @endphp
-	@if ( $resources['section_display'] == "true")
+	@if ( $resources['section_display'])
 	<section class="pt-3 pb-5 bg-light">
 		<div class="container">
 			@if ( $resources['title'] )
@@ -85,7 +85,7 @@
 	@endif
 
 	@php $news = get_field('news') @endphp
-	@if ( $news['section_display'] == "true")
+	@if ( $news['section_display'])
 	<section class="py-5 bg-white">
 		<div class="container">
 			@if ( $news['title'] )
