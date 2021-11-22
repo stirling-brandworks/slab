@@ -25,9 +25,7 @@
 
 			@php $quicklinks = get_field('quicklinks_section')['quicklinks'] @endphp
 			<div class="row my-3">
-				<div class="col">
-					Quicklinks here
-				</div>
+		       
 			</div>
 		</div>
 	</section>
