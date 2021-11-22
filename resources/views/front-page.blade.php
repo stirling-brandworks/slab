@@ -11,9 +11,9 @@
 
 	@php $quicklinks_sec = get_field('quicklinks_section') @endphp
 	@if ( $quicklinks_sec['section_display'])
-	<section class="pt-2 pb-5 bg-white">
+	<section class="pt-2 pb-4 bg-white">
 		<div class="container">
-			
+
 			@if ( $quicklinks_sec['title'] )
 				<div class="title-wrapper text-center @if ( $quicklinks_sec['link'] ) w-100 d-md-flex justify-content-md-between align-items-md-center text-md-start @endif">
 					<h3>{!! $quicklinks_sec['title'] !!}</h3>
@@ -23,9 +23,13 @@
 				</div>
 			@endif
 
-			@php $quicklinks = get_field('quicklinks_section')['quicklinks'] @endphp
-			<div class="row my-3">
-		       
+			@php $quicklinks = get_field('quicklinks')['quicklinks'] @endphp
+			<div class="row my-3 row-cols-1 row-cols-sm-3 row-cols-lg-5">
+		       @foreach ($quicklinks as $quicklink)
+		            <div class="col mb-2">
+		              @include('components.quicklink', $quicklink)
+		            </div>
+	            @endforeach
 			</div>
 		</div>
 	</section>
@@ -33,8 +37,8 @@
 
 	@php $books = get_field('books') @endphp
 	@if ( $books['section_display'])
-	<section class="pt-3 pb-5 bg-white bg-w-gray-bottom">
-		<div class="container">
+	<section class="pt-3 pb-5 bg-white bg-w-bottom bg-w-bottom--light">
+		<div class="container position-relative z-1">
 			@if ( $books['title'] )
 				<div class="title-wrapper text-center @if ( $books['link'] ) w-100 d-md-flex justify-content-md-between align-items-md-center text-md-start @endif">
 					<h3 class="text-center">{!! $books['title'] !!}</h3>
@@ -43,6 +47,13 @@
 					@endif
 				</div>
 			@endif
+
+			@php $tabs = get_field('books')['tabs'] @endphp
+			@if ($tabs)
+			<div class="pb-5">
+        		@include('components.tabs', $tabs)
+        	</div>
+          	@endif
 		</div>
 	</section>
 	@endif

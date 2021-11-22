@@ -1,4 +1,4 @@
-<section id="hero" class="hero bg-secondary bg-w-white-bottom pt-4">
+<section id="hero" class="hero bg-secondary bg-w-bottom bg-w-bottom--white pt-4">
   <div class="container">
     <div class="row">
       @php $slider = get_field('slider') @endphp
