@@ -5,7 +5,7 @@
 	
 	@php $hero = get_field('hero_section') @endphp
 	@if ( get_field('hero')['section_display'])
-	<section class="bg-secondary bg-w-white-bottom pt-4">
+	<section id="hero" class="hero bg-secondary bg-w-white-bottom pt-4">
 		<div class="container">
 			<div class="row">
 				@php $slider = get_field('slider') @endphp
@@ -16,13 +16,13 @@
 				@endif
 				@if ( $hero['title'] || $hero['link'] || $hero['hero_sidebar_content'])
 				<div class="col-md-5 col-lg-4">
-					<div class="bg-white slab-edge border p-3">
+					<div class="slab-sidebar bg-white slab-edge border p-3">
 						@if ( $hero['title'])
 						<h3>{!! $hero['title'] !!}</h3>
 						@endif
 
 						@if ( $hero['hero_sidebar_content'])
-						<div class="text-muted">{!! $hero['hero_sidebar_content'] !!}</div>
+						<div class="slab-sidebar__content">{!! $hero['hero_sidebar_content'] !!}</div>
 						@endif
 
 						@if ($hero['link'])

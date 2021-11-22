@@ -1,0 +1,9 @@
+.slab-sidebar {
+  position: relative;
+  z-index: 4;
+
+  &__content {
+    height: 19.5rem;
+    overflow-y: auto;
+  }
+}
