@@ -106,40 +106,43 @@
 			@endif
 			<div class="row">
 				<div class="col-md-7">
-					
 					@php $featuredPost = get_field('news')['featured_post'] @endphp
 					@if( $featuredPost )
+					<div class="mt-5">
 						@php
 							$title = get_the_title( $featuredPost->ID );
+							$date = get_the_date( 'M jS, Y', $featuredPost->ID );
 		        			$excerpt = get_the_excerpt( $featuredPost->ID );
-		        			$url = get_field( 'database_url', $featuredPost->ID );
+		        			$content = substr($excerpt, 0, 260);
+		        			$link = ['title'=>'Read More', 'url'=> get_post_permalink($featuredPost->ID)];
 		        			$image = get_post_thumbnail_id( $featuredPost->ID );
 		        			$layout = 'vertical';
 		        			$imageSize = 'large';
 						@endphp
 						@include('components.card')
 					@endif
-
+					</div>
 				</div>
 				<div class="col-md-5">
-
 					@php
-						$categoryIds = get_field('news')['news_category'];
 						$excludeFeaturedPost = get_field('news')['featured_post']->ID;
+						$categoryIds = get_field('news')['news_category'];
 						$args = array('numberposts' => 3, 'exclude' => $excludeFeaturedPost, 'category' => $categoryIds);
 						$latestPosts = get_posts( $args )
 					@endphp
 
 					@if ( $latestPosts )
-					<div class="card-horizontal-wrapper">
+					<div class="cards-wrapper">
 						@foreach ($latestPosts as $latestPost)
-							<div class="mb-2">
+							<div class="mt-5">
 								@include('components.card', [
 								    'title' => $latestPost->post_title,
+								    'date' => null,
+								    'content' => null,
 								    'link' => ['title'=>'Read More', 'url'=> get_post_permalink($latestPost) ],
 								    'image' => get_post_thumbnail_id($latestPost),
 								    'layout' => 'horizontal',
-								    'imageSize' => 'medium',
+								    'imageSize' => 'square-thumbnail',
 								])
 							</div>
 						@endforeach
@@ -147,7 +150,9 @@
 					@endif
 
 					@if ( $news['link'] )
-						<a href="{!! $news['link']['url'] !!}" class="btn btn-primary d-block mt-3">{!! $news['link']['title'] !!}</a>
+					<div class="ps-md-3 mt-1">
+						<a href="{!! $news['link']['url'] !!}" class="btn btn-primary d-block">{!! $news['link']['title'] !!}</a>
+					</div>
 					@endif
 				</div>
 			</div>

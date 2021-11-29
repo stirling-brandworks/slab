@@ -56,6 +56,12 @@ add_action('after_setup_theme', function () {
     add_theme_support('post-thumbnails');
 
     /**
+     * Add custom image sizes
+     * @link https://developer.wordpress.org/reference/functions/add_image_size/
+      */
+    add_image_size( 'square-thumbnail', 160, 160, true );
+
+    /**
      * Enable HTML5 markup support
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
      */
