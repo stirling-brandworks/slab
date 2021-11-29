@@ -1,5 +1,7 @@
 .page-header {
-  min-height: 11rem;
+  @include media-breakpoint-up(md) {
+    min-height: 11rem;
+  }
 
   &--w-img {
     position: relative;

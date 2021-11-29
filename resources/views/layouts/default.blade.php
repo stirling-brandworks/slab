@@ -8,7 +8,7 @@
   <div class="row">
 
     @if(App\display_sidebar())
-      <aside class="sidebar mb-5 col-md-4">
+      <aside class="sidebar mb-5 col-md-4 mt-3 mt-md-0">
         @include('partials.sidebar')
       </aside>
     @endif

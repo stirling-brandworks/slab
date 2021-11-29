@@ -1,7 +1,11 @@
 /** Page Sidebar */
 
 .sidebar {
+  order: 2;
+
   @include media-breakpoint-up(md) {
+    order: 1;
+
     &__inner {
       margin-top: -8rem;
       min-height: 12rem;
