@@ -46,9 +46,15 @@ $fields
             ->addPostObject('featured_post')
                 ->setWidth('50%')
                 ->setInstructions('Select a published post to feature in the highlighted space to show more prominently than the rest of the posts.')
-            ->addTaxonomy('news_category')
-                ->setWidth('50%')
-                ->setInstructions('Select a category to show posts *only* from that category. If none is selected posts from all categories will show.')
+            ->addTaxonomy('news_category',[
+                    'instructions' => 'Select a category (or categories) to show posts *only* from that category. If none is selected posts from all categories will show.',
+                    'field_type' => 'multi_select',
+                    'return_format' => 'id',
+                    'wrapper' => [
+                        'width' => '50%',
+                    ],
+                ],
+            )
         ->endGroup();
 
 return $fields;

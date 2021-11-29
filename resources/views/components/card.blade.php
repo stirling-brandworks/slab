@@ -1,6 +1,6 @@
 <div class="card position-relative">
   @if ($image)
-  {!! wp_get_attachment_image($image, 'medium', false, ['class' => 'card-img-top']) !!}
+  {!! wp_get_attachment_image($image, 'medium', false, ['class' => 'card-img']) !!}
   @endif
   <div class="card-body">
     <h4 class="card-title">{!! $title !!}</h4>

@@ -8,16 +8,16 @@
 		@include('partials.hero')
 	@endif
 
-	@php $quicklinks_sec = get_field('quicklinks_section') @endphp
-	@if ( $quicklinks_sec['section_display'])
+	@php $quicklinksSec = get_field('quicklinks_section') @endphp
+	@if ( $quicklinksSec['section_display'])
 	<section class="pt-2 pb-4 bg-white">
 		<div class="container">
 
-			@if ( $quicklinks_sec['title'] )
-				<div class="title-wrapper text-center @if ( $quicklinks_sec['link'] ) w-100 d-md-flex justify-content-md-between align-items-md-center text-md-start @endif">
-					<h3>{!! $quicklinks_sec['title'] !!}</h3>
-					@if ( $quicklinks_sec['link'] )
-						<a href="{!! $quicklinks_sec['link']['url'] !!}" class="slab-link slab-link--arrow">{!! $quicklinks_sec['link']['title'] !!}</a>
+			@if ( $quicklinksSec['title'] )
+				<div class="title-wrapper text-center @if ( $quicklinksSec['link'] ) w-100 d-md-flex justify-content-md-between align-items-md-center text-md-start @endif">
+					<h3>{!! $quicklinksSec['title'] !!}</h3>
+					@if ( $quicklinksSec['link'] )
+						<a href="{!! $quicklinksSec['link']['url'] !!}" class="slab-link slab-link--arrow">{!! $quicklinksSec['link']['title'] !!}</a>
 					@endif
 				</div>
 			@endif
@@ -70,17 +70,17 @@
 			</div>
 			@endif
 
-			@php $featured_resources = get_field('resources')['featured_databases'] @endphp
-			@if( $featured_resources )
+			@php $featuredResources = get_field('resources')['featured_databases'] @endphp
+			@if( $featuredResources )
 			<div class="mt-4 px-lg-5">
 				<div class="swiper-container slab-multi-swiper mx-5 mx-md-0 pe-md-5">
   					<div class="swiper-wrapper mx-md-5">
-				    	@foreach ($featured_resources as $featured_resource)
+				    	@foreach ($featuredResources as $featuredResource)
 	        			@php
-	        				$title = get_the_title( $featured_resource->ID );
-	        				$excerpt = get_the_excerpt( $featured_resource->ID );
-	        				$url = get_field( 'database_url', $featured_resource->ID );
-	        				$image = get_post_thumbnail_id( $featured_resource->ID );
+	        				$title = get_the_title( $featuredResource->ID );
+	        				$excerpt = get_the_excerpt( $featuredResource->ID );
+	        				$url = get_field( 'database_url', $featuredResource->ID );
+	        				$image = get_post_thumbnail_id( $featuredResource->ID );
 	        			@endphp
 				    		<div class="swiper-slide slab-slide">
 				    			@include('components.shelf.database-item')
@@ -107,18 +107,43 @@
 			<div class="row">
 				<div class="col-md-7">
 					
-					
-					@php $featured_post = get_field('news')['featured_post'] @endphp
-					@if( $featured_post )
-						card
+					@php $featuredPost = get_field('news')['featured_post'] @endphp
+					@if( $featuredPost )
+						@php
+							$title = get_the_title( $featuredPost->ID );
+		        			$excerpt = get_the_excerpt( $featuredPost->ID );
+		        			$url = get_field( 'database_url', $featuredPost->ID );
+		        			$image = get_post_thumbnail_id( $featuredPost->ID );
+						@endphp
+						@include('components.card')
 					@endif
 
 				</div>
 				<div class="col-md-5">
-					News Thumbs
+
+					@php
+						$categoryIds = get_field('news')['news_category'];
+						$excludeFeaturedPost = get_field('news')['featured_post']->ID;
+						$args = array('numberposts' => 3, 'exclude' => $excludeFeaturedPost, 'category' => $categoryIds);
+						$latestPosts = get_posts( $args )
+					@endphp
+
+					@if ( $latestPosts )
+					<div class="card-horizontal-wrapper">
+						@foreach ($latestPosts as $latestPost)
+							<div class="mb-2">
+								@include('components.card', [
+								    'title' => $latestPost->post_title,
+								    'link' => ['title'=>'Read More', 'url'=> get_post_permalink($latestPost) ],
+								    'image' => get_post_thumbnail_id($latestPost),
+								])
+							</div>
+						@endforeach
+					</div>
+					@endif
 
 					@if ( $news['link'] )
-						<a href="{!! $news['link']['url'] !!}" class="btn btn-primary d-block">{!! $news['link']['title'] !!}</a>
+						<a href="{!! $news['link']['url'] !!}" class="btn btn-primary d-block mt-3">{!! $news['link']['title'] !!}</a>
 					@endif
 				</div>
 			</div>
