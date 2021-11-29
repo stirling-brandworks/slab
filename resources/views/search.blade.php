@@ -12,7 +12,7 @@
 		@endif
 
 		@while(have_posts()) @php the_post() @endphp
-		@include('partials.content-search')
+			@include('partials.content-search')
 		@endwhile
 
 		{!! get_the_posts_navigation() !!}
