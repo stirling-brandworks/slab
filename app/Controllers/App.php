@@ -6,6 +6,8 @@ use Sober\Controller\Controller;
 
 class App extends Controller
 {
+    use Partials\SidebarDefault;
+
     public function primaryMenu()
     {
         return [

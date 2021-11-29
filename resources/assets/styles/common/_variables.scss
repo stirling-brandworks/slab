@@ -12,9 +12,9 @@
 @import "~bootstrap/scss/variables";
 
 /* Colors */
-$primary: #3AAFA9;
+$primary: #0A6CB4;
 $secondary: #2B7A78;
-$contrast: #0A6CB4;
+$contrast: #3AAFA9;
 $light: $gray-100;
 $dark: $gray-900;
 
@@ -23,9 +23,9 @@ $custom-colors: (
   "primary": $primary,
   "secondary": $secondary,
   "contrast": $contrast,
-  "green": $primary,
+  "green": $contrast,
   "green-dark": $secondary,
-  "blue": $contrast,
+  "blue": $primary,
   "white": #fff,
   "light": $light,
 );

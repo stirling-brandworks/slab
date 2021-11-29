@@ -13,14 +13,14 @@
 .slab-link {
   text-transform: uppercase;
   font-weight: 700;
-  color: $contrast;
+  color: $primary;
   text-decoration: none;
   transition: 0.2s all ease;
 
   &:hover,
   &:active,
   &:focus {
-    color: darken($contrast, 10%);
+    color: darken($primary, 10%);
   }
 
   &--arrow {
