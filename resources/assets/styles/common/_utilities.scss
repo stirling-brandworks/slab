@@ -48,3 +48,8 @@ $bottom-height: 7rem;
 .z-3 {
   z-index: 2;
 }
+
+/** Borders */
+.border-bottom-dashed {
+  border-bottom: 1px dashed #ddd;
+}

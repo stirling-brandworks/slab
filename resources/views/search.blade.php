@@ -2,13 +2,17 @@
 
 @section('content')
 @include('partials.page-header')
-<div class="pt-3">
+<div class="border-bottom bg-light pt-3 pb-2">
+	<div class="container">
+		{!! get_search_form(false) !!}
+	</div>
+</div>
+<div class="pt-1 pb-4">
 	<div class="container">
 		@if (!have_posts())
 		<div class="alert alert-warning">
-		  {{ __('Sorry, no results were found.', 'slab') }}
+		  {{ __('Sorry, no results were found based on your search terms.', 'slab') }}
 		</div>
-		{!! get_search_form(false) !!}
 		@endif
 
 		@while(have_posts()) @php the_post() @endphp
