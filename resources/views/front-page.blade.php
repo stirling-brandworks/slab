@@ -114,6 +114,8 @@
 		        			$excerpt = get_the_excerpt( $featuredPost->ID );
 		        			$url = get_field( 'database_url', $featuredPost->ID );
 		        			$image = get_post_thumbnail_id( $featuredPost->ID );
+		        			$layout = 'vertical';
+		        			$imageSize = 'large';
 						@endphp
 						@include('components.card')
 					@endif
@@ -136,6 +138,8 @@
 								    'title' => $latestPost->post_title,
 								    'link' => ['title'=>'Read More', 'url'=> get_post_permalink($latestPost) ],
 								    'image' => get_post_thumbnail_id($latestPost),
+								    'layout' => 'horizontal',
+								    'imageSize' => 'medium',
 								])
 							</div>
 						@endforeach

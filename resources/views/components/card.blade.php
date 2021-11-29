@@ -1,6 +1,6 @@
-<div class="card position-relative">
+<div class="card @if($layout == 'horizontal') card--horizontal @else card--vertical @endif position-relative">
   @if ($image)
-  {!! wp_get_attachment_image($image, 'medium', false, ['class' => 'card-img']) !!}
+    {!! wp_get_attachment_image($image, $imageSize, false, ['class' => 'card-img']) !!}
   @endif
   <div class="card-body">
     <h4 class="card-title">{!! $title !!}</h4>
@@ -8,7 +8,7 @@
       {!! $content !!}
     </p>
     @if ($link)
-    <a href="{{ $link['url'] }}" class="btn btn-primary stretched-link" target="{{ $link['target'] ?: '_self' }}">
+    <a href="{{ $link['url'] }}" class="slab-link slab-link--arrow" target="{{ $link['target'] ?: '_self' }}">
       {!! $link['title'] !!}
     </a>
     @endif

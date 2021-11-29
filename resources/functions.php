@@ -115,24 +115,3 @@ function my_acf_init() {
 }
 
 add_action('acf/init', 'my_acf_init');
-
-/**
- * Helper function to transform posts data into ready to use card component array.
- *
- * @param  mixed $post
- * @return array
- */
-
-function post_to_card(\WP_Post $post)
-{   
-    return [
-        'title' => $post->post_title,
-        'url' => get_permalink($post),
-        'image' => get_the_post_thumbnail_url($post, 'large'),
-        'excerpt' => get_the_excerpt($post),
-        'date' => get_the_date('', $post),
-        'content' => apply_filters('the_content', $post->post_content),
-    ];
-}
-
-add_action('slab', 'post_to_card');
