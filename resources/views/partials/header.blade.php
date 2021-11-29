@@ -1,4 +1,4 @@
-<header>
+<header class="header">
   <nav class="secondary-menu__wrapper">
     <div class="container">
       <div class="row">

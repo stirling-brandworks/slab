@@ -64,6 +64,11 @@
       padding-bottom: 0;
     }
 
+    .slab-slide {
+      height: 20rem;
+      height: 25rem;
+    }
+
     .slab-swiper__pagination {
       bottom: 0 !important;
 
@@ -108,10 +113,8 @@
 
 .slab-slide {
   position: relative;
-  height: 20rem;
 
   @include media-breakpoint-up(md) {
-    height: 25rem;
     margin: 0 0 3.5rem 0;
     border-right: 2.75rem solid transparent;
     border-left: 1px solid transparent;
