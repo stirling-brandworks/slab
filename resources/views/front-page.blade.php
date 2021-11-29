@@ -36,7 +36,7 @@
 
 	@php $books = get_field('books') @endphp
 	@if ( $books['section_display'])
-	<section class="pt-3 pb-5 bg-white bg-w-bottom bg-w-bottom--light">
+	<section class="pt-3 bg-white bg-w-bottom bg-w-bottom--light">
 		<div class="container position-relative z-1">
 			@if ( $books['title'] )
 				<div class="title-wrapper text-center @if ( $books['link'] ) w-100 d-md-flex justify-content-md-between align-items-md-center text-md-start @endif">
