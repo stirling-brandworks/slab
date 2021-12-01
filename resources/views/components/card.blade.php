@@ -1,4 +1,4 @@
-<div class="card position-relative transition @if($layout == 'horizontal') card--horizontal flex-row @else card--vertical @endif position-relative">
+<div class="card position-relative transition @if($layout == 'horizontal') card--horizontal flex-row @else card--vertical @endif">
   @if ($image)
     {!! wp_get_attachment_image($image, $imageSize, false, ['class' => 'card__img slab-edge']) !!}
   @endif

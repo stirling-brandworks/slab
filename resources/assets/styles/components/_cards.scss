@@ -37,4 +37,33 @@
       }
     }
   }
+
+  /** Used on the feed page */
+  &--lg {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+
+    .card__img {
+      width: auto;
+      height: 7rem;
+      position: relative;
+
+      @include media-breakpoint-up(md) {
+        width: 38%;
+        height: auto;
+        top: -1rem;
+      }
+    }
+
+    .card__body {
+      &--w-lg-img {
+        display: inline-block;
+        width: calc(100% - 160px);
+
+        @include media-breakpoint-up(md) {
+          width: 60%;
+        }
+      }
+    }
+  }
 }
