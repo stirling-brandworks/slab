@@ -1,0 +1,32 @@
+.meta-item {
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    margin-right: 0.3rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+  }
+
+  &--author {
+    &::before {
+      background-image: url("../images/icons/author.svg");
+    }
+  }
+
+  &--date {
+    &::before {
+      background-image: url("../images/icons/date.svg");
+    }
+  }
+
+  &--tags {
+    &::before {
+      background-image: url("../images/icons/tag.svg");
+    }
+  }
+}

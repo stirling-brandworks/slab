@@ -3,7 +3,9 @@
     {!! wp_get_attachment_image($image, $imageSize, false, ['class' => 'card__img slab-edge']) !!}
   @endif
   <div class="card__body py-3 px-3">
-    @if ($date)<h6 class="text-muted mb-1 text-uppercase fw-normal small">{!! $date !!}</h6>@endif
+    @if ($date)
+      @include('partials.meta.date')
+    @endif
     <h4 class="card__title @if($layout == 'horizontal') h5 @endif mt-1">
       @if ($link)<a href="{{ $link['url'] }}" class="stretched-link text-decoration-none text-dark" target="{{ $link['target'] ?: '_self' }}">@endif
         {!! $title !!}

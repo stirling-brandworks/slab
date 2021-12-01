@@ -6,12 +6,13 @@
   	@else
     	<h4 class="entry-title h5"><a href="{{ get_permalink() }}" class="text-dark text-decoration-none">{!! get_the_title() !!}</a> <small class="text-capitalize fw-light text-muted small">| {{ get_post_type() }}</small></h4>
   	@endif
-
+  </header>
+  <div class="entry-summary pb-2 text-muted">
+    @php the_excerpt() @endphp
+  </div>
+  <footer class="border-bottom-dashed">
     @if (get_post_type() === 'post')
       @include('partials/entry-meta')
     @endif
-  </header>
-  <div class="entry-summary pb-2 text-muted border-bottom-dashed">
-    @php the_excerpt() @endphp
-  </div>
+  </footer>
 </article>

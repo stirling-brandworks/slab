@@ -1,0 +1,1 @@
+<time class="meta-item meta-item--date text-muted small d-inline-block updated text-uppercase" datetime="{{ get_post_time('c', true) }}">{{ get_the_date('M jS, Y') }}</time>

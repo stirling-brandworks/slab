@@ -115,3 +115,22 @@ function my_acf_init() {
 }
 
 add_action('acf/init', 'my_acf_init');
+
+
+/**
+ * Display the tags
+ * https://developer.wordpress.org/reference/functions/get_the_tags/
+ */
+function display_tags() {
+    $post_tags = get_the_tags();
+    $separator = ', ';
+    $output = '';
+
+    if ( ! empty( $post_tags ) ) {
+        foreach ( $post_tags as $tag ) {
+            $output .= ( $tag->name ) . $separator;
+        }
+    }
+
+    return trim( $output, $separator );
+}
