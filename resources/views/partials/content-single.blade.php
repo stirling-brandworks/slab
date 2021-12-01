@@ -19,13 +19,12 @@
               <p>' . __('Pages:', 'slab'), 'after' => '</p>
             </nav>']) !!}
           </footer>
-          @php comments_template('/partials/comments.blade.php') @endphp
 
       @if (get_post_type() === 'post')
         </div>
       </div>
       @endif
-
     </div>
+    @php comments_template('/partials/comments.blade.php') @endphp
   </div>
 </article>
