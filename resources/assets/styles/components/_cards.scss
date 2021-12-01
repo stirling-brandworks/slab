@@ -29,8 +29,12 @@
     }
 
     .card__body {
-      display: inline-block;
-      width: calc(100% - 160px); //this is determined by img thumb size and some padding
+      width: 100%;
+
+      &--w-img {
+        display: inline-block;
+        width: calc(100% - 160px); //this is determined by img thumb size and some padding
+      }
     }
   }
 }

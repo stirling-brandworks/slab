@@ -2,7 +2,7 @@
   @if ($image)
     {!! wp_get_attachment_image($image, $imageSize, false, ['class' => 'card__img slab-edge']) !!}
   @endif
-  <div class="card__body py-3 px-3">
+  <div class="card__body py-3 px-3 @if($image) card__body--w-img @endif">
     @if ($date)
       @include('partials.meta.date')
     @endif

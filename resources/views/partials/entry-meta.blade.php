@@ -1,4 +1,4 @@
-<div class="meta row mb-4">
+<div class="meta row">
 	<div class="col-6 col-lg-3">
 		@include('partials.meta.date')
 	</div>
