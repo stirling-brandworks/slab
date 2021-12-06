@@ -159,3 +159,14 @@ function get_field_partial($partial)
     $partial = str_replace('.', '/', $partial);
     return include(config('theme.dir') . "/app/fields/{$partial}.php");
 }
+
+/**
+ * Format the string for todays hours into an echoable return
+ * @param $brand_id  - the id of the branch CPT
+ * @param $type  - type of hours regular, alternate
+ */
+function get_todays_hours($branch_id, $type) {
+    ob_start();
+    libby_todays_hours($brand_id, $type);
+    return ob_get_clean();
+};

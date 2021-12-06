@@ -1,0 +1,1 @@
+<span class="meta-item meta-item--phone text-muted"> {!! $phone !!}</span>

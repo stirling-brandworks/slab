@@ -30,6 +30,12 @@
     }
   }
 
+  &--clock {
+    &::before {
+      background-image: url("../images/icons/clock-alt.svg");
+    }
+  }
+
   /** Shelf Exclusive */
 
   &--address {

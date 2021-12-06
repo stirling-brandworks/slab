@@ -9,12 +9,12 @@
     @include('partials.page-header')
     <div class="container">
     	<div class="row mb-5">
-			<div class="col-12 col-md-9 offset-md-1">
+			  <div class="col-12 col-lg-9 offset-lg-1">
     			@include('partials.shelf.branches.map')
     			@include('partials.content-page')
-      			@include('partials.shelf.branches.thumbs')
-      		</div>
-		</div>
+      		@include('partials.shelf.branches.thumbs')
+      	</div>
+		  </div>
     </div>
   @endwhile
 @endsection
