@@ -3,7 +3,7 @@
 @if ( $holidays )
 <div class="slab-sidebar bg-white slab-edge border py-3 pe-3">
 	<h3 class="ps-3">Holidays</h3>
-	<div class="slab-sidebar__content">
+	<div class="slab-sidebar__content slab-sidebar__content--wo-footer">
 		<table class="table table-striped">
 			@foreach ($holidays as $holiday)
 			@php

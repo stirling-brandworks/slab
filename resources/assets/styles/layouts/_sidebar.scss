@@ -50,5 +50,10 @@
   &__content {
     height: 19.5rem;
     overflow-y: auto;
+
+    /** For sidebars without footer or button */
+    &--wo-footer {
+      height: 22.35rem;
+    }
   }
 }

@@ -10,9 +10,17 @@
 		<div class="col-12 col-md-7">
 		@include('partials.shelf.branches.meta.holidays')
 		</div>
-		<div class="col-12 col-md-5">
-			Events
-		</div>
+
+	    <div class="col-12 col-md-5">
+	        <div class="slab-sidebar bg-white slab-edge border p-3">
+	          <h3>Events</h3>
+	          <div class="slab-sidebar__content">Content for this widget or events</div>
+	          <div class="pt-2">
+	            <a href="#URL" class="btn btn-primary d-block">View Calendar</a>
+	          </div>
+	        </div>
+	    </div>
+	   
 	</div>
 </div>
 
