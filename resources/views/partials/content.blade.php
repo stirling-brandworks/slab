@@ -21,7 +21,7 @@
       @php the_excerpt() @endphp
     </div>
     <div class="text-end mt-2 @if (!has_post_thumbnail()) me-4 @endif">
-      <span class="slab-link slab-link--arrow">Read More</span>
+      <span class="slab-link slab-link--arrow">{{ 'database' == get_post_type() ? 'Explore' : 'Read More' }}</span>
     </div>
   </div>
 </article>
