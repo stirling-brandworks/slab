@@ -60,6 +60,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_image_size/
       */
     add_image_size( 'square-thumbnail', 160, 160, true );
+    add_image_size( 'post_hero_img', 815, 420, true );
+    
 
     /**
      * Enable HTML5 markup support

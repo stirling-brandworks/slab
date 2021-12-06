@@ -41,7 +41,7 @@
 	  	</div>
 	  	@if(get_post_thumbnail_id())
 	  		<div class="col-12 col-md-7">
-        		{!! wp_get_attachment_image(get_post_thumbnail_id(), 'full', false, ["class" => "post-header__img h-auto slab-edge position-relative z-1"]) !!}
+        		{!! wp_get_attachment_image(get_post_thumbnail_id(), 'post_hero_img', false, ["class" => "post-header__img h-auto slab-edge position-relative z-1"]) !!}
 	  		</div>
 	  	@endif
 	  </div>
