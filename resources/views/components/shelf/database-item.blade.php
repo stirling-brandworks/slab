@@ -12,7 +12,7 @@
     <hr class="mt-0">
     <p class="database-item__text text-muted my-3">{!! $excerpt !!}</p>
     <div class="text-end">
-      <div class="slab-link slab-link--arrow">Start Exploring</div>
+      <div class="slab-link slab-link--arrow">Explore</div>
     </div>
   </div>
 </div>
