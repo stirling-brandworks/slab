@@ -8,9 +8,13 @@
   @while(have_posts()) @php the_post() @endphp
     @include('partials.page-header')
     <div class="container">
-      @include('partials.shelf.branches.map')
-      @include('partials.content-page')
-      @include('partials.shelf.branches.thumbs')
+    	<div class="row mb-5">
+			<div class="col-12 col-md-9 offset-md-1">
+    			@include('partials.shelf.branches.map')
+    			@include('partials.content-page')
+      			@include('partials.shelf.branches.thumbs')
+      		</div>
+		</div>
     </div>
   @endwhile
 @endsection

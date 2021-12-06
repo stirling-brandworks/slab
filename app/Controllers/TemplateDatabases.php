@@ -6,7 +6,7 @@ use Sober\Controller\Controller;
 use WP_Query;
 use function get_field;
 
-class TemplateResources extends Controller
+class TemplateDatabases extends Controller
 {
     protected $acf = true;
 
