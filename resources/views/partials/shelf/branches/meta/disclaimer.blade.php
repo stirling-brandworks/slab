@@ -1,7 +1,7 @@
 @php
-  $disclaimer = get_field('regular_hours_disclaimer', $branch);
-  $disclaimerAlt = get_field('alternate_hours_disclaimer', $branch);
-  $disclaimerAltEnabled = get_field('enable_alternate_hours', $branch);
+  $disclaimer = get_field('regular_hours_disclaimer');
+  $disclaimerAlt = get_field('alternate_hours_disclaimer');
+  $disclaimerAltEnabled = get_field('enable_alternate_hours');
 @endphp
 
 @if ($disclaimer || $disclaimerAlt)
