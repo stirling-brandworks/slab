@@ -4,13 +4,15 @@
   @endif
   <div class="card__body py-3 px-3 @if (has_post_thumbnail()) card__body--w-lg-img @endif">
     <header>
+      @if (get_post_type() === 'post')
       <div class="mb-3">
         @include('partials.meta.date') 
         <span class="text-muted mx-2 @if (has_post_thumbnail()) d-none d-sm-inline-block @endif">|</span> 
         <span @if (has_post_thumbnail())class="d-block d-sm-inline-block" @endif>@include('partials.meta.author')</span>
       </div>
+      @endif
       <h4 class="card__title mt-1">
-        <a href="{{ get_permalink() }}" class="stretched-link text-decoration-none text-dark">
+        <a href="{{ 'database' == get_post_type() ? get_field('database_url') : get_permalink() }}" class="stretched-link text-decoration-none text-dark">
           {!! get_the_title() !!}
         </a>
       </h4>
