@@ -29,4 +29,25 @@
       background-image: url("../images/icons/tag.svg");
     }
   }
+
+  /** Shelf Exclusive */
+
+  &--address {
+    &::before {
+      background-image: url("../images/icons/map-marker.svg");
+    }
+  }
+
+  &--email {
+    &::before {
+      background-image: url("../images/icons/email.svg");
+    }
+  }
+
+  &--phone {
+    &::before {
+      background-image: url("../images/icons/phone.svg");
+    }
+  }
+  
 }

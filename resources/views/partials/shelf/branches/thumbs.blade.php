@@ -10,12 +10,11 @@
 			<div class="mt-5">
 				@include('components.card', [
 				    'title' => $branch->post_title,
-				    'date' => null,
-				    'content' => null,
 				    'link' => ['title'=>'Branch Details', 'url'=> get_post_permalink($branch) ],
 				    'image' => get_post_thumbnail_id($branch),
 				    'layout' => 'vertical',
-				    'imageSize' => 'large',
+				    'branch' => 'true',
+				    'imageSize' => 'medium',
 				])
 			</div>
 		@endforeach
