@@ -1,4 +1,4 @@
-<div class="page-header bg-primary py-3 overflow-hidden @if(get_post_thumbnail_id()) page-header--w-img @endif">
+<div class="page-header bg-primary py-4 overflow-hidden @if(get_post_thumbnail_id()) page-header--w-img @endif">
 	<div class="container">
   		<h1 class="page-header__title @if(App\display_sidebar()) page-header__title--w-sidebar @endif text-white mt-md-5 mb-0 position-relative z-2">{!! App::title() !!}</h1>
   	</div>

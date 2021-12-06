@@ -1,6 +1,6 @@
 <article @php post_class() @endphp>
 
-  @if (get_post_type() === 'post')
+  @if (get_post_type() === 'post' || get_post_type() === 'branch')
     @include('partials.post-header')
   @else
     @include('partials.page-header')
@@ -25,6 +25,8 @@
       </div>
       @endif
     </div>
-    @php comments_template('/partials/comments.blade.php') @endphp
+    @if (get_post_type() === 'post')
+      @php comments_template('/partials/comments.blade.php') @endphp
+    @endif
   </div>
 </article>
