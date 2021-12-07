@@ -113,6 +113,7 @@
 						@php
 							$title = get_the_title( $featuredPost->ID );
 							$date = get_the_date( 'M jS, Y', $featuredPost->ID );
+							$author = get_the_author($featuredPost->ID );
 		        			$excerpt = get_the_excerpt( $featuredPost->ID );
 		        			$content = substr($excerpt, 0, 260);
 		        			$link = ['title'=>'Read More', 'url'=> get_post_permalink($featuredPost->ID)];
@@ -139,6 +140,7 @@
 								@include('components.card', [
 								    'title' => $latestPost->post_title,
 								    'date' => null,
+								    'author' => null,
 								    'content' => null,
 								    'link' => ['title'=>'Read More', 'url'=> get_post_permalink($latestPost) ],
 								    'image' => get_post_thumbnail_id($latestPost),

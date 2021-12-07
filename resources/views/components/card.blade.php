@@ -6,10 +6,6 @@
 
     @include('partials.meta.category')
 
-    @if ($date)
-      @include('partials.meta.date')
-    @endif
-
     <h4 class="card__title @if($layout == 'horizontal') h5 @endif mt-1">
       @if ($link)<a href="{{ $link['url'] }}" class="stretched-link text-decoration-none text-dark" target="{{ $link['target'] ?: '_self' }}">@endif
         {!! $title !!}
@@ -25,6 +21,14 @@
         {!! $content !!}
       </p>
     @endif
+
+    @if ($date)
+      @include('partials.meta.date')
+    @endif
+    @if ($author)
+      <span class="ms-3">@include('partials.meta.author')</span>
+    @endif
+
 
     @if ($link)
     <div class="text-end mt-2">
