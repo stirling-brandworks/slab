@@ -4,6 +4,8 @@
   @endif
   <div class="card__body py-3 px-3 @if($image) card__body--w-img @endif">
 
+    @include('partials.meta.category')
+
     @if ($date)
       @include('partials.meta.date')
     @endif
