@@ -6,6 +6,7 @@
 @if ( $branches )
 <div class="cards-wrapper row mt-5">
 	@foreach ($branches as $branch)
+		@php $branch_id = $branch->ID @endphp
 		<div class="col-12 col-md-6">
 			@include('components.card', [
 				'branch' => 'true',
@@ -17,10 +18,11 @@
 			    'address' => get_field('address', $branch),
 			    'phone' => get_field('branch_phone_number', $branch),
 			    'email' => get_field('branch_email', $branch),
-			    'todayhours' => libby_todays_hours($branch, ''),
+			    //'todayhours' => App\get_todays_hours($branch->ID, ''),
 			    'status' => libby_get_open_status($branch),
 			])
 		</div>
+
 	@endforeach
 </div>
 @endif
