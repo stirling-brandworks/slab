@@ -106,7 +106,7 @@
 				<h3 class="text-center mb-5">{!! $news['title'] !!}</h3>
 			@endif
 			<div class="row">
-				<div class="col-md-7">
+				<div class="col-lg-7">
 					@php $featuredPost = get_field('news')['featured_post'] @endphp
 					@if( $featuredPost )
 					<div class="mt-5">
@@ -124,7 +124,7 @@
 					@endif
 					</div>
 				</div>
-				<div class="col-md-5">
+				<div class="col-lg-5">
 					@php
 						$excludeFeaturedPost = get_field('news')['featured_post']->ID;
 						$categoryIds = get_field('news')['news_category'];

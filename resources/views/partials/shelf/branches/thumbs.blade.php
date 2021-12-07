@@ -9,7 +9,7 @@
 		@php $branch_id = $branch->ID @endphp
 		<div class="col-12 col-md-6">
 			@include('components.card', [
-				'branch' => 'true',
+				'type' => 'branch',
 				'layout' => 'vertical',
 			    'imageSize' => 'large',
 			    'title' => $branch->post_title,
