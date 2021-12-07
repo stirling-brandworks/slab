@@ -4,20 +4,25 @@
 
     {{--Browse Alphabetically--}}
 
-    <div class="p3 border my-4">
-      @foreach($letters as $letter)
-        @if(isset($items_az_transformed[$letter]))
-            <a href="{{ '#' . $letter }}" class="text-dark me-2 exists  fw-bold text-decoration-none ">
-              {{ $letter }}
-            </a>
-        @else
-          <div class="text-lighter disabled me-2"
-               aria-disabled="true">
-            {{ $letter }}
-          </div>
-        @endif
-      @endforeach
-    </div>
+
+      
+        <div class="d-md-flex justify-content-md-between my-4">
+          <span class="h5 fw-light align-self-center me-3 d-block d-md-flex text-center text-md-start">Jump To:</span>
+          @foreach($letters as $letter)
+            @if(isset($items_az_transformed[$letter]))
+                <a href="{{ '#' . $letter }}" class="text-secondary fw-bold d-inline-block h4 mx-2 mx-md-0">
+                  {{ $letter }}
+                </a>
+            @else
+              <span class="text-muted d-inline-block h4 fw-light mx-2 mx-md-0"
+                   aria-disabled="true">
+                {{ $letter }}
+              </span>
+            @endif
+          @endforeach
+        </div>
+
+    
 
     @foreach ($items_az_transformed as $letter => $databases)
       <h2 class="position-relative"><a id="{{ $letter }}" class="text-green fw-bold text-decoration-none">{{ $letter }}</a></h2>

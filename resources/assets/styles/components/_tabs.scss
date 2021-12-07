@@ -4,3 +4,24 @@
     border-radius: $btn-border-radius;
   }
 }
+
+/** Shelf Tabs */
+.nav-tabs--shelf {
+  .nav-link {
+    color: #fff;
+    text-transform: uppercase;
+    border-color: #fff;
+    text-align: center;
+    min-width: 7rem;
+
+    @include media-breakpoint-up(md) {
+      min-width: 12rem;
+    }
+
+    &.active {
+     font-weight: bold;
+     color: $primary;
+     background-color: #fff;
+    }
+  }
+}

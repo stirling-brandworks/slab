@@ -27,9 +27,11 @@
     object-fit: cover;
   }
 
-  &__title {
-    &--w-sidebar {
-      padding-left: calc(33.33333% + 0.5rem);
+  @include media-breakpoint-up(md) {
+    &__title {
+      &--w-sidebar {
+        padding-left: calc(33.33333% + 0.5rem);
+      }
     }
   }
 }
