@@ -1,1 +1,1 @@
-<span class="meta-item meta-item--phone text-muted"> {!! $phone !!}</span>
+<a href="tel:{!! $phone !!}" class="meta-item meta-item--phone text-muted text-decoration-none position-relative z-2"> {!! $phone !!}</a>
