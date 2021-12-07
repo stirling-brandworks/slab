@@ -25,11 +25,13 @@
     
 
     @foreach ($items_az_transformed as $letter => $databases)
-      <h2 class="position-relative"><a id="{{ $letter }}" class="text-green fw-bold text-decoration-none">{{ $letter }}</a></h2>
+      <h2 class="position-relative"><a id="{{ $letter }}" class="text-secondary fw-bold text-decoration-none">{{ $letter }}</a></h2>
 
-        @foreach ($databases as $database)
-            @include('components.shelf.database-item', $database)
-        @endforeach
+      @foreach ($databases as $database)
+
+          @include('components.shelf.database-item', $database)
+
+      @endforeach
 
     @endforeach
   </div>
