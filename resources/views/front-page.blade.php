@@ -78,9 +78,10 @@
 				    	@foreach ($featuredResources as $featuredResource)
 	        			@php
 	        				$title = get_the_title( $featuredResource->ID );
-	        				$excerpt = get_the_excerpt( $featuredResource->ID );
-	        				$url = get_field( 'database_url', $featuredResource->ID );
-	        				$image = get_post_thumbnail_id( $featuredResource->ID );
+	        				$content = get_the_excerpt( $featuredResource->ID );
+	        				$link['url'] = get_field( 'database_url', $featuredResource->ID );
+	        				$imageId = get_post_thumbnail_id( $featuredResource->ID );
+	        				$layout = 'vertical';
 	        			@endphp
 				    		<div class="swiper-slide slab-slide">
 				    			@include('components.shelf.database-item')

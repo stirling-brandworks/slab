@@ -1,16 +1,22 @@
-<div class="database-item bg-white transition slab-edge card position-relative">
-  <div class="database-item__img-wrap d-flex justify-content-center align-items-center py-2 px-3">
-    @if ($image)
-      <a href="{{ $url }}" class="stretched-link text-decoration-none text-dark">
-        {!! wp_get_attachment_image($image, 'medium', false, ['class' => 'database-item__img']) !!}
+<div class="database-item database-item--{!! $layout !!} bg-white transition slab-edge position-relative">
+  @if ($imageId)
+    <div class="database-item__img-wrap py-2 px-3">
+      <a href="{{ $link['url']  }}" class="stretched-link text-decoration-none text-dark">
+        {!! wp_get_attachment_image($imageId, 'medium', false, ['class' => 'database-item__img']) !!}
       </a>
-    @else
-      <h4 class="m-0"><a href="{{ $url }}" class="stretched-link text-decoration-none text-dark">{!! $title !!}</a></h4>
+    </div>
+  @elseif ($layout == 'vertical')
+    <div class="database-item__img-wrap py-2 px-3">
+      @include('partials.shelf.databases.database-meta')
+    </div>
+  @endif
+  <div class="database-item__content @if ($imageId) database-item__content--w-img @endif">
+    @if($layout == 'horizontal')
+      @include('partials.shelf.databases.database-meta')
     @endif
-  </div>
-  <div class="database-item__content pb-3 px-3">
-    <hr class="mt-0">
-    <p class="database-item__text text-muted my-3">{!! $excerpt !!}</p>
+    @if ($content)
+      <p class="database-item__text text-muted mt-3 mb-5">{!! $content !!}</p>
+    @endif
     <div class="text-end">
       <div class="slab-link slab-link--arrow">Explore</div>
     </div>

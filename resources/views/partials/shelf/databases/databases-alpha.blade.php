@@ -4,7 +4,13 @@
   <h2 class="position-relative">
     <a id="{{ $letter }}" class="text-secondary fw-bold text-decoration-none">{{ $letter }}</a>
   </h2>
-  @foreach ($databases as $database)
-      @include('components.shelf.database-item', $database)
-  @endforeach
+  <div class="databases-wrapper">
+  	@foreach ($databases as $database)
+	  @include('components.shelf.database-item', [
+		    'image' => get_post_thumbnail_id(),
+		    'layout' => 'horizontal',
+		], $database)
+  	@endforeach
+  </div>
 @endforeach
+
