@@ -6,7 +6,7 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 
 $fields = new FieldsBuilder('front_page');
 
-$fields->setLocation('page_type', '==', 'front_page');
+$fields->setLocation('page_template', '==', 'views/front-page.blade.php');
 
 $fields
     ->addTab('hero')

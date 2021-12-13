@@ -1,0 +1,20 @@
+#mega-menu-wrap-primary_navigation {
+  #mega-menu-primary_navigation {
+    &  > li.mega-menu-item {
+      & > a.mega-menu-link {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        @include media-breakpoint-up(lg) {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+          padding-left: 3rem;
+          padding-right: 3rem;
+        }
+      }
+    }
+  }
+}

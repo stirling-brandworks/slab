@@ -1,3 +1,7 @@
+{{--
+  Template Name: Front Page
+--}}
+
 @extends('layouts.full-width')
 
 @section('content')
@@ -113,7 +117,7 @@
 						@php
 							$title = get_the_title( $featuredPost->ID );
 							$date = get_the_date( 'M jS, Y', $featuredPost->ID );
-							$author = get_the_author($featuredPost->ID );
+							$author = get_the_author_meta($featuredPost->ID );
 		        			$excerpt = get_the_excerpt( $featuredPost->ID );
 		        			$content = substr($excerpt, 0, 260);
 		        			$link = ['title'=>'Read More', 'url'=> get_post_permalink($featuredPost->ID)];
