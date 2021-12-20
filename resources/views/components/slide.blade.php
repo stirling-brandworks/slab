@@ -7,9 +7,7 @@
     <p class="text-muted">{{ $description }}</p>
     @if ($link)
     <div class="text-center text-md-end">
-      <a href="{{ $link['url'] }}" class="slab-slide__link slab-link slab-link--arrow" target="{{ $link['target'] ?: '_self' }}">
-        {{ $link['title'] }}
-      </a>
+      @include('components.slab-link')
     </div>
     @endif
   </div>
