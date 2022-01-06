@@ -4,7 +4,7 @@ namespace App;
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-$fields = new FieldsBuilder('Featured_Database_List');
+$fields = new FieldsBuilder('featured_database_list');
 
 //This is a field that allows the editor to curate a featured list of databases items
 

@@ -41,11 +41,7 @@ class TemplateDatabases extends Controller
     // Data Transformation for Card Component
     public function itemsAzTransformed(): array
     {
-        $grouped = [];
-        foreach ($this->databaseItems as $item) {
-            $grouped[strtoupper(substr($item->post_title, 0, 1))][] = static::transformData($item);
-        }
-        return $grouped;
+        return array_map([self::class, 'transformData'], $this->itemsAz());
     }
 
     public static function transformData($item)
@@ -93,7 +89,8 @@ class TemplateDatabases extends Controller
         $args = [
             'post_type' => 'database',
             'subject_area' => $subjectSlug,
-            'posts_per_page' => -1,
+            'posts_per_page' => 250,
+            'no_found_rows' => true,
             'orderby' => 'title',
             'order' => 'ASC'
         ];
