@@ -21,12 +21,7 @@
 				<div class="title-wrapper text-center @if ( $quicklinksSec['link'] ) w-100 d-md-flex justify-content-md-between align-items-md-center text-md-start @endif">
 					<h3>{!! $quicklinksSec['title'] !!}</h3>
 					@if ( $quicklinksSec['link'] )
-		
-						@php
-		        			$link = $quicklinksSec['link'];
-						@endphp
-						@include('components.slab-link')
-
+						<a href="{!! $quicklinksSec['link']['url'] !!}" class="slab-link slab-link--arrow">{!! $quicklinksSec['link']['title'] !!}</a>
 					@endif
 				</div>
 			@endif
@@ -51,12 +46,8 @@
 				<div class="title-wrapper text-center @if ( $books['link'] ) w-100 d-md-flex justify-content-md-between align-items-md-center text-md-start @endif">
 					<h3 class="text-center">{!! $books['title'] !!}</h3>
 					@if ( $books['link'] )
-						@php
-		        			$link = $books['link'];
-						@endphp
-						@include('components.slab-link')
+						<a href="{!! $books['link']['url'] !!}" class="slab-link slab-link--arrow">{!! $books['link']['title'] !!}</a>
 					@endif
-
 				</div>
 			@endif
 
@@ -78,12 +69,8 @@
 			<div class="title-wrapper text-center @if ( $resources['link'] ) w-100 d-md-flex justify-content-md-between align-items-md-center text-md-start @endif">
 				<h3 class="text-center">{!! $resources['title'] !!}</h3>
 				@if ( $resources['link'] )
-					@php
-	        			$link = $resources['link'];
-					@endphp
-					@include('components.slab-link')
+					<a href="{!! $resources['link']['url'] !!}" class="slab-link slab-link--arrow">{!! $resources['link']['title'] !!}</a>
 				@endif
-
 			</div>
 			@endif
 

@@ -11,7 +11,7 @@
 			@endphp
 	    	<tr>
 	    		<td  class="ps-3"><div class="small text-muted">{!! $holiday['name'] !!}</div>{!! $dateFormatted->format( 'F dS, Y' ) !!}</td>
-	    		<td class="text-end fw-bold">{{ '1' == $holiday['closed'] ? 'Closed' : $holiday['opening_hour'] . " - " . $holiday['closing_hour'] }}</td>
+	    		<td class="text-end fw-bold">{{ '1' === $holiday['closed'] ? 'Closed' : $holiday['opening_hour'] . " - " . $holiday['closing_hour'] }}</td>
 	    	</tr>
 	  		@endforeach
 	  	</table>

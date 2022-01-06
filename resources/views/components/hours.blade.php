@@ -1,5 +1,5 @@
 @if ( $branch_id = get_field('main_branch_object','option'))
-<div id="Live-Hours">
+<div id="live-hours">
     @if ( get_field('live_hours_display','option') == "false")
     	<div class="d-inline-block d-md-block">{!! get_field('live_hours_override','option') !!}</div>
 		@if ( get_field('live_hours_override_url','option'))
