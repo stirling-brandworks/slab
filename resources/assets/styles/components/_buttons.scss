@@ -1,11 +1,22 @@
 //** Buttons */
-.btn-primary {
-  color: #fff;
+
+//** Return to Top Button */
+.rtt-button {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
 
   &:hover,
   &:active,
   &:focus {
-    color: #fff;
+    bottom: 1.5rem;
+  }
+
+  &__icon {
+    height: 3rem;
+    line-height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
   }
 }
 
@@ -48,25 +59,5 @@
         left: 2px;
       }
     }
-  }
-}
-
-//** Return to Top Button */
-.rtt-button {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-
-  &:hover,
-  &:active,
-  &:focus {
-    bottom: 1.5rem;
-  }
-
-  &__icon {
-    height: 3rem;
-    line-height: 3rem;
-    width: 3rem;
-    border-radius: 100%;
   }
 }
