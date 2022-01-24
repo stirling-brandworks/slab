@@ -1,8 +1,8 @@
-<div class="database-item database-item--{!! $layout !!} bg-white transition position-relative">
+<div class="database-item database-item--{!! $layout !!} bg-white transition position-relative transition-all ease-ease duration-1 border border-color-primary-hover">
   @if ($imageId)
     <div class="database-item__img-wrap py-2 px-3">
       <a href="{{ $link['url']  }}" class="stretched-link text-decoration-none text-dark">
-        {!! wp_get_attachment_image($imageId, 'medium', false, ['class' => 'database-item__img']) !!}
+        {!! wp_get_attachment_image($imageId, 'medium', false, ['class' => 'database-item__img mw-100 h-auto']) !!}
       </a>
     </div>
   @elseif ($layout == 'vertical')

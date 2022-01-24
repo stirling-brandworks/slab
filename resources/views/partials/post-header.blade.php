@@ -18,12 +18,12 @@
 			  				$email  = get_field('branch_email', $branch);
 		  				@endphp
 		  				<div class="my-4">
-		  					@include('partials.shelf.branches.meta.address')
+		  					@include('shelf.partials.branches.meta.address')
 		  				</div>
 		  				<div class="mb-3">
-		  					@include('partials.shelf.branches.meta.phone')
+		  					@include('shelf.partials.branches.meta.phone')
 		  					<span class="ms-2 ms-lg-3">
-		  						@include('partials.shelf.branches.meta.email')
+		  						@include('shelf.partials.branches.meta.email')
 		  					</span>
 		  				</div>
 		  			@endif

@@ -13,7 +13,7 @@
     </h4>
     
     @if($type == 'branch')
-      @include('partials.shelf.branches.branch-meta')
+      @include('shelf.partials.branches.branch-meta')
     @endif
 
     @if ($content)

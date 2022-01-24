@@ -1,19 +1,14 @@
 /** Search form */
 .searchform {
   &__submit {
-    position: absolute;
     top: 0;
     right: 0;
-    height: 100%;
   }
 
   label {
-    @extend .form-label;
-
     font-weight: normal;
     font-size: 0.75rem;
     vertical-align: top;
-    padding-top: 0.1rem;  
   }
 
   .search-field {

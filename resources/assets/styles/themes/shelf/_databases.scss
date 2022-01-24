@@ -1,20 +1,7 @@
 /** Database Item */
 .database-item {
-  border: 1px solid #ddd;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border-color: $primary;
-  }
-
   &__img-wrap {
     min-height: 8rem;
-  }
-
-  &__img {
-    max-width: 100%;
-    height: auto;
   }
 
   &--horizontal {
@@ -78,22 +65,8 @@
   margin-top: -2.5rem;
 }
 
-.database-tabs-order {
-  order: -1;
-
-  @include media-breakpoint-up(md) {
-    order: 2;
-  }
-}
-
 @include media-breakpoint-up(md) {
   .legend--raised {
     margin-top: -9rem !important;
-  }
-}
-
-.databases-wrapper {
-  .database-item {
-    margin-bottom: 1.5rem;
   }
 }

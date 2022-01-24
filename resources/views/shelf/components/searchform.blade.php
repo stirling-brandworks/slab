@@ -8,7 +8,7 @@ $searchType = isset($_GET['search_select']) || is_search() ?
   <div class="position-relative">
     <input type="text" class="searchform__search form-control py-1 pe-5" type="text" name="s" id="s" placeholder="Search..."
       value="{!! get_search_query() !!}" />
-    <button type="submit" class="searchform__submit bg-transparent border-0 p-0 pe-3" title="Search"><i class="fa fa-search text-muted"></i></button>
+    <button type="submit" class="searchform__submit bg-transparent border-0 p-0 pe-3 h-100 position-absolute" title="Search"><i class="fa fa-search text-muted"></i></button>
   </div>
   <ul class="list-unstyled list-inline mt-1 text-end mb-0">
     <li class="list-inline-item">

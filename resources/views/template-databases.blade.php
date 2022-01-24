@@ -10,10 +10,10 @@
     <section id="top" class="bg-light pb-5">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-md-3">
+          <div class="col-12 col-md-3 order-2 order-md-0">
             @include('shelf.partials.databases.legend')
           </div>
-          <div class="col-12 col-md-8 offset-md-1 database-tabs-order">
+          <div class="col-12 col-md-8 offset-md-1 database-tabs-order order-0 order-md-3">
             @include('shelf.partials.databases.tabs')
           </div>
         </div>

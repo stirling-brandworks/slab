@@ -8,6 +8,6 @@
 		</div>
 	</div>
 	<div class="container mt-2">
-		@include('partials.shelf.branches.meta.disclaimer')
+		@include('shelf.partials.branches.meta.disclaimer')
 	</div>
 </section>
