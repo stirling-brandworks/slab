@@ -1,10 +1,4 @@
 .card {
-  &:hover,
-  &:active,
-  &:focus {
-    border-color: $primary;
-  }
-
   &--vertical {
     .card__img {
       height: auto;

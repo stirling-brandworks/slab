@@ -77,7 +77,7 @@
 			@php $featuredResources = get_field('resources')['featured_databases'] @endphp
 			@if( $featuredResources )
 			<div class="mt-4 px-lg-5">
-				<div class="swiper-container slab-multi-swiper mx-5 mx-md-0 pe-md-5">
+				<div class="swiper-container slab-multi-swiper mx-5 mx-md-0">
   					<div class="swiper-wrapper mx-md-5">
 				    	@foreach ($featuredResources as $featuredResource)
 	        			@php
@@ -92,8 +92,8 @@
 				    		</div>
 				    	@endforeach
 			    	</div>
-			    	<div class="swiper-button-prev slab-swiper__button-prev slab-swiper__button-prev--dark"></div>
-  					<div class="swiper-button-next slab-swiper__button-next slab-swiper__button-next--dark"></div>
+			    	<div class="swiper-button-prev slab-swiper__button-prev slab-swiper__button-prev--dark transition-all ease-ease duration-1"></div>
+  					<div class="swiper-button-next slab-swiper__button-next slab-swiper__button-next--dark transition-all ease-ease duration-1"></div>
 			    </div>
 			</div>
 			@endif
@@ -107,7 +107,7 @@
 	<section class="py-5 bg-white">
 		<div class="container">
 			@if ( $news['title'] )
-				<h3 class="text-center mb-5">{!! $news['title'] !!}</h3>
+				<h3 class="text-center mb-1">{!! $news['title'] !!}</h3>
 			@endif
 			<div class="row">
 				<div class="col-lg-7">
@@ -157,7 +157,7 @@
 					@endif
 
 					@if ( $news['link'] )
-					<div class="ps-md-3 mt-1">
+					<div class="mt-3">
 						<a href="{!! $news['link']['url'] !!}" class="btn btn-primary d-block">{!! $news['link']['title'] !!}</a>
 					</div>
 					@endif

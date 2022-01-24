@@ -40,6 +40,13 @@ $utilities: map-merge(
       )
     ),
 
+    
+    "object-fit": (
+      property: object-fit,
+      class: object-fit,
+      values: contain cover fill scale-down unset,
+    ),
+
     "transition": (
       property: transition-property,
       class: transition,

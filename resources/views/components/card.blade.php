@@ -1,4 +1,4 @@
-<div class="card card--{!! $size !!} position-relative transition @if($layout == 'horizontal') card--horizontal flex-row @else card--vertical @endif">
+<div class="card border transition-all ease-ease duration-1 border border-color-primary-hover card--{!! $size !!} position-relative transition-all ease-ease @if($layout == 'horizontal') card--horizontal flex-row @else card--vertical @endif">
   @if ($image)
     {!! wp_get_attachment_image($image, $imageSize, false, ['class' => 'card__img mw-100']) !!}
   @endif

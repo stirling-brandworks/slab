@@ -1,17 +1,8 @@
-.nav-pills {
-  .nav-link {
-    color: $dark;
-    border-radius: $btn-border-radius;
-  }
-}
+/** Shelf Tabs on Databases Page */
 
-/** Shelf Tabs */
 .nav-tabs--shelf {
   .nav-link {
     color: #fff;
-    text-transform: uppercase;
-    border-color: #fff;
-    text-align: center;
     min-width: 7rem;
 
     @include media-breakpoint-up(md) {
