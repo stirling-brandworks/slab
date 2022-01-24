@@ -15,12 +15,6 @@
   }
 
   &--single {
-    padding-bottom: 2rem;
-
-    @include media-breakpoint-up(md) {
-      padding-bottom: 0;
-    }
-
     .slab-slide {
       height: 25rem;
     }

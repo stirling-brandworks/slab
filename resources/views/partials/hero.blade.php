@@ -9,13 +9,13 @@
       @endif
       @if ( $hero['title'] || $hero['link'] || $hero['hero_sidebar_content'])
       <div class="col-md-5 col-lg-4">
-        <div class="slab-sidebar bg-white border p-3">
+        <div class="slab-sidebar bg-white border p-3 position-relative z-4">
           @if ( $hero['title'])
           <h3>{!! $hero['title'] !!}</h3>
           @endif
 
           @if ( $hero['hero_sidebar_content'])
-          <div class="slab-sidebar__content">{!! $hero['hero_sidebar_content'] !!}</div>
+          <div class="slab-sidebar__content overflow-y-auto" style="height:19.5rem;">{!! $hero['hero_sidebar_content'] !!}</div>
           @endif
 
           @if ($hero['link'])

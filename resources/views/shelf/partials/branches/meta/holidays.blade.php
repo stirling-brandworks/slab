@@ -1,9 +1,9 @@
 @php $holidays = get_field('holidays') @endphp
 
 @if ( $holidays )
-<div class="slab-sidebar bg-white border py-3 pe-0">
+<div class="slab-sidebar bg-white border py-3 pe-0 position-relative z-4">
 	<h3 class="ps-3">Holidays</h3>
-	<div class="slab-sidebar__content slab-sidebar__content--wo-footer">
+	<div class="slab-sidebar__content overflow-y-auto" style="height: 22.35rem;">
 		<table class="table table-striped">
 			@foreach ($holidays as $holiday)
 			@php
