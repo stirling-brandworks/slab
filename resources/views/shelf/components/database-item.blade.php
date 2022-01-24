@@ -7,12 +7,12 @@
     </div>
   @elseif ($layout == 'vertical')
     <div class="database-item__img-wrap py-2 px-3">
-      @include('partials.shelf.databases.database-meta')
+      @include('shelf.partials.databases.database-meta')
     </div>
   @endif
   <div class="database-item__content @if ($imageId) database-item__content--w-img @endif">
     @if($layout == 'horizontal')
-      @include('partials.shelf.databases.database-meta')
+      @include('shelf.partials.databases.database-meta')
     @endif
     @if ($content)
       <p class="database-item__text text-muted mt-3 mb-5">{!! $content !!}</p>

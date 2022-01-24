@@ -49,7 +49,7 @@
 
           <h2 class="mb-3">Legend</h2>
           <div class="mb-5" style="width: 32rem;">
-            @include('partials.shelf.databases.legend')
+            @include('shelf.partials.databases.legend')
           </div>
 
           <hr />

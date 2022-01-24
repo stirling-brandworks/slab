@@ -1,4 +1,4 @@
-@include('partials.shelf.databases.anchor-alpha-list')
+@include('shelf.partials.databases.anchor-alpha-list')
 
 @foreach ($items_az_transformed as $letter => $databases)
   <h2 class="position-relative">
@@ -6,7 +6,7 @@
   </h2>
   <div class="databases-wrapper">
   	@foreach ($databases as $database)
-	  @include('components.shelf.database-item', [
+	  @include('shelf.components.database-item', [
 		    'image' => get_post_thumbnail_id(),
 		    'layout' => 'horizontal',
 		], $database)

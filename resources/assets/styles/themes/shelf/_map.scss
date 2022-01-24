@@ -1,0 +1,23 @@
+.map-wrapper {
+  margin-top: 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 0;
+
+    &--raised {
+      margin-top: -3rem;
+    }
+  }
+}
+
+.acf-map {
+  height: 300px;
+
+  @include media-breakpoint-up(md) {
+    height: 400px;
+  }
+
+  img {
+    max-width: inherit !important;
+  }
+}

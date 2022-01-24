@@ -88,7 +88,7 @@
 	        				$layout = 'vertical';
 	        			@endphp
 				    		<div class="swiper-slide slab-slide">
-				    			@include('components.shelf.database-item')
+				    			@include('shelf.components.database-item')
 				    		</div>
 				    	@endforeach
 			    	</div>

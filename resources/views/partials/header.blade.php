@@ -9,7 +9,7 @@
         </div>
         <div class="col-12 col-md-9 col-lg-6 col-xl-5 text-center text-lg-end">
           <div class="secondary-menu__icon-block secondary-menu__icon-block--hours d-md-inline-block text-center text-md-start py-1 pt-md-3 align-middle">
-            @include('components.hours')
+            @include('shelf.components.hours')
           </div>
           <ul class="secondary-menu__list list-unstyled m-0 p-0 d-none d-md-inline-block align-middle">
             @if (has_nav_menu('secondary_navigation'))
@@ -20,7 +20,7 @@
         <div class="col-12 col-lg-3 col-xl-4 text-md-end d-none d-md-block">
           <hr class="d-none d-md-block d-lg-none"/>
           <div class="pt-lg-3 ps-lg-2">
-            @include('components.searchform')
+            @include('shelf.components.searchform')
           </div>
         </div>
       </div>

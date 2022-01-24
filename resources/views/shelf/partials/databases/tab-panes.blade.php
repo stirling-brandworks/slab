@@ -3,12 +3,12 @@
     id="browse-alphabetically"
     role="tabpanel" 
     aria-labelledby="browse-alphabetically-tab">
-        @include('partials.shelf.databases.databases-alpha')
+        @include('shelf.partials.databases.databases-alpha')
   </div>
   <div class="tab-pane fade" 
   id="browse-by-subject" 
   role="tabpanel" 
   aria-labelledby="browse-by-subject-tab">
-    @include('partials.shelf.databases.databases-subject')
+    @include('shelf.partials.databases.databases-subject')
   </div>
 </div>

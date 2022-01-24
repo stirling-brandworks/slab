@@ -4,11 +4,11 @@
 @while(have_posts()) @php the_post() @endphp
 @include('partials.post-header')
 
-@include('partials.shelf.branches.meta.hours')
+@include('shelf.partials.branches.meta.hours')
 <div class="container">
 	<div class="row my-5">
 		<div class="col-12 col-md-7">
-		@include('partials.shelf.branches.meta.holidays')
+		@include('shelf.partials.branches.meta.holidays')
 		</div>
 
 	    <div class="col-12 col-md-5">

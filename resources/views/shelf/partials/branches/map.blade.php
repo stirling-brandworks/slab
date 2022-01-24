@@ -1,4 +1,4 @@
-@include('partials.shelf.branches.map-acf-helper-code')
+@include('shelf.partials.branches.map-acf-helper-code')
 <div class="map-wrapper map-wrapper--raised position-relative z-2 slab-edge border overflow-hidden mb-5 w-100">
 	
     @php
