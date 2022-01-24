@@ -6,7 +6,7 @@
       	@else
       		<div class="col-12 col-md-9 offset-md-1">
       		@endif
-				<div class="post-header__main position-relative z-2 mt-5 border shadow-sm bg-white slab-edge p-4 mb-3">
+				<div class="post-header__main position-relative z-2 mt-5 border shadow-sm bg-white p-4 mb-3">
 					@if(get_post_type() === 'post')
 						@include('partials.meta.category')
 					@endif
@@ -40,7 +40,7 @@
 	  		</div>
 	  	@if(get_post_thumbnail_id())
 	  		<div class="col-12 col-md-7">
-        		{!! wp_get_attachment_image(get_post_thumbnail_id(), 'post_hero_img', false, ["class" => "post-header__img h-auto slab-edge position-relative z-1"]) !!}
+        		{!! wp_get_attachment_image(get_post_thumbnail_id(), 'post_hero_img', false, ["class" => "post-header__img h-auto position-relative z-1"]) !!}
 	  		</div>
 	  	@endif
 	  </div>

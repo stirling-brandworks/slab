@@ -1,4 +1,4 @@
-<section id="hero" class="hero bg-secondary bg-w-bottom bg-w-bottom--white pt-4">
+<section class="hero bg-secondary bg-w-bottom bg-w-bottom--white pt-4">
   <div class="container">
     <div class="row">
       @php $slider = get_field('slider') @endphp
@@ -9,7 +9,7 @@
       @endif
       @if ( $hero['title'] || $hero['link'] || $hero['hero_sidebar_content'])
       <div class="col-md-5 col-lg-4">
-        <div class="slab-sidebar bg-white slab-edge border p-3">
+        <div class="slab-sidebar bg-white border p-3">
           @if ( $hero['title'])
           <h3>{!! $hero['title'] !!}</h3>
           @endif

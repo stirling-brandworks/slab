@@ -12,7 +12,7 @@
 		</div>
 
 	    <div class="col-12 col-md-5">
-	        <div class="slab-sidebar bg-white slab-edge border p-3">
+	        <div class="slab-sidebar bg-white border p-3">
 	          <h3>Events</h3>
 	          <div class="slab-sidebar__content">Content for this widget or events</div>
 	          <div class="pt-2">

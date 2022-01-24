@@ -1,4 +1,4 @@
-<div class="database-item database-item--{!! $layout !!} bg-white transition slab-edge position-relative">
+<div class="database-item database-item--{!! $layout !!} bg-white transition position-relative">
   @if ($imageId)
     <div class="database-item__img-wrap py-2 px-3">
       <a href="{{ $link['url']  }}" class="stretched-link text-decoration-none text-dark">

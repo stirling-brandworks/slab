@@ -6,7 +6,7 @@
   <div class="entry-summary pb-2 text-muted">
     @php the_excerpt() @endphp
   </div>
-  <footer class="border-bottom-dashed">
+  <footer class="border-bottom-dashed-1">
     @if (get_post_type() === 'post')
       @include('partials/entry-meta')
     @endif

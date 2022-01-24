@@ -1,5 +1,5 @@
 @include('shelf.partials.branches.map-acf-helper-code')
-<div class="map-wrapper map-wrapper--raised position-relative z-2 slab-edge border overflow-hidden mb-5 w-100">
+<div class="map-wrapper map-wrapper--raised position-relative z-2 border overflow-hidden mb-5 w-100">
 	
     @php
 		$args = array('numberposts' => 20, 'post_type' => 'branch');

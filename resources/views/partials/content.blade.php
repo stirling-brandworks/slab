@@ -1,6 +1,6 @@
 <article class="card card--lg card--horizontal flex-row position-relative transition" @php post_class() @endphp>
   @if (has_post_thumbnail())
-    {!! the_post_thumbnail('large', array( 'class' => 'card__img slab-edge' )) !!}
+    {!! the_post_thumbnail('large', array( 'class' => 'card__img' )) !!}
   @endif
   <div class="card__body py-3 px-3 @if (has_post_thumbnail()) card__body--w-lg-img @endif">
     <header>

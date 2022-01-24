@@ -1,4 +1,4 @@
-<section id="branch-hours">
+<section>
 	<div class="container">
 		<h4>Branch Hours</h4>
 	</div>

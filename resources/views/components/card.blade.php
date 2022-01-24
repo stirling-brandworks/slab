@@ -1,6 +1,6 @@
 <div class="card card--{!! $size !!} position-relative transition @if($layout == 'horizontal') card--horizontal flex-row @else card--vertical @endif">
   @if ($image)
-    {!! wp_get_attachment_image($image, $imageSize, false, ['class' => 'card__img slab-edge']) !!}
+    {!! wp_get_attachment_image($image, $imageSize, false, ['class' => 'card__img mw-100']) !!}
   @endif
   <div class="card__body py-3 px-3 @if($image) card__body--w-img @endif">
 

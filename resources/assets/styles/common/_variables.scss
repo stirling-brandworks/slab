@@ -12,9 +12,9 @@
 @import "~bootstrap/scss/variables";
 
 /* Colors */
-$primary: #0A6CB4;
-$secondary: #2B7A78;
-$contrast: #3AAFA9;
+$primary: #0a6cb4;
+$secondary: #2b7a78;
+$contrast: #3aafa9;
 $light: $gray-100;
 $dark: $gray-900;
 
@@ -60,6 +60,7 @@ $h6-font-size: $font-size-base;
 /** Border Radius for Theme Edges */
 $br-base: 0.75rem;
 
-/** Button Variables */
+/** Button Variables
 $btn-font-weight: 700;
-$btn-border-radius: 1.25rem;
+$btn-border-radius: 0;
+*/

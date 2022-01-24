@@ -1,20 +1,12 @@
 .card {
-  margin-top: 1.75rem;
-  margin-bottom: 0.75rem;
-
   &:hover,
   &:active,
   &:focus {
     border-color: $primary;
   }
 
-  &__img {
-  	margin-top: -1.5rem;
-  }
-
   &--vertical {
     .card__img {
-      width: calc(100% - 2rem);
       height: auto;
       margin-left: auto;
       margin-right: auto;
@@ -22,12 +14,6 @@
   }
 
   &--horizontal {
-    margin-left: 1.5rem;
-
-    .card__img {
-      margin-left: -1rem;
-    }
-
     .card__body {
       width: 100%;
 
@@ -50,14 +36,12 @@
       @include media-breakpoint-up(md) {
         width: 38%;
         height: auto;
-        top: -1rem;
       }
     }
 
     .card__body {
       &--w-lg-img {
         display: inline-block;
-        width: calc(100% - 160px);
 
         @include media-breakpoint-up(md) {
           width: 60%;

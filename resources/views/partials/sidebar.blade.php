@@ -1,4 +1,4 @@
-<div class="sidebar__inner py-2 bg-white border slab-edge shadow-sm position-relative z-3">
+<div class="sidebar__inner py-2 bg-white border shadow-sm position-relative z-3">
 	<h4 class="border-bottom pb-2 px-4">
 		<a href="{{ get_permalink($post->post_parent) }}" class="d-inline-block text-dark text-decoration-none">{!! get_the_title($post->post_parent) !!}</a>
 	</h4>
