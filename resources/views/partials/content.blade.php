@@ -1,27 +1,7 @@
-<article class="card card--lg card--horizontal flex-row position-relative transition" @php post_class() @endphp>
-  @if (has_post_thumbnail())
-    {!! the_post_thumbnail('large', array( 'class' => 'card__img' )) !!}
-  @endif
-  <div class="card__body py-3 px-3 @if (has_post_thumbnail()) card__body--w-lg-img @endif">
-    <header>
-      @if (get_post_type() === 'post')
-      <div class="mb-3">
-        @include('partials.meta.date') 
-        <span class="text-muted mx-2 @if (has_post_thumbnail()) d-none d-sm-inline-block @endif">|</span> 
-        <span @if (has_post_thumbnail())class="d-block d-sm-inline-block" @endif>@include('partials.meta.author')</span>
-      </div>
-      @endif
-      <h4 class="card__title mt-1">
-        <a href="{{ 'database' == get_post_type() ? get_field('database_url') : get_permalink() }}" class="stretched-link text-decoration-none text-dark">
-          {!! get_the_title() !!}
-        </a>
-      </h4>
-    </header>
-    <div class="card__text text-muted d-none d-sm-block">
-      @php the_excerpt() @endphp
+<article @php post_class('card mb-3') @endphp>
+    <div class="card-body">
+        <h5 class="card-title">@php the_title() @endphp</h5>
+        <p class="card-text">@php the_excerpt() @endphp</p>
+        <a href="{{ get_the_permalink() }}" class="card-link stretched-link">Read More</a>
     </div>
-    <div class="text-end mt-2 @if (!has_post_thumbnail()) me-4 @endif">
-      <span class="slab-link slab-link--arrow">{{ 'database' == get_post_type() ? 'Explore' : 'Read More' }}</span>
-    </div>
-  </div>
 </article>

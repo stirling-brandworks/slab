@@ -1,1 +1,0 @@
-<span class="meta-item meta-item--email text-muted"> {!! $email !!}</span>

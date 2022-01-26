@@ -126,10 +126,6 @@ add_action('widgets_init', function () {
         'name'          => __('Footer 3', 'slab'),
         'id'            => 'sidebar-footer-3'
     ] + $config);
-    register_sidebar([
-        'name'          => __('Footer 4', 'slab'),
-        'id'            => 'sidebar-footer-4'
-    ] + $config);
 });
 
 /**

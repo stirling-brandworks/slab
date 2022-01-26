@@ -234,10 +234,79 @@ function has_hours(int $branch_id = null): bool
  * Get the branch address
  *
  * @param integer|null $branch_id
- * @return string
+ * @return array
  */
 function get_branch_address(int $branch_id = null)
 {
-    $branch_id = $branch_id ?: get_primary_branch_id();
-    return get_field('address', $branch_id);
+    try {
+        $branch_id = $branch_id ?: get_primary_branch_id();
+        return get_field('address', $branch_id);
+    } catch (\Exception $e) {
+        return [
+            'name' => 'Stirling Brandworks',
+            'street_number' => 1,
+            'street_name' => 'Mount Vernon Street',
+            'city' => 'Winchester',
+            'state' => 'MA',
+            'post_code' => '01890',
+            'country' => 'US'
+        ];
+    }
+}
+
+/**
+ * Get the branch phone number
+ *
+ * @param integer|null $branch_id
+ * @return string
+ */
+function get_branch_phone(int $branch_id = null)
+{
+    try {
+        $branch_id = $branch_id ?: get_primary_branch_id();
+        return get_field('branch_phone_number', $branch_id);
+    } catch (\Exception $e) {
+        return '(781) 369-5101';
+    }
+}
+
+/**
+ * Get the branch email address
+ *
+ * @param integer|null $branch_id
+ * @return string
+ */
+function get_branch_email(int $branch_id = null)
+{
+    try {
+        $branch_id = $branch_id ?: get_primary_branch_id();
+        return get_field('branch_email', $branch_id);
+    } catch (\Exception $e) {
+        return 'info@stirlingbrandworks.com';
+    }
+}
+
+/**
+ * Get the link to the catalog from the companion plugin.
+ *
+ * @return string
+ */
+function get_catalog_url()
+{
+    if (!function_exists('libby_get_catalog_base_url')) {
+        throw new CompanionPluginNotAvailable('libby-core');
+    }
+
+    return \libby_get_catalog_base_url();
+}
+
+
+/**
+ * Get the link to an account URL from the companion plugin.
+ *
+ * @return string
+ */
+function get_account_url()
+{
+    return get_catalog_url();
 }

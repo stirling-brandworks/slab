@@ -13,8 +13,8 @@
                     @if (has_nav_menu('secondary_navigation'))
                         {!! wp_nav_menu($secondary_menu) !!}
                     @else
-                        <li><a href="#">{{ __('Account', 'slab') }}</a></li>
-                        <li><a href="#">{{ __('Catalog', 'slab') }}</a></li>
+                        <li><a href="{{ \App\get_account_url() }}">{{ __('Account', 'slab') }}</a></li>
+                        <li><a href="{{ \App\get_catalog_url() }}">{{ __('Catalog', 'slab') }}</a></li>
                     @endif
                 </ul>
                 @include('shelf.components.searchform')
