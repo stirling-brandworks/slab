@@ -3,12 +3,17 @@
 namespace App\Controllers;
 
 use Sober\Controller\Controller;
-use WP_Query;
-use function get_field;
 
 class TemplateDatabases extends Controller
 {
     protected $acf = true;
+
+    protected $databaseItems = [];
+
+    public function __construct()
+    {
+        $this->databaseItems = (new \WP_Query($this->query()))->posts;
+    }
 
     public function query(): array
     {
@@ -22,13 +27,6 @@ class TemplateDatabases extends Controller
         ];
     }
 
-    protected $databaseItems = [];
-
-    public function __construct()
-    {
-        $this->databaseItems = (new WP_Query($this->query()))->posts;
-    }
-
     public function itemsAz(): array
     {
         $grouped = [];
@@ -38,7 +36,6 @@ class TemplateDatabases extends Controller
         return $grouped;
     }
 
-    // Data Transformation for Card Component
     public function itemsAzTransformed(): array
     {
         return array_map([self::class, 'transformData'], $this->itemsAz());
@@ -95,6 +92,6 @@ class TemplateDatabases extends Controller
             'order' => 'ASC'
         ];
 
-        return new WP_Query($args);
+        return new \WP_Query($args);
     }
 }
