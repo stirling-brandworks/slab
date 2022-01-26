@@ -229,3 +229,15 @@ function has_hours(int $branch_id = null): bool
         return false;
     }
 }
+
+/**
+ * Get the branch address
+ *
+ * @param integer|null $branch_id
+ * @return string
+ */
+function get_branch_address(int $branch_id = null)
+{
+    $branch_id = $branch_id ?: get_primary_branch_id();
+    return get_field('address', $branch_id);
+}
