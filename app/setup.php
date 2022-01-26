@@ -56,14 +56,6 @@ add_action('after_setup_theme', function () {
     add_theme_support('post-thumbnails');
 
     /**
-     * Add custom image sizes
-     * @link https://developer.wordpress.org/reference/functions/add_image_size/
-      */
-    add_image_size( 'square-thumbnail', 160, 160, true );
-    add_image_size( 'post_hero_img', 815, 420, true );
-
-
-    /**
      * Enable HTML5 markup support
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
      */
@@ -79,19 +71,14 @@ add_action('after_setup_theme', function () {
      * Enable custom header; an image that is chosen as the representative image in the theme top header section
      * @link https://codex.wordpress.org/Custom_Headers
      */
-
-    //Set Default Image
-    $args = array(
+    add_theme_support('custom-header', [
         'flex-width'    => true,
         'width'         => 180,
-        'flex-height'    => true,
+        'flex-height'   => true,
         'height'        => 90,
         'default-image' => get_template_directory_uri() . '/assets/images/logos/logo.svg',
         'uploads'       => true,
-    );
-
-    //Add Support
-    add_theme_support( 'custom-header', $args );
+    ] );
 
     /**
      * Use main stylesheet for visual editor
@@ -107,8 +94,8 @@ add_action('widgets_init', function () {
     $config = [
         'before_widget' => '<section class="widget %1$s %2$s">',
         'after_widget'  => '</section>',
-        'before_title'  => '<h6 class="widget__title text-uppercase fw-bold mb-3">',
-        'after_title'   => '</h6>'
+        'before_title'  => '<h3 class="widget__title text-uppercase fw-bold mb-3 h6">',
+        'after_title'   => '</h3>'
     ];
     register_sidebar([
         'name'          => __('Primary', 'slab'),

@@ -66,12 +66,7 @@
 .comment-form-comment {
   /** Hide for all but screen readers */
   label {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
+    @extend .visually-hidden;
   }
 }
 

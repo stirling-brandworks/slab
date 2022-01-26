@@ -26,7 +26,7 @@ $custom-colors: (
   "blue": $primary,
   "white": #fff,
   "light": $light,
-  "gray" : $gray-200,
+  "gray": $gray-200,
 );
 
 // Merge the maps
@@ -43,7 +43,7 @@ $link-hover-decoration: null;
 
 /* Typography */
 
-$font-family-sans-serif: "Poppins",
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", "Roboto",
   "Helvetica Neue", "Arial", "Noto Sans", "Liberation Sans", sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-serif: "Georgia", serif;
@@ -55,10 +55,6 @@ $h3-font-size: $font-size-base * 1.75;
 $h4-font-size: $font-size-base * 1.5;
 $h5-font-size: $font-size-base * 1.25;
 $h6-font-size: $font-size-base;
-
-
-/** Border Radius for Theme Edges */
-$br-base: 0.75rem;
 
 /** Button Variables
 $btn-font-weight: 700;
