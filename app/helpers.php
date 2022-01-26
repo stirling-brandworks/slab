@@ -3,6 +3,7 @@
 namespace App;
 
 use Roots\Sage\Container;
+use App\Exceptions\CompanionPluginNotAvailable;
 
 /**
  * Get the sage container.
@@ -161,12 +162,70 @@ function get_field_partial($partial)
 }
 
 /**
- * Format the string for todays hours into an echoable return
- * @param $brand_id  - the id of the branch CPT
- * @param $type  - type of hours regular, alternate
+ * Get the post object of the primary branch.
+ *
+ * @return WP_Post
  */
-function get_todays_hours($branch_id, $type) {
+function get_primary_branch(): \WP_Post
+{
+    $branches = wp_count_posts('branch');
+    if (!$branches || !$branches->publish) {
+        throw new \Exception('No published branches found. Please create a branch.');
+    }
+    if ($branches->publish === 1) {
+        return get_posts(['post_type' => 'branch', 'post_status' => 'publish', 'posts_per_page' => 1])[0];
+    }
+
+    $primaryBranch = get_field('main_branch_object', 'option');
+
+    if (!$primaryBranch) {
+        $primaryBranch = get_posts(['post_type' => 'branch', 'post_status' => 'publish', 'posts_per_page' => 1])[0];
+        update_field('main_branch_object', $primaryBranch, 'option');
+    }
+
+    return $primaryBranch;
+}
+
+/**
+ * Get the ID of the primary branch.
+ *
+ * @return integer
+ */
+function get_primary_branch_id(): int
+{
+    $branch = get_primary_branch();
+    return $branch['ID'];
+}
+
+/**
+ * Format the string for todays hours into an echoable return
+ *
+ * @param int    $branch_id  The id of the branch CPT
+ * @param string $type       Type of hours: "regular" or "alternate"
+ */
+function get_todays_hours(int $branch_id = null, string $type = 'regular'): string
+{
+    if (!function_exists('libby_todays_hours')) {
+        throw new CompanionPluginNotAvailable('libby-core');
+    }
     ob_start();
-    libby_todays_hours($brand_id, $type);
+    $branch_id = $branch_id ?: get_primary_branch_id();
+    \libby_todays_hours($branch_id, $type);
     return ob_get_clean();
-};
+}
+
+/**
+ * Check if there are hours configured using the companion plugin.
+ *
+ * @param integer|null $branch_id
+ * @return boolean
+ */
+function has_hours(int $branch_id = null): bool
+{
+    try {
+        $branch_id = $branch_id ?: get_primary_branch_id();
+        return !empty(\libby_get_hours($branch_id));
+    } catch (\Exception $e) {
+        return false;
+    }
+}

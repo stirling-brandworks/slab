@@ -61,7 +61,7 @@ add_action('after_setup_theme', function () {
       */
     add_image_size( 'square-thumbnail', 160, 160, true );
     add_image_size( 'post_hero_img', 815, 420, true );
-    
+
 
     /**
      * Enable HTML5 markup support
@@ -82,12 +82,12 @@ add_action('after_setup_theme', function () {
 
     //Set Default Image
     $args = array(
-    'flex-width'    => true,
-    'width'         => 240,
-    'flex-height'    => true,
-    'height'        => 240,
-    'default-image' => get_template_directory_uri() . '/assets/images/logos/logo.svg',
-    'uploads'       => true,
+        'flex-width'    => true,
+        'width'         => 180,
+        'flex-height'    => true,
+        'height'        => 90,
+        'default-image' => get_template_directory_uri() . '/assets/images/logos/logo.svg',
+        'uploads'       => true,
     );
 
     //Add Support
