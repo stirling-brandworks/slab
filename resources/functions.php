@@ -107,16 +107,6 @@ Container::getInstance()
         ]);
     }, true);
 
-
-//ACF PRO Google Maps API KEY //TODO removed after latest libby core update
-function my_acf_init() {
-    
-    acf_update_setting('google_api_key', 'AIzaSyDKGpDu0lWyzGPgPamk0_3lEDat_DoD1xI');
-}
-
-add_action('acf/init', 'my_acf_init');
-
-
 /**
  * Display the tags
  * https://developer.wordpress.org/reference/functions/get_the_tags/
