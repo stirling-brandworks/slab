@@ -3,7 +3,8 @@
 @extends('layouts.default')
 
 @section('content')
-    @while (have_posts()) @php the_post() @endphp
+    @while (have_posts())
+        @php the_post() @endphp
         @include('partials.content-page')
 
         <h2 class="mb-3">Alert</h2>
@@ -41,38 +42,43 @@
 
         <hr />
 
+        <<<<<<< HEAD <h2 class="mb-3">Legend</h2>
+            <div class="mb-5" style="width: 32rem;">
+                @include('shelf.partials.databases.legend')
+            </div>
 
-        <h2 class="mb-3">Legend</h2>
-        <div class="mb-5" style="width: 32rem;">
-            @include('shelf.partials.databases.legend')
-        </div>
+            <hr />
 
-        <hr />
+            <h2 class="mb-3">Sliders &amp; Carousels</h2>
+            =======
+            <h2 class="mb-3">Sliders & Carousels</h2>
+            >>>>>>> 9.x
+            <h3 class="mb-3">Slider</h3>
+            <div class="mb-5">
+                @if ($slider['slides'])
+                    @include('components.slider', $slider)
+                @endif
+            </div>
 
-        <h2 class="mb-3">Sliders &amp; Carousels</h2>
-        <h3 class="mb-3">Slider</h3>
-        <div class="mb-5">
-            @if ($slider['slides'])
-                @include('components.slider', $slider)
-            @endif
-        </div>
+            <h3 class="mb-3">Carousel</h3>
+            TBD
 
-        <h3 class="mb-3">Carousel</h3>
-        TBD
+            <hr />
 
-        <hr />
+            <<<<<<< HEAD <h2 class="mb-3">Accordions &amp; Tabs</h2>
+                =======
+                <h2 class="mb-3">Accordions & Tabs</h2>
+                >>>>>>> 9.x
+                <h3 class="mb-3">Accordion</h3>
+                <div class="mb-5">
+                    @if ($accordion_items)
+                        @include('components.accordion', ['items' => $accordion_items])
+                    @endif
+                </div>
 
-        <h2 class="mb-3">Accordions &amp; Tabs</h2>
-        <h3 class="mb-3">Accordion</h3>
-        <div class="mb-5">
-            @if ($accordion_items)
-                @include('components.accordion', ['items' => $accordion_items])
-            @endif
-        </div>
-
-        <h3 class="mb-3">Tabs</h3>
-        @if ($tabs)
-            @include('components.tabs', $tabs)
-        @endif
+                <h3 class="mb-3">Tabs</h3>
+                @if ($tabs)
+                    @include('components.tabs', $tabs)
+                @endif
     @endwhile
 @endsection
