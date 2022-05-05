@@ -194,7 +194,7 @@ function get_primary_branch(): \WP_Post
 function get_primary_branch_id(): int
 {
     $branch = get_primary_branch();
-    return $branch['ID'];
+    return $branch->ID;
 }
 
 /**
