@@ -7,10 +7,6 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $fields = new FieldsBuilder('hero');
 
 $fields
-    ->addGroup('hero')
-        ->setLabel(null)
-        ->addFields(get_field_partial('components.visiblity-toggle'))
-    ->endGroup()
     ->addGroup('slider')
         ->addFields(get_field_partial('components.slider'))
     ->endGroup()
