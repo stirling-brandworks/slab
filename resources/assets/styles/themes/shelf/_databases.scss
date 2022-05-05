@@ -1,0 +1,72 @@
+/** Database Item */
+.database-item {
+  &__img-wrap {
+    min-height: 8rem;
+  }
+
+  &--horizontal {
+    padding: 1.5rem;
+
+    .database-item__content {
+       &--w-img {
+        padding-top: 1rem;
+        border-top: 1px solid #ddd;
+
+        @include media-breakpoint-up(md) {
+          padding-top: 0;
+          border-top: none;
+          display: inline-block;
+          width: 69%;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .database-item__img-wrap {
+        display: inline-block;
+        width: 30%;
+        vertical-align: middle;
+      } 
+    }
+  }
+
+  &--vertical {
+    min-height: 8rem;
+
+    .database-item__content {
+      padding-bottom: 1rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      margin: 0 1rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .database-item__img-wrap {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+  }
+}
+
+/** Database Page */
+.template-databases {
+  .page-header__title {
+    padding-bottom: 3rem;  /** Add space on mobile for tabs */
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.nav--raised {
+  margin-top: -2.5rem;
+}
+
+@include media-breakpoint-up(md) {
+  .legend--raised {
+    margin-top: -9rem !important;
+  }
+}

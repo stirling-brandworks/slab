@@ -1,0 +1,11 @@
+/** Posts Pagination */
+.nav-links {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    @extend .btn;
+    @extend .btn-secondary;
+  }
+}

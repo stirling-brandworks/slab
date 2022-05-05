@@ -1,26 +1,29 @@
-@if (has_nav_menu('secondary_navigation'))
-<nav class="py-2 bg-light border-bottom">
-  <div class="container d-flex flex-wrap justify-content-end">
-    <ul class="nav">
-      {!! wp_nav_menu($secondary_menu) !!}
-    </ul>
-  </div>
-</nav>
-@endif
-
-<header class="mb-4 border-bottom banner">
-  <nav class="navbar navbar-expand-lg navbar-light">
+<header class="header">
     <div class="container">
-      <a class="navbar-brand" href="{{ home_url('/') }}">{{ $site_name }}</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          {!! wp_nav_menu($primary_menu) !!}
-        </ul>
-      </div>
-    </div>
-  </nav>
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="{{ home_url('/') }}">
+                {!! get_header_image_tag() !!}
+            </a>
+
+            <div class="d-flex align-items-center gap-2">
+                @if (App\has_hours())
+                    @include('shelf.components.hours')
+                @endif
+                <ul class="list-unstyled d-flex gap-2">
+                    @if (has_nav_menu('secondary_navigation'))
+                        {!! wp_nav_menu($secondary_menu) !!}
+                    @else
+                        <li><a href="{{ \App\get_account_url() }}">{{ __('Account', 'slab') }}</a></li>
+                        <li><a href="{{ \App\get_catalog_url() }}">{{ __('Catalog', 'slab') }}</a></li>
+                    @endif
+                </ul>
+                @include('shelf.components.searchform')
+            </div>
+        </div>
+        </nav>
+        <nav class="main-menu-wrapper border-top bg-white">
+            <div class="container">
+                {!! wp_nav_menu($primary_menu) !!}
+            </div>
+        </nav>
 </header>

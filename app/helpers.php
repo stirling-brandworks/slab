@@ -3,6 +3,7 @@
 namespace App;
 
 use Roots\Sage\Container;
+use App\Exceptions\CompanionPluginNotAvailable;
 
 /**
  * Get the sage container.
@@ -158,4 +159,154 @@ function get_field_partial($partial)
 {
     $partial = str_replace('.', '/', $partial);
     return include(config('theme.dir') . "/app/fields/{$partial}.php");
+}
+
+/**
+ * Get the post object of the primary branch.
+ *
+ * @return WP_Post
+ */
+function get_primary_branch(): \WP_Post
+{
+    $branches = wp_count_posts('branch');
+    if (!$branches || !$branches->publish) {
+        throw new \Exception('No published branches found. Please create a branch.');
+    }
+    if ($branches->publish === 1) {
+        return get_posts(['post_type' => 'branch', 'post_status' => 'publish', 'posts_per_page' => 1])[0];
+    }
+
+    $primaryBranch = get_field('main_branch_object', 'option');
+
+    if (!$primaryBranch) {
+        $primaryBranch = get_posts(['post_type' => 'branch', 'post_status' => 'publish', 'posts_per_page' => 1])[0];
+        update_field('main_branch_object', $primaryBranch, 'option');
+    }
+
+    return $primaryBranch;
+}
+
+/**
+ * Get the ID of the primary branch.
+ *
+ * @return integer
+ */
+function get_primary_branch_id(): int
+{
+    $branch = get_primary_branch();
+    return $branch->ID;
+}
+
+/**
+ * Format the string for todays hours into an echoable return
+ *
+ * @param int    $branch_id  The id of the branch CPT
+ * @param string $type       Type of hours: "regular" or "alternate"
+ */
+function get_todays_hours(int $branch_id = null, string $type = 'regular'): string
+{
+    if (!function_exists('libby_todays_hours')) {
+        throw new CompanionPluginNotAvailable('libby-core');
+    }
+    ob_start();
+    $branch_id = $branch_id ?: get_primary_branch_id();
+    \libby_todays_hours($branch_id, $type);
+    return ob_get_clean();
+}
+
+/**
+ * Check if there are hours configured using the companion plugin.
+ *
+ * @param integer|null $branch_id
+ * @return boolean
+ */
+function has_hours(int $branch_id = null): bool
+{
+    try {
+        $branch_id = $branch_id ?: get_primary_branch_id();
+        return !empty(\libby_get_hours($branch_id));
+    } catch (\Exception $e) {
+        return false;
+    }
+}
+
+/**
+ * Get the branch address
+ *
+ * @param integer|null $branch_id
+ * @return array
+ */
+function get_branch_address(int $branch_id = null)
+{
+    try {
+        $branch_id = $branch_id ?: get_primary_branch_id();
+        return get_field('address', $branch_id);
+    } catch (\Exception $e) {
+        return [
+            'name' => 'Stirling Brandworks',
+            'street_number' => 1,
+            'street_name' => 'Mount Vernon Street',
+            'city' => 'Winchester',
+            'state' => 'MA',
+            'post_code' => '01890',
+            'country' => 'US'
+        ];
+    }
+}
+
+/**
+ * Get the branch phone number
+ *
+ * @param integer|null $branch_id
+ * @return string
+ */
+function get_branch_phone(int $branch_id = null)
+{
+    try {
+        $branch_id = $branch_id ?: get_primary_branch_id();
+        return get_field('branch_phone_number', $branch_id);
+    } catch (\Exception $e) {
+        return '(781) 369-5101';
+    }
+}
+
+/**
+ * Get the branch email address
+ *
+ * @param integer|null $branch_id
+ * @return string
+ */
+function get_branch_email(int $branch_id = null)
+{
+    try {
+        $branch_id = $branch_id ?: get_primary_branch_id();
+        return get_field('branch_email', $branch_id);
+    } catch (\Exception $e) {
+        return 'info@stirlingbrandworks.com';
+    }
+}
+
+/**
+ * Get the link to the catalog from the companion plugin.
+ *
+ * @return string
+ */
+function get_catalog_url()
+{
+    if (!function_exists('libby_get_catalog_base_url')) {
+        throw new CompanionPluginNotAvailable('libby-core');
+    }
+
+    return \libby_get_catalog_base_url();
+}
+
+
+/**
+ * Get the link to an account URL from the companion plugin.
+ *
+ * @return string
+ */
+function get_account_url()
+{
+    return get_catalog_url();
 }

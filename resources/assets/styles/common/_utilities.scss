@@ -1,0 +1,85 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/utilities";
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "z-index": (
+      property: z-index,
+      class: z,
+      values: (
+        n1: -1,
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+      )
+    ),
+
+    "border-hover": (
+      property: border-color,
+      class: border-color,
+      state: hover,
+      values: (
+        primary: $primary,
+        secondary: $secondary,
+        gray: $gray-900,
+        inherit: inherti,
+      )
+    ),
+
+    "border-bottom-dashed": (
+      property: border-bottom,
+      class: border-bottom-dashed,
+      values: (
+        0: 0,
+        1: 1px dashed,
+        2: 2px dashed,
+        3: 3px dashed,
+      )
+    ),
+
+    
+    "object-fit": (
+      property: object-fit,
+      class: object-fit,
+      values: contain cover fill scale-down unset,
+    ),
+
+    "transition": (
+      property: transition-property,
+      class: transition,
+      values: (
+        none: none,
+        all: all,
+        color: color,
+        border: border,
+        bg: background,
+        bgc: background-color,
+      )
+    ),
+
+    "transition-duration": (
+      property: transition-duration,
+      class: duration,
+      values: (
+        0: 0,
+        1: 0.25s,
+        2: 0.5s,
+        3: 0.75s,
+        4: 1s,
+      )
+    ),
+
+    "transition-ease": (
+      property: transition-timing-function,
+      class: ease,
+      values: ease ease-in ease-out ease-out ease-in-out,
+    )
+  )
+);
+
+@import "~bootstrap/scss/utilities/api";

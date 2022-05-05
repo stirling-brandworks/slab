@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20">
+  <path id="bxs-calendar" d="M22.5,21V7a2,2,0,0,0-2-2h-2V3h-2V5h-6V3h-2V5h-2a2,2,0,0,0-2,2V21a2,2,0,0,0,2,2h14A2,2,0,0,0,22.5,21Zm-12-2h-2V17h2Zm0-4h-2V13h2Zm4,4h-2V17h2Zm0-4h-2V13h2Zm4,4h-2V17h2Zm0-4h-2V13h2Zm2-5H6.5V8h14Z" transform="translate(-4.5 -3)" fill="#3aafa9"/>
+</svg>

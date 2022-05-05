@@ -72,7 +72,7 @@ array_map(function ($file) use ($sage_error) {
     if (!locate_template($file, true, true)) {
         $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'slab'), $file), 'File not found');
     }
-}, ['helpers', 'setup', 'filters', 'admin', 'acf', 'cli']);
+}, ['helpers', 'setup', 'filters', 'admin', 'acf', 'cli', 'search']);
 
 /**
  * Here's what's happening with these hooks:
@@ -106,3 +106,21 @@ Container::getInstance()
             'blocks' => require dirname(__DIR__) . '/config/blocks.php',
         ]);
     }, true);
+
+/**
+ * Display the tags
+ * https://developer.wordpress.org/reference/functions/get_the_tags/
+ */
+function display_tags() {
+    $post_tags = get_the_tags();
+    $separator = ', ';
+    $output = '';
+
+    if ( ! empty( $post_tags ) ) {
+        foreach ( $post_tags as $tag ) {
+            $output .= ( $tag->name ) . $separator;
+        }
+    }
+
+    return trim( $output, $separator );
+}

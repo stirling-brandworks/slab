@@ -68,6 +68,19 @@ add_action('after_setup_theme', function () {
     add_theme_support('customize-selective-refresh-widgets');
 
     /**
+     * Enable custom header; an image that is chosen as the representative image in the theme top header section
+     * @link https://codex.wordpress.org/Custom_Headers
+     */
+    add_theme_support('custom-header', [
+        'flex-width'    => true,
+        'width'         => 180,
+        'flex-height'   => true,
+        'height'        => 90,
+        'default-image' => get_template_directory_uri() . '/assets/images/logos/logo.svg',
+        'uploads'       => true,
+    ] );
+
+    /**
      * Use main stylesheet for visual editor
      * @see resources/assets/styles/layouts/_tinymce.scss
      */
@@ -81,7 +94,7 @@ add_action('widgets_init', function () {
     $config = [
         'before_widget' => '<section class="widget %1$s %2$s">',
         'after_widget'  => '</section>',
-        'before_title'  => '<h3>',
+        'before_title'  => '<h3 class="widget__title text-uppercase fw-bold mb-3 h6">',
         'after_title'   => '</h3>'
     ];
     register_sidebar([
@@ -89,8 +102,16 @@ add_action('widgets_init', function () {
         'id'            => 'sidebar-primary'
     ] + $config);
     register_sidebar([
-        'name'          => __('Footer', 'slab'),
-        'id'            => 'sidebar-footer'
+        'name'          => __('Footer 1', 'slab'),
+        'id'            => 'sidebar-footer-1'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Footer 2', 'slab'),
+        'id'            => 'sidebar-footer-2'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Footer 3', 'slab'),
+        'id'            => 'sidebar-footer-3'
     ] + $config);
 });
 

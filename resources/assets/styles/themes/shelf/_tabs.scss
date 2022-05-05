@@ -1,0 +1,18 @@
+/** Shelf Tabs on Databases Page */
+
+.nav-tabs--shelf {
+  .nav-link {
+    color: #fff;
+    min-width: 7rem;
+
+    @include media-breakpoint-up(md) {
+      min-width: 12rem;
+    }
+
+    &.active {
+     font-weight: bold;
+     color: $primary;
+     background-color: #fff;
+    }
+  }
+}

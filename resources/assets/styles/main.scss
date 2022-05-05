@@ -12,18 +12,22 @@
 @import "~swiper/swiper-bundle.css";
 
 /** Import theme styles */
+@import "common/archive";
 @import "common/global";
 @import "common/typography";
 @import "common/utilities";
 @import "components/buttons";
+@import "components/cards";
 @import "components/comments";
 @import "components/forms";
-@import "components/wp-classes";
+@import "components/meta";
+@import "components/page-header";
 @import "components/swiper";
-@import "components/cards";
+@import "components/wp-classes";
 @import "layouts/header";
-@import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/pages";
 @import "layouts/posts";
+@import "layouts/sidebar";
 @import "layouts/tinymce";
+@import "themes/shelf/shelf";

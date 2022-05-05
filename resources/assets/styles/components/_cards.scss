@@ -1,5 +1,46 @@
 .card {
-  [class^="card-img"] {
-    object-fit: cover;
+  &--vertical {
+    .card__img {
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &--horizontal {
+    .card__body {
+      width: 100%;
+
+      &--w-img {
+        display: inline-block;
+        width: calc(100% - 160px); //this is determined by img thumb size and some padding
+      }
+    }
+  }
+
+  /** Used on the feed page */
+  &--large {
+    margin-bottom: 5rem;
+
+    .card__img {
+      width: auto;
+      height: 7rem;
+      position: relative;
+
+      @include media-breakpoint-up(md) {
+        width: 38%;
+        height: auto;
+      }
+    }
+
+    .card__body {
+      &--w-lg-img {
+        display: inline-block;
+
+        @include media-breakpoint-up(md) {
+          width: 60%;
+        }
+      }
+    }
   }
 }

@@ -6,14 +6,86 @@
   list-style: none;
 }
 
-.comment-form input[type="text"],
-.comment-form input[type="email"],
-.comment-form input[type="url"],
-.comment-form textarea {
-  @extend .form-control;
+.comment-form {
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  textarea {
+    @extend .form-control;
+  }
 }
 
 .comment-form input[type="submit"] {
   @extend .btn;
-  @extend .btn-secondary;
+  @extend .btn-primary;
+
+  min-width: 14rem;
+}
+
+.comment-respond {
+  margin-bottom: 2rem;
+
+  .comment-reply-title {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+
+    #cancel-comment-reply-link {
+      margin-left: 0.5rem;
+      font-size: 1rem;
+      font-weight: 300;
+      text-transform: capitalize;
+      text-decoration: none;
+    }
+  }
+}
+
+.comment-body {
+  margin-bottom: 1.5rem;
+
+  .comment-reply-link {
+    text-decoration: none;
+  }
+}
+
+.comment-meta {
+  .fn {
+    margin-left: 0.3rem;
+  }
+}
+
+.comment-metadata {
+  margin-top: 0.25rem;
+
+  a {
+    color: #666;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+}
+
+.comment-form-comment {
+  /** Hide for all but screen readers */
+  label {
+    @extend .visually-hidden;
+  }
+}
+
+.logged-in-as {
+  display: inline-block;
+  float: right;
+  text-align: right;
+  width: 50%;
+  color: #666;
+
+  a:first-child {
+    color: #666;
+    text-decoration: none;
+    font-weight: bold;
+
+    & + a {
+      color: $primary;
+      font-weight: 300;
+      text-transform: capitalize;
+    }
+  }
 }

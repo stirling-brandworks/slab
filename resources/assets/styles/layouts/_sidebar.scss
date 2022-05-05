@@ -1,0 +1,27 @@
+/** Page Sidebar */
+
+.sidebar {
+  @include media-breakpoint-up(md) {
+    &__inner {
+      margin-top: -8rem;
+      min-height: 12rem;
+    }
+  }
+
+  &__menu {
+    & > li {
+      margin-bottom: $spacer;
+
+      & > a {
+        color: $dark;
+        text-decoration: none;
+      }
+
+      &.current_page_item {
+        & > a {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
