@@ -45,6 +45,9 @@
     ],
     "post-create-project-cmd": [
       "App\\Installer\\ComposerScript::postCreateProject"
+    ],
+    "post-install-cmd": [
+      "App\\Installer\\ComposerScript::copyPluginConfigs"
     ]
   }
 }

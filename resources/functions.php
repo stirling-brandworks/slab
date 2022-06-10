@@ -14,7 +14,7 @@ use Roots\Sage\Container;
  * @param string $title
  */
 $sage_error = function ($message, $subtitle = '', $title = '') {
-    $title = $title ?: __('Sage &rsaquo; Error', 'slab');
+    $title = $title ?: __('Slab &rsaquo; Error', 'slab');
     $footer = '<a href="https://roots.io/sage/docs/">roots.io/sage/docs/</a>';
     $message = "<h1>{$title}<br><small>{$subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
     wp_die($message, $title);
@@ -106,3 +106,15 @@ Container::getInstance()
             'blocks' => require dirname(__DIR__) . '/config/blocks.php',
         ]);
     }, true);
+
+
+/**
+ * Load any custom packages
+ */
+foreach (\App\config('theme.packages') as $class) {
+    if (!class_exists($class)) {
+        $sage_error(__('Make sure you have installed the package via composer', 'slab'), __("$class not found", 'slab'));
+    }
+
+    new $class;
+}

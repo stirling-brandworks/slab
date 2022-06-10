@@ -5,7 +5,6 @@ namespace App\Installer;
 use Roots\Sage\Installer\ComposerScript as RootsComposerScript;
 use Composer\Script\Event;
 use Symfony\Component\Process\Process;
-
 class ComposerScript extends RootsComposerScript
 {
     /**
@@ -23,5 +22,28 @@ class ComposerScript extends RootsComposerScript
             ->validate()
             ->run(new Process(sprintf('php %s %s', $sage, 'meta')))
             ->run(new Process(sprintf('php %s %s', $sage, 'config')));
+    }
+
+    /**
+     * Look for any slab-plugin-* packages and install them
+     */
+    public static function copyPluginConfigs(Event $event)
+    {
+       $plugins = ['stirling-brandworks/shelf'];
+
+       foreach ($plugins as $plugin) {
+           if (!\Composer\InstalledVersions::isInstalled($plugin)) {
+               continue;
+           }
+
+           $installPath = \Composer\InstalledVersions::getInstallPath($plugin);
+           $slug = basename($installPath);
+           $exampleConfigPath = $installPath . "/$slug-example.yml";
+
+           if (file_exists($exampleConfigPath) && !file_exists("./$slug.yml")) {
+                (new static($event))
+                    ->run(new Process(sprintf("php -r \"copy('%s', '%s');\"", $exampleConfigPath, "./$slug.yml")));
+           }
+       }
     }
 }
