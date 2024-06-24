@@ -2,6 +2,7 @@
   "[php]": {
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
+    "editor.defaultFormatter": "valeryanm.vscode-phpsab"
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
